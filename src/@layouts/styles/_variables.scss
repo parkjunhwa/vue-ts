@@ -8,16 +8,16 @@ $selector-vertical-nav-mini: ".layout-vertical-nav-collapsed .layout-vertical-na
 
 // 👉 Horizontal nav
 $layout-horizontal-nav-z-index: 11 !default;
-$layout-horizontal-nav-navbar-height: 64px !default;
+$layout-horizontal-nav-navbar-height: 60px !default;
 
 // 👉 Navbar
-$layout-vertical-nav-navbar-height: 64px !default;
+$layout-vertical-nav-navbar-height: 60px !default;
 $layout-vertical-nav-navbar-is-contained: true !default;
 $layout-vertical-nav-layout-navbar-z-index: 11 !default;
 $layout-horizontal-nav-layout-navbar-z-index: 11 !default;
 
 // 👉 Main content
-$layout-boxed-content-width: 1440px !default;
+$layout-boxed-content-width: 100% !default;
 
 //  👉Footer
 $layout-vertical-nav-footer-height: 56px !default;
