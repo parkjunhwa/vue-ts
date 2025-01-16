@@ -355,7 +355,7 @@ const resetCustomizer = async () => {
 
             <div
               class="d-flex app-customizer-primary-colors"
-              style="column-gap: 0.75rem; margin-block-start: 2px;"
+              style="column-gap: 2px; margin-block-start: 2px;"
             >
               <div
                 v-for="color in colors"
