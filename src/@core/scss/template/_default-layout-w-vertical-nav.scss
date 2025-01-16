@@ -18,3 +18,16 @@
     }
   }
 }
+
+
+.layout-nav-type-vertical {
+  .layout-vertical-nav {
+    .nav-link {
+      > .router-link-exact-active {
+        background: linear-gradient(270deg, rgba(230, 0, 18, 0.7) 0%, rgba(230, 0, 18, 1) 100%) !important;
+      }
+    }
+  }
+}
+
+

@@ -41,9 +41,9 @@ const userProfileList = [
     v-if="userData"
     dot
     bordered
-    location="bottom right"
-    offset-x="1"
-    offset-y="2"
+    location="top right"
+    offset-x="2"
+    offset-y="1"
     color="success"
   >
     <VAvatar

@@ -1,35 +1,15 @@
-body {
-  .layout-wrapper {
-    &.layout-nav-type-vertical {
-      .layout-navbar {
-        inset-block-start: 0 !important;
+.layout-wrapper {
+  &.layout-nav-type-vertical {
+    .layout-navbar {
+      padding-inline: 0;
 
-        .navbar-content-container {
-          border-radius: 0;
-        }
-
-        padding-inline: 0;
-      }
-    }
-
-    &.layout-navbar-sticky {
-      .layout-navbar {
-        inset-block-start: 0;
-      }
-
-      .layout-page-content {
-        inset-block-start: 0;
-      }
-    }
-  }
-
-  .layout-wrapper {
-    &.layout-nav-type-vertical {
-      &.layout-navbar-sticky {
-        .layout-page-content {
-          margin-block-start: 0;
-        }
+      .navbar-content-container {
+        border-radius: 0;
       }
     }
   }
 }
+
+
+
+.layout-nav-type-vertical .layout-vertical-nav .nav-items {padding: 1rem 0;}
