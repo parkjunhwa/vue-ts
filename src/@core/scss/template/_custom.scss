@@ -65,3 +65,69 @@
 .layout-nav-type-vertical .layout-vertical-nav .nav-items {
   padding: 1rem 0;
 }
+
+
+@media screen and (max-width: 600px) {
+  .v-card {
+    button {
+      flex: 1;
+      width: 100%;
+    }
+
+    .v-card-text {
+      &.d-flex {
+        &.justify-end {
+          &.flex-wrap {
+            button {
+              flex: 1;
+              max-width: calc(50% - 6px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .v-card {
+    button {
+      flex: 1;
+      width: 100%;
+    }
+
+    .v-card-text {
+      &.d-flex {
+        &.justify-end {
+          &.flex-wrap {
+            button {
+              flex: 1;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.v-dialog {
+  .v-dialog-close-btn {
+    border-radius: 100px !important;
+    color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity)) !important;
+    width: 32px !important;
+    height: 32px !important;
+    transform: translate(0.9rem, -0.9rem) scale(1) !important;
+    border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+
+
+    &:hover {
+      transform-origin: center;
+      transform: translate(0.9rem, -0.9rem) scale(1.1) !important;
+    }
+  }
+}
+
+.fullpopup-page-content {
+  padding: 16px;
+}
