@@ -5,6 +5,7 @@ import navItems from "@/navigation/vertical";
 import Footer from "@/layouts/components/Footer.vue";
 import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
 import UserProfile from "@/layouts/components/UserProfile.vue";
+import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
 
 // @layouts plugin
 import { VerticalNavLayout } from "@layouts";
@@ -28,13 +29,7 @@ import { VerticalNavLayout } from "@layouts";
         <VSpacer />
 
         <NavBarNotifications class="me-2" />
-
-        <VTooltip location="down">
-          <template #activator="{ props }">
-            <VIcon v-bind="props" size="22" icon="tabler-logout" />
-          </template>
-          <span>로그아웃</span>
-        </VTooltip>
+        <NavBarLogout />
       </div>
     </template>
 
