@@ -15,7 +15,7 @@ export const redirects: RouteRecordRaw[] = [
       const userRole = userData.value?.role
 
       if (userRole === 'admin')
-        return { name: 'dashboards-crm' }
+        return { name: 'pages-home' }
       if (userRole === 'client')
         return { name: 'access-control' }
 
@@ -56,21 +56,5 @@ export const routes: RouteRecordRaw[] = [
       navActiveLink: 'apps-email',
       layoutWrapperClasses: 'layout-content-height-fixed',
     },
-  },
-
-  {
-    path: '/dashboards/logistics',
-    name: 'dashboards-logistics',
-    component: () => import('@/pages/apps/logistics/dashboard.vue'),
-  },
-  {
-    path: '/dashboards/academy',
-    name: 'dashboards-academy',
-    component: () => import('@/pages/apps/academy/dashboard.vue'),
-  },
-  {
-    path: '/apps/ecommerce/dashboard',
-    name: 'apps-ecommerce-dashboard',
-    component: () => import('@/pages/dashboards/ecommerce.vue'),
   },
 ]

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import navItems from '@/navigation/vertical'
+import navItems from "@/navigation/vertical";
 
 // Components
-import Footer from '@/layouts/components/Footer.vue'
-import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
-import UserProfile from '@/layouts/components/UserProfile.vue'
+import Footer from "@/layouts/components/Footer.vue";
+import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
+import UserProfile from "@/layouts/components/UserProfile.vue";
 
 // @layouts plugin
-import { VerticalNavLayout } from '@layouts'
+import { VerticalNavLayout } from "@layouts";
 </script>
 
 <template>
@@ -20,24 +20,21 @@ import { VerticalNavLayout } from '@layouts'
           class="ms-n3 d-lg-none"
           @click="toggleVerticalOverlayNavActive(true)"
         >
-          <VIcon
-            size="26"
-            icon="tabler-menu-2"
-          />
+          <VIcon size="26" icon="tabler-menu-2" />
         </IconBtn>
 
         <!-- <NavSearchBar class="ms-lg-n3" /> -->
 
         <VSpacer />
 
-        <!-- <NavBarI18n
-          v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"
-          :languages="themeConfig.app.i18n.langConfig"
-        />
-        <NavbarThemeSwitcher />
-        <NavbarShortcuts /> -->
-        <NavBarNotifications class="me-1" />
-        <UserProfile />
+        <NavBarNotifications class="me-2" />
+
+        <VTooltip location="down">
+          <template #activator="{ props }">
+            <VIcon v-bind="props" size="22" icon="tabler-logout" />
+          </template>
+          <span>로그아웃</span>
+        </VTooltip>
       </div>
     </template>
 
