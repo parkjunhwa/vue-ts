@@ -103,9 +103,4 @@ export default [
       { title: 'Data Table', icon: { icon: 'tabler-layout-grid' }, to: 'tables-data-table' },
     ],
   },
-  {
-    title: 'Dialog Examples',
-    icon: { icon: 'tabler-square' },
-    to: 'pages-dialog-examples',
-  },
 ]

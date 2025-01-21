@@ -1,93 +1,85 @@
 <script setup lang="ts">
-const isCardAddDialogVisible = ref(false)
-const isPricingPlanDialogVisible = ref(false)
-const isEditAddressDialogVisible = ref(false)
-const isTwoFactorDialogOpen = ref(false)
-const isUserInfoEditDialogVisible = ref(false)
-const isShareProjectDialogVisible = ref(false)
-const isReferAndEarnDialogVisible = ref(false)
-const isPaymentProvidersDialogVisible = ref(false)
-const isAddPaymentMethodsDialogVisible = ref(false)
-const isCreateAppVisible = ref(false)
+const isCardAddDialogVisible = ref(false);
+const isPricingPlanDialogVisible = ref(false);
+const isEditAddressDialogVisible = ref(false);
+const isTwoFactorDialogOpen = ref(false);
+const isUserInfoEditDialogVisible = ref(false);
+const isShareProjectDialogVisible = ref(false);
+const isReferAndEarnDialogVisible = ref(false);
+const isPaymentProvidersDialogVisible = ref(false);
+const isAddPaymentMethodsDialogVisible = ref(false);
+const isCreateAppVisible = ref(false);
 
 const userData = {
   id: 110,
-  firstName: 'Selena',
-  lastName: 'Kyle',
-  company: 'pixinvent',
-  role: 'Web developer',
-  username: 'charwomen1940',
-  country: 'United States',
-  contact: '(829) 537-0057',
-  email: 'irena.dubrovna@wayne.com',
-  currentPlan: '',
-  status: 'Active',
-  avatar: '',
+  firstName: "Selena",
+  lastName: "Kyle",
+  company: "pixinvent",
+  role: "Web developer",
+  username: "charwomen1940",
+  country: "United States",
+  contact: "(829) 537-0057",
+  email: "irena.dubrovna@wayne.com",
+  currentPlan: "",
+  status: "Active",
+  avatar: "",
   taskDone: null,
   projectDone: null,
-  taxId: 'Tax-8894',
-  language: 'English',
-  fullName: 'Selena Kyle',
-}
+  taxId: "Tax-8894",
+  language: "English",
+  fullName: "Selena Kyle",
+};
 </script>
 
 <template>
   <VRow>
-    <!-- 👉 Share Project Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 프로젝트 공유 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-file"
-            />
+            <VIcon size="34" icon="tabler-file" />
           </template>
-          <VCardTitle>Share Project</VCardTitle>
+          <VCardTitle>프로젝트 공유</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Quickly collect the credit card details, built in input mask and form validation support.
+            신용카드 정보를 빠르게 수집할 수 있으며, 내장된 입력 마스크 및 폼
+            유효성 검사를 지원합니다.
           </p>
 
-          <VBtn @click="isShareProjectDialogVisible = !isShareProjectDialogVisible">
-            Show
+          <VBtn
+            @click="isShareProjectDialogVisible = !isShareProjectDialogVisible"
+          >
+            보기
           </VBtn>
         </VCardText>
 
-        <ShareProjectDialog v-model:is-dialog-visible="isShareProjectDialogVisible" />
+        <ShareProjectDialog
+          v-model:is-dialog-visible="isShareProjectDialogVisible"
+        />
       </VCard>
     </VCol>
 
-    <!-- 👉 Add New Card Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 새 카드 추가 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-credit-card"
-            />
+            <VIcon size="34" icon="tabler-credit-card" />
           </template>
-          <VCardTitle>Add New Card</VCardTitle>
+          <VCardTitle>새 카드 추가</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Quickly collect the credit card details, built in input mask and form validation support.
+            신용카드 정보를 빠르게 수집할 수 있으며, 내장된 입력 마스크 및 폼
+            유효성 검사를 지원합니다.
           </p>
 
           <VBtn @click="isCardAddDialogVisible = !isCardAddDialogVisible">
-            Show
+            보기
           </VBtn>
         </VCardText>
 
@@ -95,270 +87,168 @@ const userData = {
       </VCard>
     </VCol>
 
-    <!-- 👉 Pricing Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 가격 설정 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-currency-dollar"
-            />
+            <VIcon size="34" icon="tabler-currency-dollar" />
           </template>
-          <VCardTitle>Pricing</VCardTitle>
+          <VCardTitle>가격 설정</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Elegant pricing options dialog popup example, easy to use in any page.
+            우아한 가격 설정 옵션 다이얼로그 예제, 페이지에서 쉽게 사용할 수
+            있습니다.
           </p>
 
-          <VBtn @click="isPricingPlanDialogVisible = !isPricingPlanDialogVisible">
-            Show
+          <VBtn
+            @click="isPricingPlanDialogVisible = !isPricingPlanDialogVisible"
+          >
+            보기
           </VBtn>
         </VCardText>
 
-        <!-- 👉 plan and pricing dialog -->
-        <PricingPlanDialog v-model:is-dialog-visible="isPricingPlanDialogVisible" />
+        <PricingPlanDialog
+          v-model:is-dialog-visible="isPricingPlanDialogVisible"
+        />
       </VCard>
     </VCol>
 
-    <!-- 👉 Refer And Earn Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 추천 및 적립 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-gift"
-            />
+            <VIcon size="34" icon="tabler-gift" />
           </template>
-          <VCardTitle>Refer & Earn</VCardTitle>
+          <VCardTitle>추천 & 적립</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Use Refer & Earn modal to encourage your exiting customers refer their friends & colleague.
+            기존 고객이 친구 및 동료를 추천하도록 유도하는 추천 및 적립 모달을
+            사용하세요.
           </p>
 
-          <VBtn @click="isReferAndEarnDialogVisible = !isReferAndEarnDialogVisible">
-            Show
+          <VBtn
+            @click="isReferAndEarnDialogVisible = !isReferAndEarnDialogVisible"
+          >
+            보기
           </VBtn>
         </VCardText>
 
-        <!-- 👉 plan and pricing dialog -->
-        <ReferAndEarnDialog v-model:is-dialog-visible="isReferAndEarnDialogVisible" />
+        <ReferAndEarnDialog
+          v-model:is-dialog-visible="isReferAndEarnDialogVisible"
+        />
       </VCard>
     </VCol>
 
-    <!-- 👉 Add New Address Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 새 주소 추가 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-home"
-            />
+            <VIcon size="34" icon="tabler-home" />
           </template>
-          <VCardTitle>Add New Address</VCardTitle>
+          <VCardTitle>새 주소 추가</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Ready to use form to collect user address data with validation and custom input support.
+            유효성 검사 및 사용자 지정 입력 지원을 갖춘 사용자 주소 입력 폼을
+            제공합니다.
           </p>
 
-          <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
-            Show
+          <VBtn
+            @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+          >
+            보기
           </VBtn>
         </VCardText>
 
-        <!-- 👉 Edit Address dialog -->
-        <AddEditAddressDialog v-model:is-dialog-visible="isEditAddressDialogVisible" />
+        <AddEditAddressDialog
+          v-model:is-dialog-visible="isEditAddressDialogVisible"
+        />
       </VCard>
     </VCol>
 
-    <!-- 👉 Create app dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 앱 생성 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-box"
-            />
+            <VIcon size="34" icon="tabler-box" />
           </template>
-          <VCardTitle>Create App</VCardTitle>
+          <VCardTitle>앱 생성</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Provide application data with this form to create the app dialog popup example, easy to use in any page.
+            이 폼을 사용하여 애플리케이션 데이터를 입력하고, 페이지에서 쉽게
+            사용할 수 있는 앱 생성 다이얼로그를 제공합니다.
           </p>
 
-          <VBtn @click="isCreateAppVisible = !isCreateAppVisible">
-            Show
-          </VBtn>
+          <VBtn @click="isCreateAppVisible = !isCreateAppVisible"> 보기 </VBtn>
         </VCardText>
       </VCard>
       <CreateAppDialog v-model:is-dialog-visible="isCreateAppVisible" />
     </VCol>
 
-    <!-- 👉 Two Factor Auth Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 2단계 인증 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-lock"
-            />
+            <VIcon size="34" icon="tabler-lock" />
           </template>
-          <VCardTitle>Two Factor Auth</VCardTitle>
+          <VCardTitle>2단계 인증</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Enhance your application security by enabling two factor authentication.
+            2단계 인증을 활성화하여 애플리케이션의 보안을 강화하세요.
           </p>
 
           <VBtn @click="isTwoFactorDialogOpen = !isTwoFactorDialogOpen">
-            Show
+            보기
           </VBtn>
         </VCardText>
 
-        <!-- 👉 Enable One Time Password Dialog -->
-
-        <TwoFactorAuthDialog v-model:is-dialog-visible="isTwoFactorDialogOpen" />
+        <TwoFactorAuthDialog
+          v-model:is-dialog-visible="isTwoFactorDialogOpen"
+        />
       </VCard>
     </VCol>
 
-    <!-- 👉 Edit User Info Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
+    <!-- 👉 사용자 정보 수정 다이얼로그 -->
+    <VCol cols="12" sm="6" md="4">
       <VCard class="text-high-emphasis text-center">
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-lock"
-            />
+            <VIcon size="34" icon="tabler-lock" />
           </template>
-          <VCardTitle>Edit User Info</VCardTitle>
+          <VCardTitle>사용자 정보 수정</VCardTitle>
         </VCardItem>
 
         <VCardText>
           <p class="text-base clamp-text">
-            Enhance your application security by enabling two factor authentication.
+            사용자 정보를 수정하고 관리할 수 있습니다.
           </p>
 
-          <VBtn @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible">
-            Show
+          <VBtn
+            @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible"
+          >
+            보기
           </VBtn>
         </VCardText>
 
-        <!-- 👉 Edit user info dialog -->
         <UserInfoEditDialog
           v-model:is-dialog-visible="isUserInfoEditDialogVisible"
           :user-data="userData"
         />
       </VCard>
     </VCol>
-
-    <!-- 👉 Payment Providers Dialog -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
-      <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-brand-mastercard"
-            />
-          </template>
-          <VCardTitle>Payment Providers</VCardTitle>
-        </VCardItem>
-
-        <VCardText>
-          <p class="text-base clamp-text">
-            Elegant payment options modal popup example, easy to use in any page.
-          </p>
-
-          <VBtn @click="isPaymentProvidersDialogVisible = !isPaymentProvidersDialogVisible">
-            Show
-          </VBtn>
-        </VCardText>
-
-        <!-- 👉 plan and pricing dialog -->
-        <PaymentProvidersDialog v-model:is-dialog-visible="isPaymentProvidersDialogVisible" />
-      </VCard>
-    </VCol>
-
-    <!-- 👉 Add Payment Methods -->
-    <VCol
-      cols="12"
-      sm="6"
-      md="4"
-    >
-      <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="34"
-              icon="tabler-credit-card"
-            />
-          </template>
-          <VCardTitle>Add Payment Methods</VCardTitle>
-        </VCardItem>
-
-        <VCardText>
-          <p class="text-base clamp-text">
-            Elegant payment methods modal popup example, easy to use in any page.
-          </p>
-
-          <VBtn @click="isAddPaymentMethodsDialogVisible = !isAddPaymentMethodsDialogVisible">
-            Show
-          </VBtn>
-        </VCardText>
-
-        <!-- 👉 plan and pricing dialog -->
-        <AddPaymentMethodDialog v-model:is-dialog-visible="isAddPaymentMethodsDialogVisible" />
-      </VCard>
-    </VCol>
   </VRow>
 </template>
-
-<style lang="scss">
-.pricing-dialog {
-  .pricing-title {
-    font-size: 1.5rem !important;
-  }
-}
-</style>

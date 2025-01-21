@@ -1,173 +1,134 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTextarea'
+import * as demoCode from "@/views/demos/forms/form-elements/textarea/demoCodeTextarea";
 </script>
 
 <template>
   <VRow class="match-height">
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Basic -->
-      <AppCardCode
-        title="Basic"
-        :code="demoCode.basic"
-      >
+      <AppCardCode title="Basic" :code="demoCode.basic">
         <p>
-          v-textarea in its simplest form is a multi-line text-field, useful for larger amounts of text.
+          <code>v-textarea</code>는 가장 기본적인 형태에서 여러 줄의 텍스트를
+          입력할 수 있는 필드로, 긴 텍스트 입력에 유용합니다.
         </p>
-
         <DemoTextareaBasic />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Auto Grow -->
-      <AppCardCode
-        title="Auto Grow"
-        :code="demoCode.autoGrow"
-      >
-        <p>When using the <code>auto-grow</code> prop, textarea's will automatically increase in size when the contained text exceeds its size.</p>
-
+      <AppCardCode title="Auto Grow" :code="demoCode.autoGrow">
+        <p>
+          <code>auto-grow</code> 속성을 사용하면 입력한 텍스트의 길이가 지정된
+          크기를 초과할 경우 자동으로 크기가 증가합니다.
+        </p>
         <DemoTextareaAutoGrow />
       </AppCardCode>
     </VCol>
 
     <VCol cols="12">
       <!-- 👉 Variant -->
-      <AppCardCode
-        title="Variant"
-        :code="demoCode.variant"
-      >
-        <p>Use <code>filled</code>, <code>plain</code>, <code>outlined</code>, <code>solo</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
-
+      <AppCardCode title="Variant" :code="demoCode.variant">
+        <p>
+          <code>variant</code> 속성의 <code>filled</code>, <code>plain</code>,
+          <code>outlined</code>, <code>solo</code>,
+          <code>underlined</code> 옵션을 사용하여 텍스트 입력 필드의 스타일을
+          변경할 수 있습니다.
+        </p>
         <DemoTextareaVariant />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 States -->
-      <AppCardCode
-        title="States"
-        :code="demoCode.states"
-      >
-        <p>Use <code>disabled</code> and <code>readonly</code> prop to change the state of textarea.</p>
-
+      <AppCardCode title="States" :code="demoCode.states">
+        <p>
+          <code>disabled</code> 및 <code>readonly</code> 속성을 사용하여 텍스트
+          입력 필드의 상태를 변경할 수 있습니다.
+        </p>
         <DemoTextareaStates />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Browser autocomplete -->
       <AppCardCode
         title="Browser autocomplete"
         :code="demoCode.browserAutocomplete"
       >
         <p>
-          The <code>autocomplete</code> prop gives you the option to enable the browser to predict user input.
+          <code>autocomplete</code> 속성을 사용하면 브라우저가 사용자 입력을
+          예측할 수 있도록 설정할 수 있습니다.
         </p>
-
         <DemoTextareaBrowserAutocomplete />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Clearable -->
-      <AppCardCode
-        title="Clearable"
-        :code="demoCode.clearable"
-      >
-        <p>You can clear the text from a <code>v-textarea</code> by using the <code>clearable</code> prop, and customize the icon used with the <code>clearable-icon</code> prop.</p>
-
+      <AppCardCode title="Clearable" :code="demoCode.clearable">
+        <p>
+          <code>clearable</code> 속성을 사용하면 <code>v-textarea</code>의
+          내용을 지울 수 있으며, <code>clearable-icon</code> 속성을 통해
+          아이콘을 사용자 정의할 수 있습니다.
+        </p>
         <DemoTextareaClearable />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Counter -->
-      <AppCardCode
-        title="Counter"
-        :code="demoCode.counter"
-      >
+      <AppCardCode title="Counter" :code="demoCode.counter">
         <p>
-          The <code>counter</code> prop informs the user of a character limit for the <code>v-textarea</code>.
+          <code>counter</code> 속성을 사용하면 <code>v-textarea</code>에 입력할
+          수 있는 최대 글자 수를 사용자에게 안내할 수 있습니다.
         </p>
-
         <DemoTextareaCounter />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Icons -->
-      <AppCardCode
-        title="Icons"
-        :code="demoCode.icons"
-      >
-        <p>The <code>append-icon</code>, <code>prepend-icon</code>, <code>append-inner-icon</code> and <code>prepend-inner-icon</code> props help add context to v-textarea.</p>
-
+      <AppCardCode title="Icons" :code="demoCode.icons">
+        <p>
+          <code>append-icon</code>, <code>prepend-icon</code>,
+          <code>append-inner-icon</code>, <code>prepend-inner-icon</code> 속성을
+          사용하여 <code>v-textarea</code>에 아이콘을 추가할 수 있습니다.
+        </p>
         <DemoTextareaIcons />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Rows -->
-      <AppCardCode
-        title="Rows"
-        :code="demoCode.rows"
-      >
-        <p>The <code>rows</code> prop allows you to define how many rows the textarea has, when combined with the <code>row-height</code> prop you can further customize your rows by defining their height.</p>
-
+      <AppCardCode title="Rows" :code="demoCode.rows">
+        <p>
+          <code>rows</code> 속성을 사용하여 텍스트 입력 필드의 기본 행 개수를
+          설정할 수 있으며, <code>row-height</code> 속성을 함께 사용하여 행의
+          높이를 조정할 수 있습니다.
+        </p>
         <DemoTextareaRows />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 No resize -->
-      <AppCardCode
-        title="No resize"
-        :code="demoCode.noResize"
-      >
-        <p><code>v-textarea</code>'s have the option to remain the same size regardless of their content's size, using the <code>no-resize</code> prop.</p>
-
+      <AppCardCode title="No resize" :code="demoCode.noResize">
+        <p>
+          <code>no-resize</code> 속성을 사용하면 입력한 내용의 길이와 관계없이
+          <code>v-textarea</code>의 크기를 고정할 수 있습니다.
+        </p>
         <DemoTextareaNoResize />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Validation -->
-      <AppCardCode
-        title="Validation"
-        :code="demoCode.validation"
-      >
-        <p>Use <code>rules</code> prop to validate the textarea.</p>
-
+      <AppCardCode title="Validation" :code="demoCode.validation">
+        <p>
+          <code>rules</code> 속성을 사용하여 텍스트 입력 필드의 유효성을 검사할
+          수 있습니다.
+        </p>
         <DemoTextareaValidation />
       </AppCardCode>
     </VCol>

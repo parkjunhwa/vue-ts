@@ -583,6 +583,8 @@ input[altinputclass="inlinePicker"] {
       block-size: 1.75rem;
       inset-inline-start: 0;
       text-align: start;
+      flex-direction: row-reverse;
+      width: auto;
     }
   }
 }
