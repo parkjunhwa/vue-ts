@@ -247,14 +247,14 @@ const notifications = ref<number>()
 
     <div class="demo-space-x">
       <VBtn @click="notifications = (notifications || 0) + 1">
-        Send Message
+        메시지 보내기기
       </VBtn>
 
       <VBtn
         color="error"
         @click="notifications = 0"
       >
-        Clear Notifications
+        알림 초기화
       </VBtn>
     </div>
   </div>
@@ -280,14 +280,14 @@ const notifications = ref()
 
     <div class="demo-space-x">
       <VBtn @click="notifications = (notifications || 0) + 1">
-        Send Message
+        메시지 보내기기
       </VBtn>
 
       <VBtn
         color="error"
         @click="notifications = 0"
       >
-        Clear Notifications
+        알림 초기화
       </VBtn>
     </div>
   </div>

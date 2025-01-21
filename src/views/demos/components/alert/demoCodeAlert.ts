@@ -116,7 +116,7 @@ const isAlertVisible = ref(true)
     close-label="Close Alert"
     color="primary"
   >
-    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 
   <!-- Button -->
@@ -141,7 +141,7 @@ const isAlertVisible = ref(true)
     close-label="Close Alert"
     color="primary"
   >
-    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 
   <!-- Button -->
@@ -164,39 +164,39 @@ export const coloredBorder = {
       border="start"
       border-color="primary"
     >
-      Cake sweet roll sesame snaps cheesecake halvah apple pie gingerbread cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="secondary"
     >
-      Cookie brownie tootsie roll pudding biscuit chupa chups. Dragée gingerbread carrot.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="success"
     >
-      Gingerbread jelly beans macaroon croissant soufflé. Muffin halvah cake brownie cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="info"
     >
-      Muffin I love wafer pudding caramels jelly beans fruitcake I love cotton candy.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       border="start"
       border-color="warning"
     >
-      Cake sweet roll sesame snaps cheesecake halvah apple pie gingerbread cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       border="start"
       border-color="error"
     >
-      Lemon drops tootsie roll liquorice marzipan lollipop I love tiramisu tootsie roll.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -207,39 +207,39 @@ export const coloredBorder = {
       border="start"
       border-color="primary"
     >
-      Cake sweet roll sesame snaps cheesecake halvah apple pie gingerbread cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="secondary"
     >
-      Cookie brownie tootsie roll pudding biscuit chupa chups. Dragée gingerbread carrot.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="success"
     >
-      Gingerbread jelly beans macaroon croissant soufflé. Muffin halvah cake brownie cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
     <VAlert
       border="start"
       border-color="info"
     >
-      Muffin I love wafer pudding caramels jelly beans fruitcake I love cotton candy.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       border="start"
       border-color="warning"
     >
-      Cake sweet roll sesame snaps cheesecake halvah apple pie gingerbread cake.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       border="start"
       border-color="error"
     >
-      Lemon drops tootsie roll liquorice marzipan lollipop I love tiramisu tootsie roll.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -384,7 +384,7 @@ const alertShadow = ref(5)
     color="primary"
     :elevation="alertShadow"
   >
-    I'm an alert with box shadow.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 </template>
 `,
@@ -407,7 +407,7 @@ const alertShadow = ref(5)
     color="primary"
     :elevation="alertShadow"
   >
-    I'm an alert with box shadow.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 </template>
 `,
@@ -420,7 +420,7 @@ export const icons = {
       color="primary"
       icon="tabler-egg-cracked"
     >
-      Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -428,7 +428,7 @@ export const icons = {
       icon="tabler-device-desktop-analytics"
       variant="tonal"
     >
-      Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -436,7 +436,7 @@ export const icons = {
       icon="tabler-brand-vue"
       variant="outlined"
     >
-      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -447,7 +447,7 @@ export const icons = {
       color="primary"
       icon="tabler-egg-cracked"
     >
-      Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -455,7 +455,7 @@ export const icons = {
       icon="tabler-device-desktop-analytics"
       variant="tonal"
     >
-      Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -463,7 +463,7 @@ export const icons = {
       icon="tabler-brand-vue"
       variant="outlined"
     >
-      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -477,42 +477,42 @@ export const outlined = {
       variant="outlined"
       color="primary"
     >
-      Duis vel nibh at velit scelerisque suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="secondary"
     >
-      Praesent venenatis metus at tortor pulvinar varius. Aenean commodo ligula eget dolor. Praesent ac massa at ligula laoreet iaculis.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="success"
     >
-      Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Suspendisse non nisl sit amet velit hendrerit rutrum.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="info"
     >
-      Marshmallow jelly beans toffee. Sweet roll lemon drops muffin biscuit. Gummies jujubes halvah dessert cream croissant.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="warning"
     >
-      Tootsie roll candy canes wafer icing sweet jelly macaroon. Caramels icing fruitcake chocolate cake cake donut.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="error"
     >
-      Jelly beans dragée jelly. Cotton candy danish chocolate cake. Carrot cake pastry jelly beans gummi bears.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -523,42 +523,42 @@ export const outlined = {
       variant="outlined"
       color="primary"
     >
-      Duis vel nibh at velit scelerisque suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="secondary"
     >
-      Praesent venenatis metus at tortor pulvinar varius. Aenean commodo ligula eget dolor. Praesent ac massa at ligula laoreet iaculis.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="success"
     >
-      Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Suspendisse non nisl sit amet velit hendrerit rutrum.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="info"
     >
-      Marshmallow jelly beans toffee. Sweet roll lemon drops muffin biscuit. Gummies jujubes halvah dessert cream croissant.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="warning"
     >
-      Tootsie roll candy canes wafer icing sweet jelly macaroon. Caramels icing fruitcake chocolate cake cake donut.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
       variant="outlined"
       color="error"
     >
-      Jelly beans dragée jelly. Cotton candy danish chocolate cake. Carrot cake pastry jelly beans gummi bears.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -573,7 +573,7 @@ export const prominent = {
       type="info"
     >
       <template #text>
-        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
+        안녕하세요! 오늘의 알림입니다.
       </template>
     </VAlert>
 
@@ -582,7 +582,7 @@ export const prominent = {
       icon="tabler-school"
       prominent
     >
-      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -590,7 +590,7 @@ export const prominent = {
       prominent
       type="warning"
     >
-      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -602,7 +602,7 @@ export const prominent = {
       type="info"
     >
       <template #text>
-        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
+        안녕하세요! 오늘의 알림입니다.
       </template>
     </VAlert>
 
@@ -611,7 +611,7 @@ export const prominent = {
       icon="tabler-school"
       prominent
     >
-      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert
@@ -619,7 +619,7 @@ export const prominent = {
       prominent
       type="warning"
     >
-      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 </template>
@@ -725,19 +725,19 @@ export const type = {
   ts: `<template>
   <div class="demo-space-y">
     <VAlert type="info">
-      I'm a alert with a <strong>type</strong> of info
+      안녕하세요! <strong>오늘의 알림</strong>입니다.info
     </VAlert>
 
     <VAlert type="success">
-      I'm a alert with a <strong>type</strong> of success
+      안녕하세요! <strong>오늘의 알림</strong>입니다.success
     </VAlert>
 
     <VAlert type="warning">
-      I'm a alert with a <strong>type</strong> of warning
+      안녕하세요! <strong>오늘의 알림</strong>입니다.warning
     </VAlert>
 
     <VAlert type="error">
-      I'm a alert with a <strong>type</strong> of error
+      안녕하세요! <strong>오늘의 알림</strong>입니다.error
     </VAlert>
   </div>
 </template>
@@ -745,19 +745,19 @@ export const type = {
   js: `<template>
   <div class="demo-space-y">
     <VAlert type="info">
-      I'm a alert with a <strong>type</strong> of info
+      안녕하세요! <strong>오늘의 알림</strong>입니다.info
     </VAlert>
 
     <VAlert type="success">
-      I'm a alert with a <strong>type</strong> of success
+      안녕하세요! <strong>오늘의 알림</strong>입니다.success
     </VAlert>
 
     <VAlert type="warning">
-      I'm a alert with a <strong>type</strong> of warning
+      안녕하세요! <strong>오늘의 알림</strong>입니다.warning
     </VAlert>
 
     <VAlert type="error">
-      I'm a alert with a <strong>type</strong> of error
+      안녕하세요! <strong>오늘의 알림</strong>입니다.error
     </VAlert>
   </div>
 </template>
@@ -776,13 +776,13 @@ const isAlertVisible = ref(true)
       color="warning"
       variant="tonal"
     >
-      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 
   <!-- button -->
   <VBtn @click="isAlertVisible = !isAlertVisible">
-    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
+    {{ isAlertVisible ? "알림 숨기기" : "알림 보이기" }}
   </VBtn>
 </template>
 
@@ -804,13 +804,13 @@ const isAlertVisible = ref(true)
       color="warning"
       variant="tonal"
     >
-      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
   </div>
 
   <!-- button -->
   <VBtn @click="isAlertVisible = !isAlertVisible">
-    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
+    {{ isAlertVisible ? "알림 숨기기" : "알림 보이기" }}
   </VBtn>
 </template>
 

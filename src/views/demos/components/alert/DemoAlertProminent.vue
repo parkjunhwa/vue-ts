@@ -5,7 +5,7 @@
       type="info"
     >
       <template #text>
-        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
+        안녕하세요! 오늘의 알림입니다.
       </template>
     </VAlert>
 
@@ -14,7 +14,7 @@
       icon="tabler-school"
       prominent
     >
-      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+      안녕하세요! 오늘의 알림입니다.
     </VAlert>
 
     <VAlert

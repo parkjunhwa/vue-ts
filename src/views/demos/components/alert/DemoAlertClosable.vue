@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const isAlertVisible = ref(true)
+const isAlertVisible = ref(true);
 </script>
 
 <template>
@@ -9,16 +9,11 @@ const isAlertVisible = ref(true)
     close-label="Close Alert"
     color="primary"
   >
-    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 
   <!-- Button -->
   <div class="text-center">
-    <VBtn
-      v-if="!isAlertVisible"
-      @click="isAlertVisible = true"
-    >
-      Reset
-    </VBtn>
+    <VBtn v-if="!isAlertVisible" @click="isAlertVisible = true"> Reset </VBtn>
   </div>
 </template>

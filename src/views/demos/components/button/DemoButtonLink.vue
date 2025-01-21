@@ -1,7 +1,7 @@
 <template>
   <div class="demo-space-x">
     <VBtn href="https://pixinvent.com/">
-      String Literal
+    문자열 Literal
     </VBtn>
 
     <VBtn
@@ -9,7 +9,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      Open New Tab
+      새창
     </VBtn>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const notifications = ref<number>()
+const notifications = ref<number>();
 </script>
 
 <template>
@@ -10,23 +10,15 @@ const notifications = ref<number>()
       color="success"
       class="me-5"
     >
-      <VIcon
-        size="40"
-        icon="tabler-brand-vue"
-      />
+      <VIcon size="40" icon="tabler-brand-vue" />
     </VBadge>
 
     <div class="demo-space-x">
       <VBtn @click="notifications = (notifications || 0) + 1">
-        Send Message
+        메시지 보내기
       </VBtn>
 
-      <VBtn
-        color="error"
-        @click="notifications = 0"
-      >
-        Clear Notifications
-      </VBtn>
+      <VBtn color="error" @click="notifications = 0"> 알림 초기화 </VBtn>
     </div>
   </div>
 </template>

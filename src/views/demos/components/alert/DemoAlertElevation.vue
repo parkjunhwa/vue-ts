@@ -17,6 +17,6 @@ const alertShadow = ref(5)
     color="primary"
     :elevation="alertShadow"
   >
-    I'm an alert with box shadow.
+    안녕하세요! 오늘의 알림입니다.
   </VAlert>
 </template>

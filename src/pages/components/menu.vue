@@ -1,96 +1,75 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
+import * as demoCode from "@/views/demos/components/menu/demoCodeMenu";
 </script>
 
 <template>
   <VRow class="match-height">
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Basic -->
-      <AppCardCode
-        title="Basic"
-        :code="demoCode.basic"
-      >
-        <p>
-          Remember to put the element that activates the menu in the activator slot.
-        </p>
+      <AppCardCode title="Basic" :code="demoCode.basic">
+        <p>메뉴를 활성화하는 요소를 활성화 슬롯에 넣는 것을 잊지 마세요.</p>
 
         <DemoMenuBasic />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Custom transitions -->
       <AppCardCode
         title="Custom transitions"
         :code="demoCode.customTransitions"
       >
-        <p>Vuetify comes with 3 standard transitions, <code>scale</code>, <code>slide-x</code> and <code>slide-y</code>. Use <code>transition</code> prop to add transition to a menu.</p>
-
+        <p>
+          Vuetify에는 3가지 표준 전환, <code>scale</code>, <code>slide-x</code>,
+          <code>slide-y</code>가 제공됩니다. <code>transition</code> prop을
+          사용하여 메뉴에 전환을 추가합니다.
+        </p>
         <DemoMenuCustomTransitions />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Location -->
-      <AppCardCode
-        title="Location"
-        :code="demoCode.location"
-      >
-        <p>Menu can be offset relative to the activator by using the <code>location</code> prop.</p>
+      <AppCardCode title="Location" :code="demoCode.location">
+        <p><code>location</code> prop 으로 위치를 지정할 수 있습니다..</p>
 
         <DemoMenuLocation />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Open on hover -->
-      <AppCardCode
-        title="Open on hover"
-        :code="demoCode.openOnHover"
-      >
-        <p>Menus can be accessed using hover instead of clicking with the <code>open-on-hover</code> prop.</p>
+      <AppCardCode title="Open on hover" :code="demoCode.openOnHover">
+        <p><code>open-on-hover</code> prop 은 마우스 hover시 동작.</p>
 
         <DemoMenuOpenOnHover />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Popover -->
-      <AppCardCode
-        title="Popover"
-        :code="demoCode.popover"
-      >
-        <p>A menu can be configured to be static when opened, allowing it to function as a popover. This can be useful when there are multiple interactive items within the menu contents.</p>
+      <AppCardCode title="Popover" :code="demoCode.popover">
+        <p>
+          메뉴는 열릴 때 정적으로 구성될 수 있으므로 팝오버로 기능할 수
+          있습니다. 이는 메뉴 콘텐츠 내에 여러 개의 대화형 항목이 있는 경우
+          유용할 수 있습니다.
+        </p>
 
         <DemoMenuPopover />
       </AppCardCode>
     </VCol>
 
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <!-- 👉 Activator and tooltip -->
       <AppCardCode
         title="Activator and tooltip"
         :code="demoCode.activatorAndTooltip"
       >
-        <p>With the new <code>v-slot</code> syntax, nested activators such as those seen with a <code>v-menu</code> and <code>v-tooltip</code> attached to the same activator button, need a particular setup in order to function correctly</p>
+        <p>
+          새로운 <code>v-slot</code> 구문에서는 <code>v-menu</code>와
+          <code>v-tooltip</code>이 동일한 활성화 버튼에 연결된 활성화 장치와
+          같은 중첩 활성화 장치가 올바르게 작동하려면 특정 설정이 필요합니다.
+        </p>
 
         <DemoMenuActivatorAndTooltip />
       </AppCardCode>

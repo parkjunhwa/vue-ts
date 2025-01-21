@@ -1,27 +1,15 @@
 <template>
   <div class="demo-space-y">
-    <VAlert
-      density="compact"
-      color="primary"
-      variant="tonal"
-    >
-      I'm a compact alert with a <strong>color</strong> of primary.
+    <VAlert density="compact" color="primary" variant="tonal">
+      안녕하세요! <strong>오늘의 알림</strong>입니다.
     </VAlert>
 
-    <VAlert
-      density="comfortable"
-      color="secondary"
-      variant="tonal"
-    >
-      I'm a comfortable alert with the <strong>variant</strong> prop and a <strong>color</strong> of secondary.
+    <VAlert density="comfortable" color="secondary" variant="tonal">
+      안녕하세요! <strong>오늘의 알림</strong>입니다.
     </VAlert>
 
-    <VAlert
-      density="default"
-      color="success"
-      variant="tonal"
-    >
-      I'm a default alert with the <strong>color</strong> of success.
+    <VAlert density="default" color="success" variant="tonal">
+      안녕하세요! <strong>오늘의 알림</strong>입니다.
     </VAlert>
   </div>
 </template>

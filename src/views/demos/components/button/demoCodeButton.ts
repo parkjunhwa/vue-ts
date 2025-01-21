@@ -398,7 +398,7 @@ export const link = {
   ts: `<template>
   <div class="demo-space-x">
     <VBtn href="https://pixinvent.com/">
-      String Literal
+      문자열 Literal
     </VBtn>
 
     <VBtn
@@ -406,7 +406,7 @@ export const link = {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Open New Tab
+      새창
     </VBtn>
   </div>
 </template>
@@ -414,7 +414,7 @@ export const link = {
   js: `<template>
   <div class="demo-space-x">
     <VBtn href="https://pixinvent.com/">
-      String Literal
+      문자열 Literal
     </VBtn>
 
     <VBtn
@@ -422,7 +422,7 @@ export const link = {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Open New Tab
+      새창
     </VBtn>
   </div>
 </template>
@@ -835,7 +835,7 @@ export const router = {
   ts: `<template>
   <div class="demo-space-x">
     <VBtn to="alert">
-      String Literal
+      문자열 Literal
     </VBtn>
 
     <VBtn
@@ -864,7 +864,7 @@ export const router = {
   js: `<template>
   <div class="demo-space-x">
     <VBtn to="alert">
-      String Literal
+      문자열 Literal
     </VBtn>
 
     <VBtn

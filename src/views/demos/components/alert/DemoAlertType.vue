@@ -1,19 +1,19 @@
 <template>
   <div class="demo-space-y">
     <VAlert type="info">
-      I'm a alert with a <strong>type</strong> of info
+      안녕하세요! <strong>오늘의 알림</strong>입니다.info
     </VAlert>
 
     <VAlert type="success">
-      I'm a alert with a <strong>type</strong> of success
+      안녕하세요! <strong>오늘의 알림</strong>입니다.success
     </VAlert>
 
     <VAlert type="warning">
-      I'm a alert with a <strong>type</strong> of warning
+      안녕하세요! <strong>오늘의 알림</strong>입니다.warning
     </VAlert>
 
     <VAlert type="error">
-      I'm a alert with a <strong>type</strong> of error
+      안녕하세요! <strong>오늘의 알림</strong>입니다.error
     </VAlert>
   </div>
 </template>
