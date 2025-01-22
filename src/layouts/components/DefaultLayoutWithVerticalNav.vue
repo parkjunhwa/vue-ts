@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import navItems from "@/navigation/vertical";
 
 // Components
@@ -13,7 +13,6 @@ import { VerticalNavLayout } from "@layouts";
 
 <template>
   <VerticalNavLayout :nav-items="navItems">
-    <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
         <IconBtn
@@ -23,24 +22,17 @@ import { VerticalNavLayout } from "@layouts";
         >
           <VIcon size="26" icon="tabler-menu-2" />
         </IconBtn>
-
-        <!-- <NavSearchBar class="ms-lg-n3" /> -->
-
         <VSpacer />
-
         <NavBarNotifications class="me-2" />
         <NavBarLogout />
       </div>
     </template>
-
     <!-- 👉 Pages -->
     <slot />
-
     <!-- 👉 Footer -->
     <template #footer>
       <Footer />
     </template>
-
     <!-- 👉 Customizer -->
     <TheCustomizer />
   </VerticalNavLayout>

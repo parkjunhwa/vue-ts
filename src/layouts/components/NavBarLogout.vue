@@ -1,6 +1,7 @@
 <template>
-  <VBtn variant="outlined">
-    <VIcon v-bind="props" size="22" icon="tabler-logout" />
-    <VTooltip activator="parent" location="top">로그아웃</VTooltip> </VBtn
-  >sdsd
+  <VBtn
+    icon="tabler-logout"
+    variant="text"
+    color="rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))"
+  />
 </template>

@@ -140,7 +140,9 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
         class="d-flex align-center flex-wrap justify-space-between my-2 ml-6 mr-6"
       >
         <div class="d-flex flex-column">
-          <span class="text-body-1 font-weight-medium text-high-emphasis"
+          <span
+            class="text-body-1 font-weight-regular"
+            style="color: var(--theme-text-primary)"
             >홍길동</span
           ><span class="text-body-2">부서정보</span>
         </div>
