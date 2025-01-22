@@ -114,16 +114,16 @@
 .v-dialog {
   .v-dialog-close-btn {
     border-radius: 100px !important;
-    color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity)) !important;
-    width: 32px !important;
-    height: 32px !important;
-    transform: translate(0.9rem, -0.9rem) scale(1) !important;
-    border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    color: var(--color-gray-gray-600) !important;
+    width: 38px !important;
+    height: 38px !important;
+    transform: translate(1.2rem, -1.2rem) scale(1) !important;
+    border: 1px solid var(--color-gray-gray-600) !important;
 
 
     &:hover {
       transform-origin: center;
-      transform: translate(0.9rem, -0.9rem) scale(1.1) !important;
+      transform: translate(1.2rem, -1.2rem) scale(1.1) !important;
     }
   }
 }
