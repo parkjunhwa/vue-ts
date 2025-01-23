@@ -3,9 +3,9 @@ import { isEmpty, isEmptyArray, isNullOrUndefined } from './helpers'
 // 👉 Required Validator
 export const requiredValidator = (value: unknown) => {
   if (isNullOrUndefined(value) || isEmptyArray(value) || value === false)
-    return 'This field is required'
+    return '입력이 필요합니다.'
 
-  return !!String(value).trim().length || 'This field is required'
+  return !!String(value).trim().length || '입력이 필요합니다.'
 }
 
 // 👉 Email Validator
@@ -16,9 +16,9 @@ export const emailValidator = (value: unknown) => {
   const re = /^(?:[^<>()[\]\\.,;:\s@"]+(?:\.[^<>()[\]\\.,;:\s@"]+)*|".+")@(?:\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\]|(?:[a-z\-\d]+\.)+[a-z]{2,})$/i
 
   if (Array.isArray(value))
-    return value.every(val => re.test(String(val))) || 'The Email field must be a valid email'
+    return value.every(val => re.test(String(val))) || '이메일 주소 형식이어야 합니다.'
 
-  return re.test(String(value)) || 'The Email field must be a valid email'
+  return re.test(String(value)) || '이메일 주소 형식이어야 합니다.'
 }
 
 // 👉 Password Validator
@@ -27,19 +27,19 @@ export const passwordValidator = (password: string) => {
 
   const validPassword = regExp.test(password)
 
-  return validPassword || 'Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars'
+  return validPassword || '최소 8자 이상의 대문자, 소문자, 특수 문자 및 숫자가 하나 이상 포함되어야 합니다.'
 }
 
 // 👉 Confirm Password Validator
 export const confirmedValidator = (value: string, target: string) =>
 
-  value === target || 'The Confirm Password field confirmation does not match'
+  value === target || '비밀번호 확인 항목의의 내용이 일치하지 않습니다.'
 
 // 👉 Between Validator
 export const betweenValidator = (value: unknown, min: number, max: number) => {
   const valueAsNumber = Number(value)
 
-  return (Number(min) <= valueAsNumber && Number(max) >= valueAsNumber) || `Enter number between ${min} and ${max}`
+  return (Number(min) <= valueAsNumber && Number(max) >= valueAsNumber) || `${min} 와 ${max} 사이 입력`
 }
 
 // 👉 Integer Validator
@@ -48,9 +48,9 @@ export const integerValidator = (value: unknown) => {
     return true
 
   if (Array.isArray(value))
-    return value.every(val => /^-?\d+$/.test(String(val))) || 'This field must be an integer'
+    return value.every(val => /^-?\d+$/.test(String(val))) || '정수여야 합니다.'
 
-  return /^-?\d+$/.test(String(value)) || 'This field must be an integer'
+  return /^-?\d+$/.test(String(value)) || '정수여야 합니다.'
 }
 
 // 👉 Regex Validator
@@ -65,7 +65,7 @@ export const regexValidator = (value: unknown, regex: RegExp | string): string |
   if (Array.isArray(value))
     return value.every(val => regexValidator(val, regeX))
 
-  return regeX.test(String(value)) || 'The Regex field format is invalid'
+  return regeX.test(String(value)) || '정규식 필드 형식이 잘못되었습니다.'
 }
 
 // 👉 Alpha Validator
@@ -73,7 +73,7 @@ export const alphaValidator = (value: unknown) => {
   if (isEmpty(value))
     return true
 
-  return /^[A-Z]*$/i.test(String(value)) || 'The Alpha field may only contain alphabetic characters'
+  return /^[A-Z]*$/i.test(String(value)) || '알파벳 문자만 포함될 수 있습니다.'
 }
 
 // 👉 URL Validator
@@ -83,7 +83,7 @@ export const urlValidator = (value: unknown) => {
 
   const re = /^https?:\/\/[^\s$.?#].\S*$/
 
-  return re.test(String(value)) || 'URL is invalid'
+  return re.test(String(value)) || 'URL이 잘못되었습니다'
 }
 
 // 👉 Length Validator
@@ -91,7 +91,7 @@ export const lengthValidator = (value: unknown, length: number) => {
   if (isEmpty(value))
     return true
 
-  return String(value).length === length || `"The length of the Characters field must be ${length} characters."`
+  return String(value).length === length || `"문자 필드의 길이는 ${length}자여야 합니다."`
 }
 
 // 👉 Alpha-dash Validator
@@ -101,5 +101,5 @@ export const alphaDashValidator = (value: unknown) => {
 
   const valueAsString = String(value)
 
-  return /^[\w-]*$/.test(valueAsString) || 'All Character are not valid'
+  return /^[\w-]*$/.test(valueAsString) || '모든 문자가 유효하지 않습니다'
 }

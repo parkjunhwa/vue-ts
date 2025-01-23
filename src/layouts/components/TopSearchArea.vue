@@ -3,17 +3,18 @@
     <VRow>
       <slot></slot>
     </VRow>
-    <div class="top-search-area-open-button-wrap">
+    <div v-if="openbutton" class="top-search-area-open-button-wrap">
       <VBtn
-        @click="$emit('update:expanded', !expanded)"
+        @click="toggleExpanded"
         icon="tabler-search"
         variant="outlined"
         color="secondary"
         class="top-search-area-open-button"
-        ><VIcon
+      >
+        <VIcon
           size="18"
           icon="tabler-chevron-down"
-          :class="{ 'rotate-icon': expanded }"
+          :class="{ 'rotate-icon': localExpanded }"
           color="var(--color-gray-gray-600)"
         />
       </VBtn>
@@ -24,7 +25,36 @@
 <script>
 export default {
   props: {
-    expanded: Boolean, // Receive the expanded state from parent
+    expanded: Boolean, // Optional prop, controlled inside the component
+    openbutton: { type: Boolean, default: false }, // Determines default state
+  },
+  data() {
+    return {
+      localExpanded:
+        this.expanded !== undefined ? this.expanded : !this.openbutton,
+    };
+  },
+  watch: {
+    expanded(newVal) {
+      if (newVal !== undefined) {
+        this.localExpanded = newVal;
+      }
+    },
+    openbutton(newVal) {
+      this.localExpanded = !newVal;
+    },
+  },
+  created() {
+    // Set default expanded state if 'expanded' is not provided
+    if (this.expanded === undefined) {
+      this.localExpanded = !this.openbutton;
+    }
+  },
+  methods: {
+    toggleExpanded() {
+      this.localExpanded = !this.localExpanded;
+      this.$emit("update:expanded", this.localExpanded); // Only emit if the parent listens to it
+    },
   },
 };
 </script>
@@ -36,7 +66,7 @@ export default {
   overflow: visible;
 
   &:has(.top-search-area-open-button-wrap) {
-    padding: 16px 16px 34px 16px;
+    padding: 20px 20px 38px 20px;
   }
 
   .top-search-area-open-button-wrap {
