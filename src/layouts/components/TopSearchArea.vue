@@ -67,6 +67,7 @@ export default {
 
   &:has(.top-search-area-open-button-wrap) {
     padding: 20px 20px 38px 20px;
+    margin-bottom: 0px;
   }
 
   .top-search-area-open-button-wrap {
