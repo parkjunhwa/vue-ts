@@ -76,8 +76,10 @@ export default {
     transform: translateX(-50%);
 
     .top-search-area-open-button {
-      width: 38px;
-      height: 38px;
+      width: 38px !important;
+      min-width: 38px !important;
+      height: 38px !important;
+      padding: 0;
       border-radius: 19px;
       background: #ffffff;
       color: var(--color-gray-gray-600);
