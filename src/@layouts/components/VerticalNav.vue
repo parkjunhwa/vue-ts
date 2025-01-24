@@ -16,7 +16,9 @@ import type {
 import type { Component } from "vue";
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 import { VNodeRenderer } from "./VNodeRenderer";
-import avatar1 from "@images/avatars/avatar-1.png";
+
+import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
+import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
 
 interface Props {
   tag?: string | Component;
@@ -137,7 +139,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
 
     <div class="vertical-menu-log-box">
       <div
-        class="d-flex align-center flex-wrap justify-space-between my-2 ml-6 mr-6"
+        class="d-flex align-center flex-wrap justify-space-between my-2 ml-6 mr-4"
       >
         <div class="d-flex flex-column">
           <span
@@ -146,12 +148,10 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
             >홍길동</span
           ><span class="text-body-2">부서정보</span>
         </div>
-        <VTooltip location="right">
-          <template #activator="{ props }">
-            <VIcon v-bind="props" size="22" icon="tabler-logout" />
-          </template>
-          <span>로그아웃</span>
-        </VTooltip>
+        <div class="d-flex flex-col">
+          <NavBarNotifications class="me-1" />
+          <NavBarLogout />
+        </div>
       </div>
     </div>
 

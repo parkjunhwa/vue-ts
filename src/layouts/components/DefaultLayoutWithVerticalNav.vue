@@ -4,7 +4,6 @@ import navItems from "@/navigation/vertical";
 // Components
 import Footer from "@/layouts/components/Footer.vue";
 import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
-import UserProfile from "@/layouts/components/UserProfile.vue";
 import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
 
 // @layouts plugin
