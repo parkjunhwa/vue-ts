@@ -486,6 +486,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 .front-page-navbar {
   .v-toolbar__content {
     padding-inline: 30px !important;
+    background-color: var();
   }
 
   .v-toolbar {

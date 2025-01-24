@@ -17,7 +17,7 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
     class="page-title-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-6 mb-6 align-items-center"
   >
     <div class="d-flex justify-start flex-wrap">
-      <h3 class="text-h3 font-weight-medium align-items-center">제목</h3>
+      <h3 class="d-flex text-h3 font-weight-medium align-center">제목</h3>
     </div>
 
     <div class="d-flex gap-4 align-center flex-wrap">

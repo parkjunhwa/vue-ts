@@ -1,74 +1,75 @@
 <script setup lang="ts">
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
+import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
+import { themeConfig } from "@themeConfig";
 
 // Components
-import InvoiceAddPaymentDrawer from '@/views/apps/invoice/InvoiceAddPaymentDrawer.vue'
-import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
+import InvoiceAddPaymentDrawer from "@/views/apps/invoice/InvoiceAddPaymentDrawer.vue";
+import InvoiceSendInvoiceDrawer from "@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue";
 
-const route = useRoute('apps-invoice-preview-id')
+const route = useRoute("apps-invoice-preview-id");
 
-const isAddPaymentSidebarVisible = ref(false)
-const isSendPaymentSidebarVisible = ref(false)
+const isAddPaymentSidebarVisible = ref(false);
+const isSendPaymentSidebarVisible = ref(false);
 
-const { data: invoiceData } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
-const invoice = ref()
-const paymentDetails = ref()
+const { data: invoiceData } = await useApi<any>(
+  `/apps/invoice/${Number(route.params.id)}`
+);
+const invoice = ref();
+const paymentDetails = ref();
 
 if (invoiceData.value) {
-  invoice.value = invoiceData.value.invoice
-  paymentDetails.value = invoiceData.value.paymentDetails
+  invoice.value = invoiceData.value.invoice;
+  paymentDetails.value = invoiceData.value.paymentDetails;
 }
 
 // 👉 Invoice Description
 // ℹ️ Your real data will contain this information
 const purchasedProducts = [
   {
-    name: 'Premium Branding Package',
-    description: 'Branding & Promotion',
+    name: "Premium Branding Package",
+    description: "Branding & Promotion",
     qty: 1,
     hours: 15,
     price: 32,
   },
   {
-    name: 'SMM',
-    description: 'Social media templates',
+    name: "SMM",
+    description: "Social media templates",
     qty: 1,
     hours: 14,
     price: 28,
   },
   {
-    name: 'Web Design',
-    description: 'Web designing package',
+    name: "Web Design",
+    description: "Web designing package",
     qty: 1,
     hours: 12,
     price: 24,
   },
   {
-    name: 'SEO',
-    description: 'Search engine optimization',
+    name: "SEO",
+    description: "Search engine optimization",
     qty: 1,
     hours: 5,
     price: 22,
   },
-]
+];
 
 // 👉 Print Invoice
 const printInvoice = () => {
-  window.print()
-}
+  window.print();
+};
 </script>
 
 <template>
   <section v-if="invoice && paymentDetails">
     <VRow>
-      <VCol
-        cols="12"
-        md="9"
-      >
+      <VCol cols="12" md="9">
         <VCard class="invoice-preview-wrapper pa-6 pa-sm-12">
           <!-- SECTION Header -->
-          <div class="invoice-header-preview d-flex flex-wrap justify-space-between flex-column flex-sm-row print-row bg-var-theme-background gap-6 rounded pa-6 mb-6">
+          <div
+            class="invoice-header-preview d-flex flex-wrap justify-space-between flex-column flex-sm-row print-row bg-var-theme-background gap-6 rounded pa-6 mb-6"
+          >
             <!-- 👉 Left Content -->
             <div>
               <div class="d-flex align-center app-logo mb-6">
@@ -103,13 +104,17 @@ const printInvoice = () => {
               <!-- 👉 Issue Date -->
               <h6 class="text-h6 font-weight-regular">
                 <span>Date Issued: </span>
-                <span>{{ new Date(invoice.issuedDate).toLocaleDateString('en-GB') }}</span>
+                <span>{{
+                  new Date(invoice.issuedDate).toLocaleDateString("en-GB")
+                }}</span>
               </h6>
 
               <!-- 👉 Due Date -->
               <h6 class="text-h6 font-weight-regular">
                 <span>Due Date: </span>
-                <span>{{ new Date(invoice.dueDate).toLocaleDateString('en-GB') }}</span>
+                <span>{{
+                  new Date(invoice.dueDate).toLocaleDateString("en-GB")
+                }}</span>
               </h6>
             </div>
           </div>
@@ -118,9 +123,7 @@ const printInvoice = () => {
           <!-- 👉 Payment Details -->
           <VRow class="print-row mb-6">
             <VCol class="text-no-wrap">
-              <h6 class="text-h6 mb-4">
-                Invoice To:
-              </h6>
+              <h6 class="text-h6 mb-4">Invoice To:</h6>
 
               <p class="mb-0">
                 {{ invoice.client.name }}
@@ -140,47 +143,35 @@ const printInvoice = () => {
             </VCol>
 
             <VCol class="text-no-wrap">
-              <h6 class="text-h6 mb-4">
-                Bill To:
-              </h6>
+              <h6 class="text-h6 mb-4">Bill To:</h6>
               <table>
                 <tbody>
                   <tr>
-                    <td class="pe-4">
-                      Total Due:
-                    </td>
+                    <td class="pe-4">Total Due:</td>
                     <td>
                       {{ paymentDetails.totalDue }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-4">
-                      Bank Name:
-                    </td>
+                    <td class="pe-4">Bank Name:</td>
                     <td>
                       {{ paymentDetails.bankName }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-4">
-                      Country:
-                    </td>
+                    <td class="pe-4">Country:</td>
                     <td>
                       {{ paymentDetails.country }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-4">
-                      IBAN:
-                    </td>
+                    <td class="pe-4">IBAN:</td>
                     <td>
                       {{ paymentDetails.iban }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-4">
-                      SWIFT Code:
-                    </td>
+                    <td class="pe-4">SWIFT Code:</td>
                     <td>
                       {{ paymentDetails.swiftCode }}
                     </td>
@@ -191,41 +182,21 @@ const printInvoice = () => {
           </VRow>
 
           <!-- 👉 invoice Table -->
-          <VTable class="invoice-preview-table border text-high-emphasis overflow-hidden mb-6">
+          <VTable
+            class="invoice-preview-table border text-high-emphasis overflow-hidden mb-6"
+          >
             <thead>
               <tr>
-                <th scope="col">
-                  ITEM
-                </th>
-                <th scope="col">
-                  DESCRIPTION
-                </th>
-                <th
-                  scope="col"
-                  class="text-center"
-                >
-                  HOURS
-                </th>
-                <th
-                  scope="col"
-                  class="text-center"
-                >
-                  QTY
-                </th>
-                <th
-                  scope="col"
-                  class="text-center"
-                >
-                  TOTAL
-                </th>
+                <th scope="col">ITEM</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col" class="text-center">HOURS</th>
+                <th scope="col" class="text-center">QTY</th>
+                <th scope="col" class="text-center">TOTAL</th>
               </tr>
             </thead>
 
             <tbody class="text-base">
-              <tr
-                v-for="item in purchasedProducts"
-                :key="item.name"
-              >
+              <tr v-for="item in purchasedProducts" :key="item.name">
                 <td class="text-no-wrap">
                   {{ item.name }}
                 </td>
@@ -238,20 +209,18 @@ const printInvoice = () => {
                 <td class="text-center">
                   {{ item.qty }}
                 </td>
-                <td class="text-center">
-                  ${{ item.price }}
-                </td>
+                <td class="text-center">${{ item.price }}</td>
               </tr>
             </tbody>
           </VTable>
 
           <!-- 👉 Total -->
-          <div class="d-flex justify-space-between flex-column flex-sm-row print-row">
+          <div
+            class="d-flex justify-space-between flex-column flex-sm-row print-row"
+          >
             <div class="mb-2">
               <div class="d-flex align-center mb-1">
-                <h6 class="text-h6 me-2">
-                  Salesperson:
-                </h6>
+                <h6 class="text-h6 me-2">Salesperson:</h6>
                 <span>Jenny Parker</span>
               </div>
               <p>Thanks for your business</p>
@@ -261,33 +230,27 @@ const printInvoice = () => {
               <table class="w-100">
                 <tbody>
                   <tr>
-                    <td class="pe-16">
-                      Subtotal:
-                    </td>
-                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                      <h6 class="text-base font-weight-medium">
-                        $1800
-                      </h6>
+                    <td class="pe-16">Subtotal:</td>
+                    <td
+                      :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'"
+                    >
+                      <h6 class="text-base font-weight-medium">$1800</h6>
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-16">
-                      Discount:
-                    </td>
-                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                      <h6 class="text-base font-weight-medium">
-                        $28
-                      </h6>
+                    <td class="pe-16">Discount:</td>
+                    <td
+                      :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'"
+                    >
+                      <h6 class="text-base font-weight-medium">$28</h6>
                     </td>
                   </tr>
                   <tr>
-                    <td class="pe-16">
-                      Tax:
-                    </td>
-                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                      <h6 class="text-base font-weight-medium">
-                        21%
-                      </h6>
+                    <td class="pe-16">Tax:</td>
+                    <td
+                      :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'"
+                    >
+                      <h6 class="text-base font-weight-medium">21%</h6>
                     </td>
                   </tr>
                 </tbody>
@@ -298,13 +261,11 @@ const printInvoice = () => {
               <table class="w-100">
                 <tbody>
                   <tr>
-                    <td class="pe-16">
-                      Total:
-                    </td>
-                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                      <h6 class="text-base font-weight-medium">
-                        $1690
-                      </h6>
+                    <td class="pe-16">Total:</td>
+                    <td
+                      :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'"
+                    >
+                      <h6 class="text-base font-weight-medium">$1690</h6>
                     </td>
                   </tr>
                 </tbody>
@@ -318,16 +279,16 @@ const printInvoice = () => {
             <span class="text-high-emphasis font-weight-medium me-1">
               Note:
             </span>
-            <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>
+            <span
+              >It was a pleasure working with you and your team. We hope you
+              will keep us in mind for future freelance projects. Thank
+              You!</span
+            >
           </p>
         </VCard>
       </VCol>
 
-      <VCol
-        cols="12"
-        md="3"
-        class="d-print-none"
-      >
+      <VCol cols="12" md="3" class="d-print-none">
         <VCard>
           <VCardText>
             <!-- 👉 Send Invoice Trigger button -->
@@ -340,12 +301,7 @@ const printInvoice = () => {
               Send Invoice
             </VBtn>
 
-            <VBtn
-              block
-              color="secondary"
-              variant="tonal"
-              class="mb-4"
-            >
+            <VBtn block color="secondary" variant="tonal" class="mb-4">
               Download
             </VBtn>
 
@@ -363,7 +319,10 @@ const printInvoice = () => {
                 color="secondary"
                 variant="tonal"
                 class="mb-4 flex-grow-1"
-                :to="{ name: 'apps-invoice-edit-id', params: { id: route.params.id } }"
+                :to="{
+                  name: 'apps-invoice-edit-id',
+                  params: { id: route.params.id },
+                }"
               >
                 Edit
               </VBtn>
@@ -384,17 +343,18 @@ const printInvoice = () => {
     </VRow>
 
     <!-- 👉 Add Payment Sidebar -->
-    <InvoiceAddPaymentDrawer v-model:is-drawer-open="isAddPaymentSidebarVisible" />
+    <InvoiceAddPaymentDrawer
+      v-model:is-drawer-open="isAddPaymentSidebarVisible"
+    />
 
     <!-- 👉 Send Invoice Sidebar -->
-    <InvoiceSendInvoiceDrawer v-model:is-drawer-open="isSendPaymentSidebarVisible" />
+    <InvoiceSendInvoiceDrawer
+      v-model:is-drawer-open="isSendPaymentSidebarVisible"
+    />
   </section>
   <section v-else>
-    <VAlert
-      type="error"
-      variant="tonal"
-    >
-      Invoice with ID  {{ route.params.id }} not found!
+    <VAlert type="error" variant="tonal">
+      Invoice with ID {{ route.params.id }} not found!
     </VAlert>
   </section>
 </template>
@@ -404,15 +364,16 @@ const printInvoice = () => {
   --v-table-header-color: var(--v-theme-surface);
 
   &.v-table .v-table__wrapper table thead tr th {
-    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    border-block-end: 1px solid
+      rgba(var(--v-border-color), var(--v-border-opacity)) !important;
   }
 }
 
 @media print {
   .v-theme--dark {
-    --v-theme-surface: 255, 255, 255;
-    --v-theme-on-surface: 47, 43, 61;
-    --v-theme-on-background: 47, 43, 61;
+    --v-theme-surface: #ffffff;
+    --v-theme-on-surface: #2f2b3d;
+    --v-theme-on-background: #2f2b3d;
   }
 
   body {

@@ -18,9 +18,9 @@ const isDialogVisible = ref(false);
     <VCard>
       <!-- Toolbar -->
       <div>
-        <VToolbar color="primary">
+        <VToolbar color="white">
           <VBtn icon variant="plain" @click="isDialogVisible = false">
-            <VIcon color="white" icon="tabler-x" />
+            <VIcon color="#000000" icon="tabler-x" />
           </VBtn>
 
           <VToolbarTitle>전체팝업</VToolbarTitle>
@@ -32,7 +32,7 @@ const isDialogVisible = ref(false);
           </VToolbarItems>
         </VToolbar>
       </div>
-      <div class="fullpopup-page-content">sd</div>
+      <div class="fullpopup-page-content">내용입력 예정</div>
     </VCard>
   </VDialog>
 </template>

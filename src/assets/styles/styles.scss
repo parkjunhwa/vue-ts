@@ -5,222 +5,245 @@
     font-weight: 100;
     font-style: normal;
     src:
-      url('/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Thin.woff') format('woff');
-  }
-  
-  /* Spoqa Han Sans Light */
-  @font-face {
+        url('/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2'),
+        url('/fonts/SpoqaHanSansNeo-Thin.woff') format('woff');
+}
+
+/* Spoqa Han Sans Light */
+@font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 300;
     font-style: normal;
     src:
-      url('/fonts/SpoqaHanSansNeo-Light.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Light.woff') format('woff');
-  }
-  
-  /* Spoqa Han Sans Regular */
-  @font-face {
+        url('/fonts/SpoqaHanSansNeo-Light.woff2') format('woff2'),
+        url('/fonts/SpoqaHanSansNeo-Light.woff') format('woff');
+}
+
+/* Spoqa Han Sans Regular */
+@font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 400;
     font-style: normal;
     src:
-      url('/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Regular.woff') format('woff');
-  }
-  
-  /* Spoqa Han Sans Bold */
-  @font-face {
+        url('/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+        url('/fonts/SpoqaHanSansNeo-Regular.woff') format('woff');
+}
+
+/* Spoqa Han Sans Bold */
+@font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 700;
     font-style: normal;
     src:
-      url('/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
-  }
-  
-  /* Spoqa Han Sans Medium */
-  @font-face {
+        url('/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+        url('/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
+}
+
+/* Spoqa Han Sans Medium */
+@font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 500;
     font-style: normal;
     src:
-      url('/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Medium.woff') format('woff');
-  }
-  
-  
-  .layout-wrapper {
+        url('/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+        url('/fonts/SpoqaHanSansNeo-Medium.woff') format('woff');
+}
+
+
+.layout-wrapper {
     &.layout-nav-type-vertical {
-      .layout-navbar {
-        padding-inline: 0;
-  
-        .navbar-content-container {
-          border-radius: 0;
+        .layout-navbar {
+            padding-inline: 0;
+
+            .navbar-content-container {
+                border-radius: 0;
+            }
         }
-      }
     }
-  }
-  
-  .layout-nav-type-vertical .layout-vertical-nav .nav-items {
+}
+
+.layout-nav-type-vertical .layout-vertical-nav .nav-items {
     padding: 1rem 0;
-  }
-  
-  
-  @media screen and (max-width: 600px) {
+}
+
+
+@media screen and (max-width: 600px) {
     .v-card {
-      button {
-        flex: 1;
-        width: 100%;
-      }
-  
-      .v-card-text {
-        &.d-flex {
-          &.justify-end {
-            &.flex-wrap {
-              button {
-                flex: 1;
-                max-width: calc(50% - 6px);
-              }
-            }
-          }
+        button {
+            flex: 1;
+            width: 100%;
         }
-      }
+
+        .v-card-text {
+            &.d-flex {
+                &.justify-end {
+                    &.flex-wrap {
+                        button {
+                            flex: 1;
+                            max-width: calc(50% - 6px);
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
-  
-  @media screen and (max-width: 320px) {
+}
+
+@media screen and (max-width: 320px) {
     .v-card {
-      button {
-        flex: 1;
-        width: 100%;
-      }
-  
-      .v-card-text {
-        &.d-flex {
-          &.justify-end {
-            &.flex-wrap {
-              button {
-                flex: 1;
-                width: 100%;
-              }
-            }
-          }
+        button {
+            flex: 1;
+            width: 100%;
         }
-      }
+
+        .v-card-text {
+            &.d-flex {
+                &.justify-end {
+                    &.flex-wrap {
+                        button {
+                            flex: 1;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
-  
-  .v-dialog {
+}
+
+.v-dialog {
     .v-dialog-close-btn {
-      border-radius: 100px !important;
-      color: var(--color-gray-gray-600) !important;
-      width: 38px !important;
-      height: 38px !important;
-      transform: translate(1.2rem, -1.2rem) scale(1) !important;
-      border: 1px solid var(--color-gray-gray-600) !important;
-  
-  
-      &:hover {
-        transform-origin: center;
-        transform: translate(1.2rem, -1.2rem) scale(1.1) !important;
-      }
+        border-radius: 100px !important;
+        color: var(--color-gray-gray-600) !important;
+        width: 38px !important;
+        height: 38px !important;
+        transform: translate(1.2rem, -1.2rem) scale(1) !important;
+        border: 1px solid var(--color-gray-gray-600) !important;
+
+
+        &:hover {
+            transform-origin: center;
+            transform: translate(1.2rem, -1.2rem) scale(1.1) !important;
+        }
     }
-  }
-  
-  .fullpopup-page-content {
-    padding: 16px;
-  }
-  
-  .top-search-area {
+}
+
+.v-toolbar {
+    background: var(--color-gray-gray-100) !important;
+    color: var(--theme-text-primary);
+}
+
+.v-toolbar__content {
+    height: 60px !important;
+
+    .v-btn--icon {
+        flex: none;
+    }
+
+    >.v-toolbar-title {
+        margin-inline-start: 8px !important;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+}
+
+.fullpopup-page-content {
+    padding: 1.5rem;
+}
+
+.top-search-area {
     [class^="v-col"] {
-      padding: 8px;
+        padding: 8px;
     }
-  
+
     margin-bottom:19px;
-  }
-  
-  .layout-page-content {
+}
+
+.layout-page-content {
     padding-block: 1.5rem 0 !important;
     padding-inline: 1.5rem !important;
-  }
-  
-  .v-pagination {
+}
+
+.v-pagination {
     font-size: 12px;
-  }
-  
-  .v-data-table {
+}
+
+.v-data-table {
     thead {
-      tr {
-        th {
-          height: 40px !important;
-        }
-      }
-    }
-  }
-  
-  .v-table__wrapper {
-    >table {
-      >thead {
-        >tr {
-          >th {
-            height: 40px !important;
-            position: relative;
-  
-            &:not(:last-child)::after {
-              content: "｜";
-              position: absolute;
-              right: 0;
-              top: 50%;
-              transform: translateY(-50%);
-              color: rgba(var(--v-border-color), 0.3)
+        tr {
+            th {
+                height: 40px !important;
             }
-          }
         }
-      }
     }
-  
+}
+
+.v-table__wrapper {
+    >table {
+        >thead {
+            >tr {
+                >th {
+                    height: 40px !important;
+                    position: relative;
+
+                    &:not(:last-child)::after {
+                        content: "｜";
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: rgba(var(--v-border-color), 0.24);
+                    }
+                }
+            }
+        }
+    }
+
     border-radius: 0 !important;
     border-top: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
     border-bottom: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
-  }
-  
-  
-  @media (max-width: 600px) {
+}
+
+
+@media (max-width: 600px) {
+    .fullpopup-page-content {
+        padding: 1rem;
+    }
+
     .v-card-item {
-      padding: 1rem !important;
+        padding: 1rem !important;
     }
-  
+
     .v-card-text {
-      padding: 1rem !important;
+        padding: 1rem !important;
     }
-  
+
     .layout-page-content {
-      padding-block: 1rem 0 !important;
-      padding-inline: 1rem !important;
+        padding-block: 1rem 0 !important;
+        padding-inline: 1rem !important;
     }
-  
+
     .page-title-area {
-      flex-direction: column !important;
-      gap: 4px;
-  
-      .v-btn {
-        flex: 1;
-  
-        &.bg-secondary {
-          flex: 0;
+        flex-direction: column !important;
+        gap: 4px;
+
+        .v-btn {
+            flex: 1;
+
+            &.bg-secondary {
+                flex: 0;
+            }
         }
-      }
     }
-  
+
     .top-search-area {
-      .v-btn {
-        flex: 1;
-  
-        &.bg-secondary {
-          flex: 0;
+        .v-btn {
+            flex: 1;
+
+            &.bg-secondary {
+                flex: 0;
+            }
         }
-      }
     }
-  }
-  
+}
