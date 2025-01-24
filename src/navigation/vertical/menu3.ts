@@ -96,11 +96,33 @@ export default [
     ],
   },
   {
+    title: 'Extentions',
+    icon: { icon: 'tabler-box' },
+    children: [
+      {
+        title: 'Tour',
+        to: 'extensions-tour',
+      },
+      {
+        title: 'Swiper',
+        to: 'extensions-swiper',
+      },
+    ],
+  },
+  {
     title: 'Tables',
     icon: { icon: 'tabler-layout-grid' },
     children: [
-      { title: 'Simple Table', icon: { icon: 'tabler-table' }, to: 'tables-simple-table' },
-      { title: 'Data Table', icon: { icon: 'tabler-layout-grid' }, to: 'tables-data-table' },
+      { title: 'Simple Table', to: 'tables-simple-table' },
+      { title: 'Data Table', to: 'tables-data-table' },
+    ],
+  },
+  {
+    title: 'Charts',
+    icon: { icon: 'tabler-chart-area-line' },
+    children: [
+      { title: 'Apex Charts', to: 'charts-apex-chart'},
+      { title: 'ChartJS', to: 'charts-chartjs' },
     ],
   },
 ]

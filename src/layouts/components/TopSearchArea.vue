@@ -6,7 +6,6 @@
     <div v-if="openbutton" class="top-search-area-open-button-wrap">
       <VBtn
         @click="toggleExpanded"
-        icon="tabler-search"
         variant="outlined"
         color="secondary"
         class="top-search-area-open-button"
@@ -68,6 +67,7 @@ export default {
   &:has(.top-search-area-open-button-wrap) {
     padding: 20px 20px 38px 20px;
     margin-bottom: 0px;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
   .top-search-area-open-button-wrap {
