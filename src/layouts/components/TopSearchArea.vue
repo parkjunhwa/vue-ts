@@ -67,7 +67,6 @@ export default {
   &:has(.top-search-area-open-button-wrap) {
     padding: 20px 20px 38px 20px;
     margin-bottom: 0px;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
   .top-search-area-open-button-wrap {
@@ -79,6 +78,7 @@ export default {
     .top-search-area-open-button {
       width: 38px;
       height: 38px;
+      border-radius: 19px;
       background: #ffffff;
       color: var(--color-gray-gray-600);
       box-shadow: 0 3px 12px
