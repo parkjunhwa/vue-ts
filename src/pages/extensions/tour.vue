@@ -66,7 +66,7 @@ onMounted(() => {
       buttons: [
         {
           label: "Back",
-          text: "이전전",
+          text: "이전",
           action: tour.back,
           classes: "backBtnClass",
         },
