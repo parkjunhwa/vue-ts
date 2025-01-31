@@ -68,6 +68,14 @@
 
 
 @media screen and (max-width: 600px) {
+    .layout-vertical-nav {
+        inline-size: 100%;
+    }
+
+    .layout-vertical-nav:not(.visible) {
+        transform: translateX(-100%);
+    }
+
     .v-card {
         button {
             flex: 1;
