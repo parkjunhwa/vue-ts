@@ -15,10 +15,9 @@ import type {
 } from "@layouts/types";
 import type { Component } from "vue";
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
-import { VNodeRenderer } from "./VNodeRenderer";
 
-import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
 import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
+import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
 
 interface Props {
   tag?: string | Component;
@@ -91,15 +90,31 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
     <div class="nav-header">
       <slot name="nav-header">
         <RouterLink to="/" class="app-logo app-title-wrapper">
-          <VNodeRenderer :nodes="layoutConfig.app.logo" />
-
-          <Transition name="vertical-nav-app-title">
+          <div class="icon d-none d-lg-flex">
+            <img src="@images/logos/logo.png" alt="logo" />
+          </div>
+          <Transition name="vertical-nav-app-title" class="d-none d-lg-flex">
             <h1 v-show="!hideTitleAndIcon" class="app-logo-title">
               {{ layoutConfig.app.title }}
             </h1>
           </Transition>
         </RouterLink>
         <!-- 👉 Vertical nav actions -->
+        <div class="vertical-menu-log-box d-lg-none">
+          <div
+            class="d-flex align-center flex-wrap justify-space-between ml-6 mr-2"
+          >
+            <div class="d-flex me-2">
+              <span
+                class="text-body-1 font-weight-regular"
+                style="color: var(--theme-text-primary)"
+                >홍길동</span
+              >
+            </div>
+            <NavBarNotifications />
+            <NavBarLogout />
+          </div>
+        </div>
         <!-- Show toggle collapsible in >md and close button in <md -->
         <div class="header-action">
           <Component
@@ -136,25 +151,6 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
     <slot name="before-nav-items">
       <div class="vertical-nav-items-shadow" />
     </slot>
-
-    <div class="vertical-menu-log-box">
-      <div
-        class="d-flex align-center flex-wrap justify-space-between my-2 ml-6 mr-4"
-      >
-        <div class="d-flex flex-column">
-          <span
-            class="text-body-1 font-weight-regular"
-            style="color: var(--theme-text-primary)"
-            >홍길동</span
-          ><span class="text-body-2">부서정보</span>
-        </div>
-        <div class="d-flex flex-col">
-          <NavBarNotifications class="me-1" />
-          <NavBarLogout />
-        </div>
-      </div>
-    </div>
-
     <slot
       name="nav-items"
       :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
@@ -182,14 +178,21 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
 .app-logo {
   display: flex;
   align-items: center;
-  column-gap: 2px;
-
   .app-logo-title {
-    font-size: 1.375rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.25px;
     line-height: 1.5rem;
     text-transform: capitalize;
+  }
+}
+.icon {
+  width: 28px;
+  height: 22px;
+  margin-inline-start: 0.5rem;
+  img {
+    width: 16px;
+    height: 22px;
   }
 }
 </style>
@@ -248,11 +251,6 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
     margin-inline-end: auto;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  .vertical-menu-log-box {
-    max-height: 58px;
-    overflow: hidden;
   }
 
   // 👉 Collapsed

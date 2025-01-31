@@ -183,6 +183,7 @@ body .fc {
 
     .fc-button-group {
       .fc-button-primary {
+
         &,
         &:hover,
         &:not(.disabled):active {
@@ -244,7 +245,7 @@ body .fc {
   }
 
   tbody[role="rowgroup"] {
-    > tr > td[role="presentation"] {
+    >tr>td[role="presentation"] {
       border: none;
     }
   }
@@ -262,7 +263,7 @@ body .fc {
     padding-inline: 0.6875rem;
   }
 
-  .fc-scrollgrid-section > * {
+  .fc-scrollgrid-section>* {
     border-inline-end-width: 0;
     border-inline-start-width: 0;
   }
