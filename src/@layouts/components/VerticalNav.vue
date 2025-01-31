@@ -102,7 +102,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
         <!-- 👉 Vertical nav actions -->
         <div class="vertical-menu-log-box d-lg-none">
           <div
-            class="d-flex align-center flex-wrap justify-space-between ml-6 mr-2"
+            class="d-flex align-center flex-wrap justify-space-between ml-6 mr-1"
           >
             <div class="d-flex me-2">
               <span
