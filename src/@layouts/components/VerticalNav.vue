@@ -296,7 +296,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
 .layout-nav-type-vertical {
   .layout-vertical-nav.scrolled {
     .vertical-nav-items-shadow {
-      inset-block-start: calc(108px - 2px);
+      inset-block-start: 55px;
     }
   }
 }
