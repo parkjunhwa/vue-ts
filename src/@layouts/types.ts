@@ -114,11 +114,7 @@ export type Notification = {
   time: string
   color?: string
   isSeen: boolean
-} & (
-  | { img: string; text?: never; icon?: never }
-  | { img?: never; text: string; icon?: never }
-  | { img?: never; text?: never; icon: string }
-)
+} 
 
 export interface ThemeSwitcherTheme {
   name: string
