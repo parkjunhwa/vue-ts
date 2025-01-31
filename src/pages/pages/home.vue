@@ -108,6 +108,27 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
         <DemoDataTableExternalPagination />
       </VCard>
     </VCol>
+
+    <VCol cols="12" class="card-table-infinity">
+      <VCard title="카드형 테이블">
+        <template #append>
+          <VBtn size="small"> Primary </VBtn>
+
+          <VBtn size="small" color="secondary" variant="tonal">
+            Secondary
+          </VBtn>
+
+          <VBtn size="small" color="success" variant="tonal"> Success </VBtn>
+
+          <VBtn size="small" color="info" variant="tonal"> Info </VBtn>
+
+          <VBtn size="small" color="warning" variant="tonal"> Warning </VBtn>
+
+          <VBtn size="small" color="error" variant="tonal"> Error </VBtn>
+        </template>
+      </VCard>
+      <DemoDataTableCardInfinity />
+    </VCol>
   </VRow>
 </template>
 
