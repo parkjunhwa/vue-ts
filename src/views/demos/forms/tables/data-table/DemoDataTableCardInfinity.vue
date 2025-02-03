@@ -43,7 +43,7 @@ const cardData = ref([
     </VCardText>
   </VCard>
 
-  <div class="d-flex gap-4 flex-wrap justify-center w-100 card-more-btn">
+  <div class="d-flex mt-2 flex-wrap justify-center w-100 card-more-btn">
     <VBtn size="small" color="secondary" variant="tonal">
       <VIcon start icon="tabler-plus" />
       더보기
