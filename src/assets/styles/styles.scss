@@ -76,10 +76,19 @@
         transform: translateX(-100%);
     }
 
+
     .v-card {
         button {
             flex: 1;
             width: 100%;
+        }
+
+        .notification-section {
+            button {
+                flex: none;
+                width: auto;
+            }
+
         }
 
         .v-card-text {
