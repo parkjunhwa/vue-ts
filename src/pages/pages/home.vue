@@ -119,7 +119,7 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
           />
           개씩
           <VBtn size="small" color="secondary" variant="tonal"> 취소 </VBtn>
-          <VBtn size="small"> Primary </VBtn>
+          <VBtn size="small"> 저장 </VBtn>
         </template>
       </VCard>
       <DemoDataTableCardInfinity />
