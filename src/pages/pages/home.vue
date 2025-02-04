@@ -1,5 +1,8 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import { ref } from "vue";
+
+const selectedValue = ref(10); // 기본값을 10으로 설정
 </script>
 
 <template>
@@ -113,6 +116,7 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
       <VCard title="카드형 테이블">
         <template #append>
           <VSelect
+            v-model="selectedValue"
             :items="[5, 10, 25, 50, 100]"
             style="max-inline-size: 4rem; min-inline-size: 5rem"
             density="compact"
