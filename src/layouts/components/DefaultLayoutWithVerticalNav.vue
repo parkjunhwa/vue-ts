@@ -33,7 +33,7 @@ import { layoutConfig } from "@layouts";
           </Transition>
         </RouterLink>
 
-        <VSpacer />
+        <VSpacer /> 
 
         <div class="align-center me-2 d-none d-lg-flex">
           <span
@@ -42,7 +42,7 @@ import { layoutConfig } from "@layouts";
             >홍길동</span
           >
         </div>
-        <NavBarNotifications class="d-none d-lg-flex" />
+        <NavBarNotifications class="d-none d-lg-flex" id="notification-btn" />
         <NavBarLogout class="d-none d-lg-flex" />
       </div>
     </template>
