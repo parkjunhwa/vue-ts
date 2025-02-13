@@ -80,7 +80,6 @@ compAttrs.config = {
   ...compAttrs.config,
   defaultDate: new Date(), // 현재 날짜를 기본값으로 설정
   locale: Korean, // 한국어 적용
-  locale: "ko", // 한국어 적용
   time_24hr: true, // 24시간제 적용
   prevArrow:
     '<i class="tabler-chevron-left v-icon" style="font-size: 20px; height: 20px; width: 20px;"></i>',
