@@ -14,6 +14,11 @@ watch(date, (newVal) => {
     )}`;
   }
 });
+
+// 입력 값 초기화 함수
+const onClear = () => {
+  date.value = "";
+};
 </script>
 
 <template>
@@ -24,5 +29,6 @@ watch(date, (newVal) => {
     clear-icon="tabler-x"
     append-inner-icon="tabler-calendar"
     :config="{ dateFormat: 'Y-m-d', allowInput: true }"
+    @keydown.esc="onClear"
   />
 </template>
