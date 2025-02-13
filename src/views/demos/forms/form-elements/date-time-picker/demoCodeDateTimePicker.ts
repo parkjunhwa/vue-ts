@@ -25,6 +25,21 @@ const date = ref('')
 `,
 }
 
+export const basic2 = {
+  ts: `실제코드 참조
+<template>
+  <AppDateTimePicker
+    v-model="date"
+    label="날짜 선택"
+    clearable
+    clear-icon="tabler-x"
+    append-inner-icon="tabler-calendar"
+    :config="{ dateFormat: 'Y-m-d', allowInput: true }"
+  />
+</template>`,
+  js: ``,
+}
+
 export const dateAndTime = {
   ts: `<script setup lang="ts">
 const date = ref('')

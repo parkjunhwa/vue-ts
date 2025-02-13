@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { Korean } from "flatpickr/dist/l10n/ko.js";
 import FlatPickr from "vue-flatpickr-component";
 import { useTheme } from "vuetify";
-import { Korean } from "flatpickr/dist/l10n/ko.js"; // 한국어 로케일 추가
 
 // @ts-expect-error There won't be declaration file for it
 import {
