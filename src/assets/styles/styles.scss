@@ -365,7 +365,8 @@
         margin-inline-start: 4px !important;
     }
 
-    .tabler-asterisk {
+    .tabler-asterisk-simple {
+        margin: 4px;
         color: rgb(var(--v-theme-error)) !important;
         block-size: 0.5rem !important;
         font-size: 0.5rem !important;
@@ -373,54 +374,28 @@
     }
 }
 
-.v-overlay__content[style*="--v-overlay-anchor-origin: top center;"]::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 2px;
-    transform: rotate(45deg) translateX(-50%);
-    background: rgb(var(--v-tooltip-background));
-}
+$positions: (
+    top center: (bottom: -8px, left: 50%),
+    bottom center: (top: 0px, left: 50%),
+    right center: (top: calc(50% - 2px), left: 0px),
+    left center: (top: calc(50% - 2px), right: -8px)
+);
 
-.v-overlay__content[style*="--v-overlay-anchor-origin: bottom center;"]::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 0px;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 2px;
-    transform: rotate(45deg) translateX(-50%);
-    background: rgb(var(--v-tooltip-background));
-}
+.v-overlay__content {
+    @each $pos, $values in $positions {
+        &[style*="--v-overlay-anchor-origin: #{$pos};"]::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 2px;
+            transform: rotate(45deg) translateX(-50%);
+            background: rgb(var(--v-tooltip-background));
 
-.v-overlay__content[style*="--v-overlay-anchor-origin: right center;"]::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: calc(50% - 2px);
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 2px;
-    transform: rotate(45deg) translateX(-50%);
-    background: rgb(var(--v-tooltip-background));
-}
-
-.v-overlay__content[style*="--v-overlay-anchor-origin: left center;"]::after {
-    content: "";
-    display: block;
-    position: absolute;
-    right: -8px;
-    top: calc(50% - 2px);
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 2px;
-    transform: rotate(45deg) translateX(-50%);
-    background: rgb(var(--v-tooltip-background));
+            @each $key, $value in $values {
+                #{$key}: $value;
+            }
+        }
+    }
 }
