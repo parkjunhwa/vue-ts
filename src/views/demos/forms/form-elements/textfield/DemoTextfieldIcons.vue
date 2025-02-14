@@ -31,5 +31,13 @@
         placeholder="Placeholder Text"
       />
     </VCol>
+
+    <VCol cols="12">
+      <AppTextField
+        label="Prepend"
+        prepend-icon="tabler-asterisk"
+        placeholder="Placeholder Text"
+      />
+    </VCol>
   </VRow>
 </template>

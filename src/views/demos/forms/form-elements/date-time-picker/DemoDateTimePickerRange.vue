@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const dateRange = ref('')
+const dateRange = ref("");
+// 입력 값 초기화 함수
+const onClear = () => {
+  dateRange.value = "";
+};
 </script>
 
 <template>
@@ -8,5 +12,8 @@ const dateRange = ref('')
     label="Range"
     placeholder="Select date"
     :config="{ mode: 'range' }"
+    prepend-inner-icon="tabler-calendar-minus"
+    clearable
+    @keydown.esc="onClear"
   />
 </template>

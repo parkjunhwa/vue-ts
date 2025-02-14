@@ -39,3 +39,9 @@ const label = computed(() => useAttrs().label as string | undefined);
     </VTextField>
   </div>
 </template>
+
+<style scoped>
+:deep(.v-field__input) {
+  flex: auto;
+}
+</style>

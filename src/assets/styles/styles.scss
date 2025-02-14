@@ -276,6 +276,10 @@
 
     .v-card {
         width: 100%;
+
+        .v-card-item {
+            padding: 16px 24px;
+        }
     }
 
     .data {
@@ -287,7 +291,7 @@
             justify-content: flex-start;
             gap: 4px 1rem;
             flex-flow: row wrap;
-            padding: 16px 24px;
+            padding: 8px 24px;
 
             .item {
                 display: flex;
@@ -295,7 +299,6 @@
                 gap: 4px;
 
                 @media (max-width: 960px) {
-                    flex: 1;
                     justify-content: flex-start;
                 }
 
@@ -351,4 +354,73 @@
             }
         }
     }
+}
+
+.v-input {
+    .v-input__prepend {
+        margin-inline-end: 4px !important;
+    }
+
+    .v-input__append {
+        margin-inline-start: 4px !important;
+    }
+
+    .tabler-asterisk {
+        color: rgb(var(--v-theme-error)) !important;
+        block-size: 0.5rem !important;
+        font-size: 0.5rem !important;
+        inline-size: 0.5rem !important;
+    }
+}
+
+.v-overlay__content[style*="--v-overlay-anchor-origin: top center;"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: rgb(var(--v-tooltip-background));
+}
+
+.v-overlay__content[style*="--v-overlay-anchor-origin: bottom center;"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: rgb(var(--v-tooltip-background));
+}
+
+.v-overlay__content[style*="--v-overlay-anchor-origin: right center;"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: calc(50% - 2px);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: rgb(var(--v-tooltip-background));
+}
+
+.v-overlay__content[style*="--v-overlay-anchor-origin: left center;"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -8px;
+    top: calc(50% - 2px);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: rgb(var(--v-tooltip-background));
 }

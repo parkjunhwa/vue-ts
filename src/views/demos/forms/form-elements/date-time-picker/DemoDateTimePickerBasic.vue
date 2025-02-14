@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const date = ref('')
+const date = ref("");
+// 입력 값 초기화 함수
+const onClear = () => {
+  date.value = "";
+};
 </script>
 
 <template>
@@ -7,5 +11,7 @@ const date = ref('')
     v-model="date"
     label="Default"
     placeholder="Select date"
+    clearable
+    @keydown.esc="onClear"
   />
 </template>

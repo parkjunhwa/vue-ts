@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const date = ref('')
+const date = ref("");
+// 입력 값 초기화 함수
+const onClear = () => {
+  date.value = "";
+};
 </script>
 
 <template>
@@ -8,5 +12,7 @@ const date = ref('')
     label="Human Friendly"
     placeholder="Select date"
     :config="{ dateFormat: 'F j, Y' }"
+    clearable
+    @keydown.esc="onClear"
   />
 </template>
