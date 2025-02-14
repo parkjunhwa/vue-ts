@@ -11,7 +11,7 @@ const onClear = () => {
     v-model="date"
     clearable
     label="Date & TIme"
-    placeholder="Select date and time"
+    placeholder="날자, 시간 선택"
     prepend-inner-icon="tabler-calendar-time"
     :config="{ enableTime: true, dateFormat: 'Y-m-d H:i' }"
     @keydown.esc="onClear"

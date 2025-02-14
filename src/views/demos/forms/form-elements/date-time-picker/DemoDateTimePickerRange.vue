@@ -10,7 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="dateRange"
     label="Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ mode: 'range' }"
     prepend-inner-icon="tabler-calendar-minus"
     clearable

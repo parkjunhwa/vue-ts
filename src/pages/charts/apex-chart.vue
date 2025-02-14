@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import ApexChartAreaChart from '@/views/charts/apex-chart/ApexChartAreaChart.vue'
-import ApexChartBalance from '@/views/charts/apex-chart/ApexChartBalance.vue'
-import ApexChartDailySalesStates from '@/views/charts/apex-chart/ApexChartDailySalesStates.vue'
-import ApexChartDataScience from '@/views/charts/apex-chart/ApexChartDataScience.vue'
-import ApexChartExpenseRatio from '@/views/charts/apex-chart/ApexChartExpenseRatio.vue'
-import ApexChartHorizontalBar from '@/views/charts/apex-chart/ApexChartHorizontalBar.vue'
-import ApexChartMobileComparison from '@/views/charts/apex-chart/ApexChartMobileComparison.vue'
-import ApexChartNewTechnologiesData from '@/views/charts/apex-chart/ApexChartNewTechnologiesData.vue'
-import ApexChartStatistics from '@/views/charts/apex-chart/ApexChartStatistics.vue'
-import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPrices.vue'
+import ApexChartAreaChart from "@/views/charts/apex-chart/ApexChartAreaChart.vue";
+import ApexChartBalance from "@/views/charts/apex-chart/ApexChartBalance.vue";
+import ApexChartDailySalesStates from "@/views/charts/apex-chart/ApexChartDailySalesStates.vue";
+import ApexChartDataScience from "@/views/charts/apex-chart/ApexChartDataScience.vue";
+import ApexChartExpenseRatio from "@/views/charts/apex-chart/ApexChartExpenseRatio.vue";
+import ApexChartHorizontalBar from "@/views/charts/apex-chart/ApexChartHorizontalBar.vue";
+import ApexChartMobileComparison from "@/views/charts/apex-chart/ApexChartMobileComparison.vue";
+import ApexChartNewTechnologiesData from "@/views/charts/apex-chart/ApexChartNewTechnologiesData.vue";
+import ApexChartStatistics from "@/views/charts/apex-chart/ApexChartStatistics.vue";
+import ApexChartStocksPrices from "@/views/charts/apex-chart/ApexChartStocksPrices.vue"; /* PartiallyEnd: #3632/scriptSetup.vue */
 </script>
 
 <template>
@@ -25,8 +25,12 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
-                :config="$vuetify.display.smAndDown ? { position: 'auto center' } : { position: 'auto right' }"
+                placeholder="날자 선택"
+                :config="
+                  $vuetify.display.smAndDown
+                    ? { position: 'auto center' }
+                    : { position: 'auto right' }
+                "
               />
             </div>
           </template>
@@ -49,8 +53,12 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
-                :config="$vuetify.display.smAndDown ? { position: 'auto center' } : { position: 'auto right' }"
+                placeholder="날자 선택"
+                :config="
+                  $vuetify.display.smAndDown
+                    ? { position: 'auto center' }
+                    : { position: 'auto right' }
+                "
               />
             </div>
           </template>
@@ -97,18 +105,9 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
 
           <template #append>
             <div class="d-flex align-center">
-              <h6 class="text-h6 me-3">
-                $221,267
-              </h6>
-              <VChip
-                label
-                color="success"
-              >
-                <VIcon
-                  start
-                  icon="tabler-arrow-up"
-                  size="15"
-                />
+              <h6 class="text-h6 me-3">$221,267</h6>
+              <VChip label color="success">
+                <VIcon start icon="tabler-arrow-up" size="15" />
                 <span>22%</span>
               </VChip>
             </div>
@@ -122,10 +121,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Balance Horizontal Bar -->
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <VCard>
         <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Balance</VCardTitle>
@@ -136,8 +132,12 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
-                :config="$vuetify.display.smAndDown ? { position: 'auto center' } : { position: 'auto right' }"
+                placeholder="날자 선택"
+                :config="
+                  $vuetify.display.smAndDown
+                    ? { position: 'auto center' }
+                    : { position: 'auto right' }
+                "
               />
             </div>
           </template>
@@ -150,10 +150,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Stocks Prices -->
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <VCard>
         <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Stocks Prices</VCardTitle>
@@ -164,8 +161,12 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
-                :config="$vuetify.display.smAndDown ? { position: 'auto center' } : { position: 'auto right' }"
+                placeholder="날자 선택"
+                :config="
+                  $vuetify.display.smAndDown
+                    ? { position: 'auto center' }
+                    : { position: 'auto right' }
+                "
               />
             </div>
           </template>
@@ -178,10 +179,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Daily Sales States -->
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <VCard title="Daily Sales States">
         <VCardText>
           <ApexChartDailySalesStates />
@@ -190,10 +188,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Statistics -->
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <VCard title="Statistics">
         <VCardText>
           <ApexChartStatistics />
@@ -202,10 +197,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Mobile Comparison -->
-    <VCol
-      cols="12"
-      md="6"
-    >
+    <VCol cols="12" md="6">
       <VCard title="Mobile Comparison">
         <VCardText>
           <ApexChartMobileComparison />
@@ -214,14 +206,8 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
     </VCol>
 
     <!-- 👉 Expense Ratio Chart -->
-    <VCol
-      cols="12"
-      md="6"
-    >
-      <VCard
-        title="Expense Ratio"
-        subtitle="Spending on various categories"
-      >
+    <VCol cols="12" md="6">
+      <VCard title="Expense Ratio" subtitle="Spending on various categories">
         <VCardText>
           <ApexChartExpenseRatio />
         </VCardText>

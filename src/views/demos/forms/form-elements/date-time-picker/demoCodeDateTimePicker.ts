@@ -7,7 +7,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Default"
-    placeholder="Select date"
+    placeholder="날자 선택"
   />
 </template>
 `,
@@ -19,7 +19,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Default"
-    placeholder="Select date"
+    placeholder="날자 선택"
   />
 </template>
 `,
@@ -49,7 +49,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Date & TIme"
-    placeholder="Select date and time"
+    placeholder="날자, 시간 선택"
     :config="{ enableTime: true, dateFormat: 'Y-m-d H:i' }"
   />
 </template>
@@ -62,7 +62,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Date & TIme"
-    placeholder="Select date and time"
+    placeholder="날자, 시간 선택"
     :config="{ enableTime: true, dateFormat: 'Y-m-d H:i' }"
   />
 </template>
@@ -81,7 +81,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Disabled Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ dateFormat: 'Y-m-d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
   />
 </template>
@@ -97,7 +97,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Disabled Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ dateFormat: 'Y-m-d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
   />
 </template>
@@ -113,7 +113,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Human Friendly"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ dateFormat: 'F j, Y' }"
   />
 </template>
@@ -126,7 +126,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Human Friendly"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ dateFormat: 'F j, Y' }"
   />
 </template>
@@ -142,7 +142,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Inline"
-    placeholder="Select Date"
+    placeholder="날자 선택"
     :config="{ inline: true }"
   />
 </template>
@@ -155,7 +155,7 @@ const date = ref('')
   <AppDateTimePicker
     v-model="date"
     label="Inline"
-    placeholder="Select Date"
+    placeholder="날자 선택"
     :config="{ inline: true }"
   />
 </template>
@@ -171,7 +171,7 @@ const multipleDate = ref('')
   <AppDateTimePicker
     v-model="multipleDate"
     label="Multiple Dates"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
   />
 </template>
@@ -184,7 +184,7 @@ const multipleDate = ref('')
   <AppDateTimePicker
     v-model="multipleDate"
     label="Multiple Dates"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
   />
 </template>
@@ -200,7 +200,7 @@ const dateRange = ref('')
   <AppDateTimePicker
     v-model="dateRange"
     label="Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ mode: 'range' }"
   />
 </template>
@@ -213,7 +213,7 @@ const dateRange = ref('')
   <AppDateTimePicker
     v-model="dateRange"
     label="Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ mode: 'range' }"
   />
 </template>
@@ -229,7 +229,7 @@ const time = ref('')
   <AppDateTimePicker
     v-model="time"
     label="Time picker"
-    placeholder="Select time"
+    placeholder="시간 선택"
     :config="{ enableTime: true, noCalendar: true, dateFormat: 'H:i' }"
   />
 </template>
@@ -242,7 +242,7 @@ const time = ref('')
   <AppDateTimePicker
     v-model="time"
     label="Time picker"
-    placeholder="Select time"
+    placeholder="시간 선택"
     :config="{ enableTime: true, noCalendar: true, dateFormat: 'H:i' }"
   />
 </template>

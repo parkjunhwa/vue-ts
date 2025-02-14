@@ -13,7 +13,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="date"
     label="Disabled Range"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{
       dateFormat: 'Y-m-d',
       disable: [

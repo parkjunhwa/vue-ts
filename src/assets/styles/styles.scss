@@ -375,8 +375,8 @@
 }
 
 $positions: (
-    top center: (bottom: -8px, left: 50%),
-    bottom center: (top: 0px, left: 50%),
+    top center: (bottom: -8px, left: calc(50% - 2px)),
+    bottom center: (top: 0px, left: calc(50% - 2px)),
     right center: (top: calc(50% - 2px), left: 0px),
     left center: (top: calc(50% - 2px), right: -8px)
 );

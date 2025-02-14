@@ -105,7 +105,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
+                placeholder="날자 선택"
                 :config="
                   $vuetify.display.smAndDown
                     ? { position: 'auto center' }
@@ -133,7 +133,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
+                placeholder="날자 선택"
                 :config="
                   $vuetify.display.smAndDown
                     ? { position: 'auto center' }
@@ -162,7 +162,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="tabler-calendar"
-                placeholder="Select Date"
+                placeholder="날자 선택"
                 :config="
                   $vuetify.display.smAndDown
                     ? { position: 'auto center' }

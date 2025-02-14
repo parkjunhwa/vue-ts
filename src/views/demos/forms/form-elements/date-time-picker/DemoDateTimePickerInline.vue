@@ -10,7 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="date"
     label="Inline"
-    placeholder="Select Date"
+    placeholder="날자 선택"
     :config="{ inline: true }"
     clearable
     @keydown.esc="onClear"

@@ -10,7 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="time"
     label="Time picker"
-    placeholder="Select time"
+    placeholder="시간 선택"
     prepend-inner-icon="tabler-clock"
     :config="{ enableTime: true, noCalendar: true, dateFormat: 'H:i' }"
     clearable

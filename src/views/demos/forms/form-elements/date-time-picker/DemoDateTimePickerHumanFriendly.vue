@@ -10,7 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="date"
     label="Human Friendly"
-    placeholder="Select date"
+    placeholder="날자 선택"
     :config="{ dateFormat: 'F j, Y' }"
     clearable
     @keydown.esc="onClear"

@@ -10,7 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="multipleDate"
     label="Multiple Dates"
-    placeholder="Select date"
+    placeholder="날자 선택"
     prepend-inner-icon="tabler-calendar-event"
     :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
     clearable
