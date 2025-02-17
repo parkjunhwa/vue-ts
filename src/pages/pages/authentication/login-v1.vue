@@ -108,7 +108,7 @@ const onClear3 = () => {
                   <VCol cols="12">
                     <AppTextField
                       v-model="form.password"
-                      label="Password"
+                      label="비밀번호"
                       placeholder="비밀번호 입력"
                       :type="isPasswordVisible ? 'text' : 'password'"
                       autocomplete="password"
