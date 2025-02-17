@@ -12,7 +12,7 @@ const onClear = () => {
     label="Range"
     placeholder="날자 선택"
     :config="{ mode: 'range' }"
-    prepend-inner-icon="tabler-calendar-minus"
+    prepend-inner-icon="tabler-calendar-event"
     clearable
     @keydown.esc="onClear"
   />
