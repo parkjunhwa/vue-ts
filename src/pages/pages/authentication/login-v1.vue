@@ -157,6 +157,13 @@ const onClear3 = () => {
               </VForm>
             </VCardText>
           </VCard>
+          <div class="d-flex align-center justify-center footer">
+            <span class="d-flex align-center text-body-2">
+              &copy;
+              {{ new Date().getFullYear() }}
+              명인제약 by UBCare All Right Reserved.
+            </span>
+          </div>
         </VCol>
       </VRow>
     </div>
@@ -177,7 +184,7 @@ const onClear3 = () => {
   width: fit-content;
   gap: 12px;
   .app-logo-title {
-    font-size: 36px;
+    font-size: 44px;
   }
   img {
     height: 64px;
@@ -202,16 +209,26 @@ const onClear3 = () => {
     height: 40px;
     gap: 8px;
     .app-logo-title {
-      font-size: 22px;
+      font-size: 28px;
     }
     img {
       height: 40px;
     }
   }
+  .footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 @media (min-width: 961px) {
   .position-relative {
     max-width: 900px;
+  }
+  .footer {
+    margin-top: 24px;
   }
 }
 .background-image {
