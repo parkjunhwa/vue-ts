@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import logoIcon from "@/assets/images/logos/logo.png";
 import { themeConfig } from "@themeConfig";
-
 definePage({
   meta: {
     layout: "blank",
@@ -216,15 +215,11 @@ const onClear3 = () => {
   }
 }
 .background-image {
-  /* 배경 이미지 설정 */
   background-image: url("@/assets/images/front-pages/backgrounds/login_bg_v1.png");
-  background-size: cover; /* 화면에 맞게 이미지 크기 조정 */
-  background-position: center center; /* 이미지 중앙 정렬 */
-  background-repeat: no-repeat; /* 반복 금지 */
-  height: 100vh; /* 화면 전체 높이 */
-  width: 100vw; /* 화면 전체 너비 */
-}
-input:-internal-autofill-selected {
-  background: #fff !important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
 }
 </style>
