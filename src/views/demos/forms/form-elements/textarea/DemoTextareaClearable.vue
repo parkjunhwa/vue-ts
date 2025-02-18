@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const textareaValue = ref('This is clearable text.')
+const textareaValue = ref("This is clearable text.");
 </script>
 
 <template>
   <AppTextarea
     v-model="textareaValue"
     clearable
-    clear-icon="tabler-circle-x"
+    clear-icon="tabler-x"
     label="Text"
     placeholder="Placeholder Text"
   />

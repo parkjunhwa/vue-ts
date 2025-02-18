@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logoIcon from "@/assets/images/logos/logo.png";
+import logoIcon from "@images/logos/logo.png";
 import { themeConfig } from "@themeConfig";
 definePage({
   meta: {
@@ -144,10 +144,10 @@ const onClear3 = () => {
                   </VCol>
 
                   <!-- create account -->
-                  <VCol cols="12" class="text-body-1 text-center">
+                  <VCol cols="12" class="text-body-2 text-center">
                     <span class="d-inline-block"> 관리자에게 계정요청 </span>
                     <RouterLink
-                      class="text-primary ms-1 d-inline-block text-body-1"
+                      class="text-primary ms-1 d-inline-block text-body-2"
                       :to="{ name: 'pages-authentication-register-v1' }"
                     >
                       바로가기

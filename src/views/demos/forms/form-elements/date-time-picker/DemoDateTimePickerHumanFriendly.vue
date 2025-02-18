@@ -11,7 +11,7 @@ const onClear = () => {
     v-model="date"
     label="Human Friendly"
     placeholder="날자 선택"
-    :config="{ dateFormat: 'F j, Y' }"
+    :config="{ dateFormat: 'Y년 n월 j일' }"
     clearable
     @keydown.esc="onClear"
   />
