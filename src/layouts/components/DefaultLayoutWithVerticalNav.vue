@@ -33,7 +33,7 @@ import { layoutConfig } from "@layouts";
           </Transition>
         </RouterLink>
 
-        <VSpacer /> 
+        <VSpacer />
 
         <div class="align-center me-2 d-none d-lg-flex">
           <span
@@ -58,15 +58,10 @@ import { layoutConfig } from "@layouts";
 </template>
 
 <style lang="scss" scoped>
-.app-logo-title {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.25px;
-  text-transform: capitalize;
-}
 .icon {
   width: 22px;
   height: 22px;
+  gap: 0;
   img {
     width: 16px;
     height: 22px;

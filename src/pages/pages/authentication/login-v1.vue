@@ -34,7 +34,7 @@ const onClear3 = () => {
     class="auth-wrapper d-flex align-center justify-center pa-5 background-image"
   >
     <div class="position-relative">
-      <VRow class="match-height">
+      <VRow>
         <VCol cols="12" sm="12" lg="6" class="d-none d-lg-block">
           <VCardText>
             <RouterLink to="/">
@@ -48,15 +48,15 @@ const onClear3 = () => {
               </div>
             </RouterLink>
             <h2 class="text-h2 mb-5">
-              Better Quality medicine Better Public Health
+              Better Quality medicine<br />Better Public<br />Health
             </h2>
             <p class="mb-0">‘좋은 치료제, 넘치는 건강’ 명인제약 입니다.</p>
           </VCardText>
         </VCol>
         <VCol cols="12" sm="12" lg="6">
           <VCard class="auth-card">
-            <VCardText class="pa-12"
-              ><VCol cols="12" class="pa-0 text-center d-block d-lg-none">
+            <VCardText class="pa-12">
+              <VCol cols="12" class="pa-0 text-center d-block d-lg-none">
                 <RouterLink to="/" class="d-inline-block pb-6">
                   <div class="app-logo align-center">
                     <v-img>
@@ -238,5 +238,28 @@ const onClear3 = () => {
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+}
+.bg-primary {
+  background: linear-gradient(
+    270deg,
+    rgba(230, 0, 18, 0.7) 0%,
+    rgb(230, 0, 18) 100%
+  ) !important;
+}
+.text-primary {
+  color: rgb(230, 0, 18) !important;
+}
+.app-text-field {
+  &:focus {
+    label {
+      color: rgb(230, 0, 18) !important;
+    }
+  }
+}
+.app-text-field
+  .v-label:has(
+    + .v-input .v-field.v-field--focused .v-field__outline.text-primary
+  ) {
+  color: rgb(230, 0, 18) !important;
 }
 </style>

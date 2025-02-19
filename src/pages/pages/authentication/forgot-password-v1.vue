@@ -1,36 +1,28 @@
 <script setup lang="ts">
-import authV1BottomShape from '@images/svg/auth-v1-bottom-shape.svg?raw'
-import authV1TopShape from '@images/svg/auth-v1-top-shape.svg?raw'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
+import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
+import { themeConfig } from "@themeConfig";
 
 definePage({
   meta: {
-    layout: 'blank',
+    layout: "blank",
     public: true,
   },
-})
+});
 
 const form = ref({
-  email: '',
-})
+  email: "",
+});
+// 입력 값 초기화 함수
+const onClear1 = () => {
+  form.value.email = "";
+};
 </script>
 
 <template>
-  <div class="auth-wrapper d-flex align-center justify-center pa-4">
+  <div
+    class="auth-wrapper d-flex align-center justify-center pa-5 background-image"
+  >
     <div class="position-relative my-sm-16">
-      <!-- 👉 Top shape -->
-      <VNodeRenderer
-        :nodes="h('div', { innerHTML: authV1TopShape })"
-        class="text-primary auth-v1-top-shape d-none d-sm-block"
-      />
-
-      <!-- 👉 Bottom shape -->
-      <VNodeRenderer
-        :nodes="h('div', { innerHTML: authV1BottomShape })"
-        class="text-primary auth-v1-bottom-shape d-none d-sm-block"
-      />
-
       <!-- 👉 Auth card -->
       <VCard
         class="auth-card"
@@ -40,9 +32,9 @@ const form = ref({
         <VCardItem class="justify-center">
           <VCardTitle>
             <RouterLink to="/">
-              <div class="app-logo">
+              <div class="app-logo mb-4">
                 <VNodeRenderer :nodes="themeConfig.app.logo" />
-                <h1 class="app-logo-title">
+                <h1 class="app-logo-title ml-1">
                   {{ themeConfig.app.title }}
                 </h1>
               </div>
@@ -51,11 +43,9 @@ const form = ref({
         </VCardItem>
 
         <VCardText>
-          <h4 class="text-h4 mb-1">
-            Forgot Password? 🔒
-          </h4>
+          <h4 class="text-h4 mb-1">비밀번호 분실 🔒</h4>
           <p class="mb-0">
-            Enter your email and we'll send you instructions to reset your password
+            이메일 주소를 입력하시면 초기화된 비밀번호를<br />발송해 드립니다.
           </p>
         </VCardText>
 
@@ -69,24 +59,22 @@ const form = ref({
                   autofocus
                   label="Email"
                   type="email"
-                  placeholder="johndoe@email.com"
+                  placeholder="user@email.com"
+                  prepend-inner-icon="tabler-mail"
+                  clearable
+                  @keydown.esc="onClear1"
                 />
               </VCol>
 
               <!-- reset password -->
               <VCol cols="12">
-                <VBtn
-                  block
-                  type="submit"
-                >
-                  Send Reset Link
-                </VBtn>
+                <VBtn block type="submit"> 초기화 비밀번호 전송 </VBtn>
               </VCol>
 
               <!-- back to login -->
               <VCol cols="12">
                 <RouterLink
-                  class="d-flex align-center justify-center"
+                  class="d-flex align-center justify-center text-body-2"
                   :to="{ name: 'pages-authentication-login-v1' }"
                 >
                   <VIcon
@@ -94,7 +82,7 @@ const form = ref({
                     size="20"
                     class="me-1 flip-in-rtl"
                   />
-                  <span>Back to login</span>
+                  <span>로그인 화면으로 이동</span>
                 </RouterLink>
               </VCol>
             </VRow>
@@ -107,4 +95,28 @@ const form = ref({
 
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth";
+.background-image {
+  background-image: url("@/assets/images/front-pages/backgrounds/login_bg_v1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+.bg-primary {
+  background: linear-gradient(
+    270deg,
+    rgba(230, 0, 18, 0.7) 0%,
+    rgb(230, 0, 18) 100%
+  ) !important;
+}
+.text-primary {
+  color: rgb(230, 0, 18) !important;
+}
+.app-text-field
+  .v-label:has(
+    + .v-input .v-field.v-field--focused .v-field__outline.text-primary
+  ) {
+  color: rgb(230, 0, 18) !important;
+}
 </style>
