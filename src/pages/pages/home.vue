@@ -94,38 +94,32 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
             placeholder="Select Option"
           />
         </VCol>
-        <VCol cols="12" class="d-flex flex-wrap justify-center gap-x-6">
-          <div class="d-flex gap-4 flex-wrap justify-center w-100">
+        <VCol cols="12" class="d-flex flex-wrap justify-center">
+          <div class="d-flex gap-2 mt-2 flex-wrap justify-center w-100">
             <VBtn color="secondary">취소</VBtn>
             <VBtn color="primary">저장</VBtn>
           </div>
         </VCol>
       </TopSearchArea>
     </VCol>
+  </VRow>
 
-    <VCol cols="12">
-      <VCard>
-        <VCardItem>
-          <VCardTitle>테이블제목</VCardTitle>
-        </VCardItem>
-        <DemoDataTableExternalPagination />
-      </VCard>
-    </VCol>
-
+  <VRow>
     <VCol cols="12" class="card-table-infinity">
-      <VCard title="카드형 테이블">
-        <template #append>
-          <VSelect
-            v-model="selectedValue"
-            :items="[5, 10, 25, 50, 100]"
-            style="max-inline-size: 4rem; min-inline-size: 5rem"
-            density="compact"
-          />
-          개씩
+      <div
+        class="page-stitle-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-2 mb-2 align-items-center"
+      >
+        <div class="d-flex justify-start flex-wrap">
+          <h5 class="d-flex text-h5 font-weight-medium align-center">
+            주문등록
+          </h5>
+        </div>
+
+        <div class="d-flex gap-2 align-center flex-wrap">
           <VBtn size="small" color="secondary" variant="tonal"> 취소 </VBtn>
           <VBtn size="small"> 저장 </VBtn>
-        </template>
-      </VCard>
+        </div>
+      </div>
       <DemoDataTableCardInfinity />
     </VCol>
   </VRow>

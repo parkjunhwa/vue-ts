@@ -25,12 +25,12 @@
 export default {
   props: {
     expanded: Boolean, // Optional prop, controlled inside the component
-    openbutton: { type: Boolean, default: false }, // Determines default state
   },
   data() {
     return {
+      openbutton: window.innerWidth <= 960, // Default based on screen size
       localExpanded:
-        this.expanded !== undefined ? this.expanded : !this.openbutton,
+        this.expanded !== undefined ? this.expanded : window.innerWidth > 960,
     };
   },
   watch: {
@@ -39,20 +39,23 @@ export default {
         this.localExpanded = newVal;
       }
     },
-    openbutton(newVal) {
-      this.localExpanded = !newVal;
-    },
   },
   created() {
-    // Set default expanded state if 'expanded' is not provided
-    if (this.expanded === undefined) {
-      this.localExpanded = !this.openbutton;
-    }
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
+    handleResize() {
+      this.openbutton = window.innerWidth <= 960;
+      if (!this.openbutton) {
+        this.localExpanded = true;
+      }
+    },
     toggleExpanded() {
       this.localExpanded = !this.localExpanded;
-      this.$emit("update:expanded", this.localExpanded); // Only emit if the parent listens to it
+      this.$emit("update:expanded", this.localExpanded);
     },
   },
 };
@@ -60,12 +63,12 @@ export default {
 
 <style lang="scss" scoped>
 .top-search-area {
-  padding: 16px;
+  padding: 24px;
   border: 1px solid var(--color-gray-gray-600);
   overflow: visible;
 
   &:has(.top-search-area-open-button-wrap) {
-    padding: 20px 20px 38px 20px;
+    padding: 24px 24px 38px 24px;
     margin-bottom: 0px;
   }
 
@@ -98,6 +101,16 @@ export default {
         transition: transform 0.3s ease;
       }
     }
+  }
+}
+@media (min-width: 961px) {
+  .top-search-area-open-button-wrap {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  .top-search-area-open-button-wrap {
+    display: inherit;
   }
 }
 </style>

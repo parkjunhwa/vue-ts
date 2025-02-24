@@ -10,9 +10,9 @@ definePage({
   },
 });
 const isPasswordVisible = ref(false);
-// const route = useRoute();
-// const router = useRouter();
-// const ability = useAbility();
+const route = useRoute();
+const router = useRouter();
+const ability = useAbility();
 
 const errors = ref<Record<string, string | undefined>>({
   email: undefined,
@@ -122,7 +122,7 @@ const onClear3 = () => {
                 </p>
               </VCol>
               <h4 class="text-h4 mb-8">로그인</h4>
-              <VAlert color="primary" variant="tonal" class="mb-4">
+              <!-- <VAlert color="primary" variant="tonal" class="mb-4">
                 <p class="text-sm mb-2">
                   Admin Email: <strong>admin@demo.com</strong> / Pass:
                   <strong>admin</strong>
@@ -131,7 +131,7 @@ const onClear3 = () => {
                   Client Email: <strong>client@demo.com</strong> / Pass:
                   <strong>client</strong>
                 </p>
-              </VAlert>
+              </VAlert> -->
               <VForm ref="refVForm" @submit.prevent="onSubmit">
                 <VRow>
                   <!-- companycode -->
@@ -304,7 +304,6 @@ const onClear3 = () => {
   max-width: 100%;
   overflow: hidden;
 }
-
 .auth-card {
   border-radius: 20px;
 }

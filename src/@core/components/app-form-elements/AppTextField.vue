@@ -13,6 +13,11 @@ const elementId = computed(() => {
 });
 
 const label = computed(() => useAttrs().label as string | undefined);
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 
 <template>

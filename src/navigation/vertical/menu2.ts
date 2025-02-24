@@ -5,7 +5,11 @@ export default [
     icon: { icon: 'tabler-shopping-cart' },
     children: [
       {
-        title: 'title',
+        title: '주문등록',
+        to: 'pages-published-order-reg',
+      },
+      {
+        title: '주문내역조회',
         to: '',
       },
       {
@@ -36,7 +40,16 @@ export default [
   {
     title: '공지관리',
     icon: { icon: 'tabler-message-circle-2' },
-    to: '',
+    children: [
+      {
+        title: '공지사항',
+        to: 'pages-published-notice-list',
+      },
+      {
+        title: '공지사항',
+        to: 'pages-published-notice-view',
+      },
+    ],
   },
   {
     title: '현황통계',

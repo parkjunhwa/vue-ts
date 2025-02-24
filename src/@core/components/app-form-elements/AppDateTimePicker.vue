@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import { Korean } from "flatpickr/dist/l10n/ko.js";
 import FlatPickr from "vue-flatpickr-component";
-import { useTheme } from "vuetify";
-
 // @ts-expect-error There won't be declaration file for it
 import {
   VField,
   filterFieldProps,
   makeVFieldProps,
 } from "vuetify/lib/components/VField/VField";
-
 // @ts-expect-error There won't be declaration file for it
 import { VInput, makeVInputProps } from "vuetify/lib/components/VInput/VInput";
-
 // @ts-expect-error There won't be declaration file for it
+import { useConfigStore } from "@core/stores/config";
 import { filterInputAttrs } from "vuetify/lib/util/helpers";
 
-import { useConfigStore } from "@core/stores/config";
-
-// inherit Attribute make false
 defineOptions({
   inheritAttrs: false,
 });
@@ -66,186 +59,55 @@ const fieldProps = ref(filterFieldProps(props));
 
 const refFlatPicker = ref();
 
-const { focused } = useFocus(refFlatPicker);
-const isCalendarOpen = ref(false);
-const isInlinePicker = ref(false);
-
-// flat picker prop manipulation
-if (compAttrs.config && compAttrs.config.inline) {
-  isInlinePicker.value = compAttrs.config.inline;
-  Object.assign(compAttrs, { altInputClass: "inlinePicker" });
-}
-
-compAttrs.config = {
-  ...compAttrs.config,
-  defaultDate: new Date(), // 현재 날짜를 기본값으로 설정
-  locale: Korean, // 한국어 적용
-  time_24hr: true, // 24시간제 적용
-  prevArrow:
-    '<i class="tabler-chevron-left v-icon" style="font-size: 20px; height: 20px; width: 20px;"></i>',
-  nextArrow:
-    '<i class="tabler-chevron-right v-icon" style="font-size: 20px; height: 20px; width: 20px;"></i>',
-
-  // Highlight Saturdays (Blue) & Sundays (Red)
-  onDayCreate: (dObj, dStr, fp, dayElem) => {
-    const date = new Date(dayElem.dateObj);
-    const day = date.getDay(); // 0 = Sunday, 6 = Saturday
-
-    if (day === 0) {
-      dayElem.classList.add("sunday"); // Apply red color
-    } else if (day === 6) {
-      dayElem.classList.add("saturday"); // Apply blue color
-    }
-  },
-};
-
-// v-field clear prop
-const onClear = (el: MouseEvent) => {
-  el.stopPropagation();
-
-  nextTick(() => {
-    emit("update:modelValue", "");
-
-    emit("click:clear", el);
-  });
-};
-
-const vuetifyTheme = useTheme();
-
-const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value);
-
-// Themes class added to flat-picker component for light and dark support
-const updateThemeClassInCalendar = () => {
-  // ℹ️ Flatpickr don't render it's instance in mobile and device simulator
-  if (!refFlatPicker.value.fp.calendarContainer) return;
-
-  vuetifyThemesName.forEach((t) => {
-    refFlatPicker.value.fp.calendarContainer.classList.remove(`v-theme--${t}`);
-  });
-  refFlatPicker.value.fp.calendarContainer.classList.add(
-    `v-theme--${vuetifyTheme.global.name.value}`
-  );
-};
-
-watch(() => configStore.theme, updateThemeClassInCalendar);
-
-onMounted(() => {
-  updateThemeClassInCalendar();
-});
-
 const emitModelValue = (val: string) => {
   emit("update:modelValue", val);
 };
-
-watch(
-  () => props,
-  () => {
-    fieldProps.value = filterFieldProps(props);
-    inputProps.value = VInput.filterProps(props);
-  },
-  {
-    deep: true,
-    immediate: true,
-  }
-);
-
-const elementId = computed(() => {
-  const _elementIdToken =
-    fieldProps.id || fieldProps.label || inputProps.value.id;
-
-  const _id = useId();
-
-  return _elementIdToken ? `app-picker-field-${_elementIdToken}` : _id;
-});
 </script>
 
 <template>
   <div class="app-picker-field">
-    <!-- v-input -->
     <VLabel
       v-if="fieldProps.label"
       class="mb-1 text-body-2"
       :for="elementId"
       :text="fieldProps.label"
     />
-
     <VInput
       v-bind="{ ...inputProps, ...rootAttrs }"
       :model-value="modelValue"
       :hide-details="props.hideDetails"
-      :class="[
-        {
-          'v-text-field--prefixed': props.prefix,
-          'v-text-field--suffixed': props.suffix,
-          'v-text-field--flush-details': ['plain', 'underlined'].includes(
-            props.variant
-          ),
-        },
-        props.class,
-      ]"
-      class="position-relative v-text-field"
-      :style="props.style"
     >
-      <template
-        #default="{ id, isDirty, isValid, isDisabled, isReadonly, validate }"
-      >
-        <!-- v-field -->
-        <VField
-          v-bind="{ ...fieldProps, label: undefined }"
-          :id="id.value"
-          role="textbox"
-          :active="focused || isDirty.value || isCalendarOpen"
-          :focused="focused || isCalendarOpen"
-          :dirty="isDirty.value || props.dirty"
-          :error="isValid.value === false"
-          :disabled="isDisabled.value"
-          @click:clear="onClear"
-        >
+      <template #default="{ id, isDisabled, isReadonly }">
+        <VField v-bind="{ ...fieldProps, label: undefined }" :id="id.value">
           <template #default="{ props: vFieldProps }">
-            <div v-bind="vFieldProps">
-              <!-- flat-picker  -->
-              <FlatPickr
-                v-if="!isInlinePicker"
-                v-bind="compAttrs"
-                ref="refFlatPicker"
-                :model-value="modelValue"
-                :placeholder="props.placeholder"
-                :readonly="isReadonly.value"
-                class="flat-picker-custom-style h-100 w-100"
-                :disabled="isReadonly.value"
-                @on-open="isCalendarOpen = true"
-                @on-close="
-                  isCalendarOpen = false;
-                  validate();
-                "
-                @update:model-value="emitModelValue"
-              />
+            <div class="v-field__container" v-bind="vFieldProps">
+              <!-- Prefix 추가 -->
+              <span v-if="props.prefix" class="v-field__prefix">{{
+                props.prefix
+              }}</span>
+              <!-- Input 컨테이너 -->
+              <div class="v-field__input-container">
+                <FlatPickr
+                  v-bind="compAttrs"
+                  ref="refFlatPicker"
+                  :model-value="modelValue"
+                  :placeholder="props.placeholder"
+                  :readonly="isReadonly.value"
+                  class="flat-picker-custom-style"
+                  :disabled="isDisabled.value"
+                  @update:model-value="emitModelValue"
+                />
+              </div>
 
-              <!-- simple input for inline prop -->
-              <input
-                v-if="isInlinePicker"
-                :value="modelValue"
-                :placeholder="props.placeholder"
-                :readonly="isReadonly.value"
-                class="flat-picker-custom-style h-100 w-100"
-                type="text"
-              />
+              <!-- Suffix 추가 -->
+              <span v-if="props.suffix" class="v-field__suffix">{{
+                props.suffix
+              }}</span>
             </div>
           </template>
         </VField>
       </template>
     </VInput>
-
-    <!-- flat picker for inline props -->
-    <FlatPickr
-      v-if="isInlinePicker"
-      v-bind="compAttrs"
-      ref="refFlatPicker"
-      :model-value="modelValue"
-      @update:model-value="emitModelValue"
-      @on-open="isCalendarOpen = true"
-      @on-close="isCalendarOpen = false"
-    />
   </div>
 </template>
 
@@ -257,13 +119,10 @@ const elementId = computed(() => {
 @use "@core/scss/base/mixins";
 
 .flat-picker-custom-style {
-  position: absolute;
-  color: inherit;
   inline-size: 100%;
-  inset: 0;
+  padding-left: 0;
   outline: none;
   padding-block: 0;
-  padding-inline: var(--v-field-padding-start);
 }
 
 $heading-color: rgba(
@@ -600,5 +459,48 @@ input[altinputclass="inlinePicker"] {
       color: white !important;
     }
   }
+}
+.v-field__container {
+  display: flex;
+  align-items: center;
+}
+.flat-picker-custom-style {
+  position: absolute;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0;
+  padding-left: var(--v-field-padding-start);
+}
+
+/* VField 내부 요소 정렬 */
+.v-field__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Prefix & Suffix 스타일 */
+.v-field__prefix,
+.v-field__suffix {
+  padding: 0px;
+  font-size: 12px;
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+}
+
+.v-field__prefix {
+  margin-right: 0px;
+}
+
+.v-field__suffix {
+  margin-left: 0px;
+}
+
+/* Input 컨테이너 */
+.v-field__input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 </style>

@@ -9,8 +9,8 @@ const onClear = () => {
 <template>
   <AppDateTimePicker
     v-model="dateRange"
-    label="Range"
     placeholder="날자 선택"
+    prefix="조회기간"
     :config="{ mode: 'range' }"
     prepend-inner-icon="tabler-calendar-event"
     clearable

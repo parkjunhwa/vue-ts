@@ -35,7 +35,7 @@
     <VCol cols="12">
       <AppTextField
         label="Prepend 필수"
-        prepend-icon="tabler-asterisk-simple"
+        prepend-inner-icon="tabler-asterisk-simple"
         placeholder="Placeholder Text"
       />
     </VCol>

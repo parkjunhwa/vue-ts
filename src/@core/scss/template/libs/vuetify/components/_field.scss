@@ -3,18 +3,15 @@
 @use "@core/scss/template/mixins" as templateMixins;
 
 $v-input-density: (
-  comfortable: (
-    icon-size: 1rem,
+  comfortable: (icon-size: 1rem,
     font-size: 0.9375rem,
     line-height: 1.5rem,
   ),
-  default: (
-    icon-size: 1.125rem,
+  default: (icon-size: 1.125rem,
     font-size: 1.0625rem,
     line-height: 1.5rem,
   ),
-  compact: (
-    icon-size: 0.8125rem,
+  compact: (icon-size: 0.8125rem,
     font-size: 0.8125rem,
     line-height: 1.375rem,
   ),
@@ -22,6 +19,7 @@ $v-input-density: (
 
 // 👉 VInput
 .v-input {
+
   // 👉 VField
   .v-field {
     .v-field__loader {
@@ -84,7 +82,7 @@ $v-input-density: (
 
   // Give hint messages color based on theme color
   @each $color-name in variables.$theme-colors-name {
-    &:has( .v-field.v-field--focused .v-field__outline.text-#{$color-name}) {
+    &:has(.v-field.v-field--focused .v-field__outline.text-#{$color-name}) {
       .v-messages {
         color: rgb(var(--v-theme-#{$color-name}));
       }
@@ -94,13 +92,14 @@ $v-input-density: (
   // Loop through each density setting in the map
   @each $density, $settings in $v-input-density {
     &.v-input--density-#{$density} {
+
       .v-input__append,
       .v-input__prepend,
       .v-input__details,
       .v-field .v-field__append-inner,
       .v-field .v-field__prepend-inner,
       .v-field .v-field__clearable {
-        > .v-icon {
+        >.v-icon {
           block-size: map.get($settings, icon-size);
           color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
           font-size: map.get($settings, icon-size);
@@ -124,12 +123,14 @@ $v-input-density: (
 
 // Styles related to our custom input components
 body {
+
   .app-text-field,
   .app-select,
   .app-autocomplete,
   .app-combobox,
   .app-textarea,
   .app-picker-field {
+
     // making padding 0 for help text
     .v-text-field .v-input__details {
       padding-inline-start: 0;
@@ -138,6 +139,7 @@ body {
     // Placeholder
     .v-input {
       .v-field {
+
         // Placeholder transition
         input,
         .v-field__input {
@@ -147,6 +149,7 @@ body {
         }
 
         &.v-field--focused {
+
           input,
           .v-field__input {
             &::placeholder {
@@ -211,6 +214,20 @@ body {
       }
     }
 
+    // Readonly state
+    &:has(.v-input.v-input--readonly) {
+      .v-label {
+        color: rgba(var(--v-theme-on-surface), 0.38);
+      }
+
+      .v-input {
+        .v-field {
+          background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+          opacity: 1;
+        }
+      }
+    }
+
     // Apply color to label
     @each $color-name in variables.$theme-colors-name {
       .v-label {
@@ -235,7 +252,7 @@ body {
       }
 
       // Vertical alignment of placeholder & text
-      .v-#{$component-name} .v-field .v-field__input > input {
+      .v-#{$component-name} .v-field .v-field__input>input {
         align-self: center;
       }
 
@@ -296,6 +313,7 @@ body {
 }
 
 .app-inner-list {
+
   // Hide checkboxes
   .v-selection-control {
     display: none;

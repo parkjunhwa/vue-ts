@@ -35,7 +35,8 @@ const cardData = ref([
 
 <template>
   <VCard v-for="(card, index) in cardData" :key="index" class="data">
-    <VCardText>
+    <VCardText
+      >
       <div v-for="(item, idx) in card" :key="idx" class="item">
         <span class="item-title">{{ item.title }}</span>
         <span class="item-text">{{ item.text }}</span>

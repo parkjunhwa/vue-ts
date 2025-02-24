@@ -1,0 +1,185 @@
+<script setup>
+import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import { ref } from "vue";
+const textareaValue = ref(
+  "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+);
+
+const file = ref(null);
+</script>
+
+<template>
+  <div class="d-flex flex-wrap justify-start mb-2">
+    <VIcon size="18" icon="tabler-arrow-left" />
+    <VBreadcrumbs
+      class="px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"
+      :items="[
+        {
+          title: '이전',
+          to: { name: 'pages-published-notice-list' },
+        },
+        { title: '공지사항' },
+      ]"
+    />
+  </div>
+  <div
+    class="page-title-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-6 mb-6 align-items-center"
+  >
+    <div class="d-flex justify-start flex-wrap">
+      <h3 class="d-flex text-h3 font-weight-medium align-center">공지사항</h3>
+    </div>
+
+    <div class="d-flex gap-4 align-center flex-wrap">
+      <VBtn size="large" color="secondary">취소</VBtn>
+      <VBtn size="large" color="primary">저장</VBtn>
+    </div>
+  </div>
+
+  <VRow>
+    <VCol cols="12">
+      <TopSearchArea v-model:expanded="expanded" :openbutton="true">
+        <VCol cols="12" lg="5" md="5" sm="12" xs="12" v-show="expanded">
+          <AppTextField
+            label="제목"
+            placeholder="제목입력"
+            value="제목이 이렇게 들어갑니다."
+            readonly
+            class="required"
+          />
+        </VCol>
+        <VCol cols="6" lg="1" md="1" sm="6" xs="6" v-show="expanded">
+          <AppTextField
+            label="작성자"
+            placeholder="작성자"
+            value="김영업"
+            readonly
+            class="required"
+          />
+        </VCol>
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+          <AppTextField
+            label="작성일"
+            placeholder="작성일"
+            value="2024.12.12"
+            readonly
+          />
+        </VCol>
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+          <AppTextField
+            label="조회수"
+            placeholder="조회수"
+            value="201232"
+            readonly
+          />
+        </VCol>
+
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+          <AppTextField label="번호" placeholder="번호" value="30" readonly />
+        </VCol>
+
+        <VCol
+          cols="12"
+          lg="12"
+          md="12"
+          sm="12"
+          xs="12"
+          class="file"
+          :class="{ 'readonly-mode': isReadonly }"
+        >
+          <label
+            class="v-label mb-1 text-body-2 text-wrap"
+            style="line-height: 15px"
+            >첨부파일</label
+          ><vicon> </vicon>
+          <VFileInput
+            chips
+            placeholder="첨부파일 선택"
+            label="첨부파일"
+            prependInnerIcon="tabler-paperclip"
+            prepend-icon=""
+            single-line
+            hide-details="auto"
+            persistent-placeholder
+            class="custom-input"
+            :readonly="isReadonly"
+          />
+          <div class="v-messages">
+            (이미지/문서 파일 최대 3개, 파일 1개 용량 10MB 제한)
+          </div>
+        </VCol>
+        <VCol cols="12" class="d-flex flex-wrap justify-center">
+          <div class="d-flex gap-2 mt-2 flex-wrap justify-center w-100">
+            <VBtn color="secondary">취소</VBtn>
+            <VBtn color="primary">저장</VBtn>
+          </div>
+        </VCol>
+      </TopSearchArea>
+    </VCol>
+  </VRow>
+  <VRow>
+    <VCol cols="12"
+      ><VCard class="basic-editor-card">
+        <VCardText
+          ><AppTextarea
+            v-model="textareaValue"
+            placeholder="Placeholder Text"
+            auto-grow
+        /></VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      expanded: true,
+      values: "",
+      items: ["Option 1", "Option 2", "Option 3"],
+      nameRules: [(v) => !!v || "필수 항목입니다"],
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.basic-editor-card {
+  .v-card-text {
+    padding: 16px;
+
+    @media (max-width: 960px) {
+      padding: 0px !important;
+    }
+  }
+}
+.file {
+  display: flex;
+  flex-direction: column;
+
+  .custom-input {
+    :deep(.v-label) {
+      display: none !important;
+    }
+  }
+  label {
+    padding-top: 4px;
+  }
+  /* readonly 상태일 때 label 및 메시지 색상 변경 */
+  &.readonly-mode label,
+  .custom-input.v-input.v-input--readonly ~ .v-messages {
+    color: rgba(var(--v-theme-on-surface), 0.38) !important;
+  }
+}
+.custom-field {
+  /* required가 있을 때만 아이콘 추가 */
+  &:has([required]) :deep(.v-label)::after {
+    content: "\2A"; /* Unicode for '*' */
+    font-family: "tabler-icons";
+    font-size: 16px;
+    color: red;
+    margin-left: 5px;
+    display: inline-block;
+  }
+}
+</style>
