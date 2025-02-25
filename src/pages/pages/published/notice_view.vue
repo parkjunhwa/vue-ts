@@ -1,5 +1,6 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
 const textareaValue = ref(
   "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
@@ -9,22 +10,11 @@ const file = ref(null);
 </script>
 
 <template>
-  <div class="d-flex flex-wrap justify-start mb-2">
+  <div class="d-flex flex-wrap justify-start mb-2 align-center">
     <VIcon size="18" icon="tabler-arrow-left" />
-    <VBreadcrumbs
-      class="px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"
-      :items="[
-        {
-          title: '이전',
-          to: { name: 'pages-published-notice-list' },
-        },
-        { title: '공지사항' },
-      ]"
-    />
+    <router-link to="-1" class="text-secondary">이전</router-link>
   </div>
-  <div
-    class="page-title-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-6 mb-6 align-items-center"
-  >
+  <TitleArea>
     <div class="d-flex justify-start flex-wrap">
       <h3 class="d-flex text-h3 font-weight-medium align-center">공지사항</h3>
     </div>
@@ -33,12 +23,12 @@ const file = ref(null);
       <VBtn size="large" color="secondary">취소</VBtn>
       <VBtn size="large" color="primary">저장</VBtn>
     </div>
-  </div>
+  </TitleArea>
 
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="5" md="5" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="5" md="5" sm="12" xs="12">
           <AppTextField
             label="제목"
             placeholder="제목입력"
@@ -85,6 +75,7 @@ const file = ref(null);
           xs="12"
           class="file"
           :class="{ 'readonly-mode': isReadonly }"
+          v-show="expanded"
         >
           <label
             class="v-label mb-1 text-body-2 text-wrap"

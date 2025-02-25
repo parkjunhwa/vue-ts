@@ -93,6 +93,8 @@ declare module 'vue-router/auto-routes' {
     'pages-misc-coming-soon': RouteRecordInfo<'pages-misc-coming-soon', '/pages/misc/coming-soon', Record<never, never>, Record<never, never>>,
     'pages-misc-under-maintenance': RouteRecordInfo<'pages-misc-under-maintenance', '/pages/misc/under-maintenance', Record<never, never>, Record<never, never>>,
     'pages-pricing': RouteRecordInfo<'pages-pricing', '/pages/pricing', Record<never, never>, Record<never, never>>,
+    'pages-published-collectmoneylist': RouteRecordInfo<'pages-published-collectmoneylist', '/pages/published/collectmoneylist', Record<never, never>, Record<never, never>>,
+    'pages-published-collectpay-vwrite': RouteRecordInfo<'pages-published-collectpay-vwrite', '/pages/published/collectpay_vwrite', Record<never, never>, Record<never, never>>,
     'pages-published-notice-list': RouteRecordInfo<'pages-published-notice-list', '/pages/published/notice_list', Record<never, never>, Record<never, never>>,
     'pages-published-notice-view': RouteRecordInfo<'pages-published-notice-view', '/pages/published/notice_view', Record<never, never>, Record<never, never>>,
     'pages-published-order-reg': RouteRecordInfo<'pages-published-order-reg', '/pages/published/order_reg', Record<never, never>, Record<never, never>>,

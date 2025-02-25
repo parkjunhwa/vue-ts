@@ -35,7 +35,16 @@ export default [
   {
     title: '수금',
     icon: { icon: 'tabler-report-money' },
-    to: '',
+    children: [
+      {
+        title: '카드수금등록',
+        to: 'pages-published-collectpay-vwrite',
+      },
+      {
+        title: '수금내역조회',
+        to: 'pages-published-collectmoneylist',
+      },
+    ],
   },
   {
     title: '공지관리',
@@ -46,7 +55,7 @@ export default [
         to: 'pages-published-notice-list',
       },
       {
-        title: '공지사항',
+        title: '공지사항(임시)',
         to: 'pages-published-notice-view',
       },
     ],

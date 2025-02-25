@@ -162,7 +162,6 @@
         font-size: 18px;
         font-weight: 500;
     }
-
 }
 
 .fullpopup-page-content {
@@ -173,11 +172,45 @@
     [class^="v-col"] {
         padding: 4px;
     }
+
+    align-items: center;
+
+    .v-row {
+        align-items: center;
+    }
+
+    .top-chip-item {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        align-items: center;
+
+        @media (max-width: 960px) {
+            justify-content: flex-start;
+        }
+
+        .item-title {
+            color: inherit;
+            font-size: 12px;
+            display: block;
+            white-space: nowrap;
+            font-weight: 200;
+        }
+
+        .item-text {
+            color: inherit;
+            font-size: 13px;
+            display: block;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+    }
 }
 
 .layout-page-content {
     padding-block: 1.5rem 0 !important;
     padding-inline: 1.5rem !important;
+    margin-bottom: 0;
 }
 
 .v-pagination {
@@ -226,6 +259,7 @@
 
 .page-stitle-area {
     width: 100%;
+    min-height: 30px;
 }
 
 .page-title-area {
@@ -237,7 +271,7 @@
 @media (min-width: 601px) {
     .page-title-area {
         .v-btn {
-            width: 150px;
+            width: 180px;
         }
     }
 }
@@ -251,7 +285,7 @@
     }
 
     .v-card-item {
-        padding: 1rem !important;
+        padding: 1rem 1rem 0 1rem !important;
     }
 
     .v-card-text {
@@ -261,6 +295,7 @@
     .layout-page-content {
         padding-block: 1rem 0 !important;
         padding-inline: 1rem !important;
+        margin-bottom: 0;
     }
 
     .page-title-area {
@@ -278,8 +313,6 @@
 
     .page-stitle-area {
         flex-direction: column !important;
-        gap: 4px;
-        margin-bottom: 8px;
 
         .v-btn {
             flex: 1;
@@ -294,7 +327,6 @@
 }
 
 .card-table-infinity {
-    display: flex;
     width: 100%;
     flex-wrap: wrap;
     gap: 2px;
@@ -310,6 +342,11 @@
     .data {
         display: flex;
         flex-direction: column;
+        margin-bottom: 2px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
 
         .v-card-text {
             display: flex;
@@ -317,6 +354,10 @@
             gap: 4px 1rem;
             flex-flow: row wrap;
             padding: 8px 24px;
+
+            @media (max-width: 1280px) {
+                padding: 8px 16px;
+            }
 
             .item {
                 display: flex;
@@ -333,6 +374,7 @@
                     font-size: 12px;
                     display: block;
                     white-space: nowrap;
+                    font-weight: 200;
                 }
 
                 .item-text {
@@ -340,14 +382,39 @@
                     font-size: 13px;
                     display: block;
                     white-space: nowrap;
+                    font-weight: 500;
+                }
+            }
+
+            .chip-item {
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
+
+                @media (max-width: 960px) {
+                    justify-content: flex-start;
+                }
+
+
+                .item-title {
+                    color: inherit;
+                    font-size: 12px;
+                    display: block;
+                    white-space: nowrap;
+                    font-weight: 200;
+                }
+
+                .item-text {
+                    color: inherit;
+                    font-size: 13px;
+                    display: block;
+                    white-space: nowrap;
+                    font-weight: 500;
                 }
             }
         }
-
-
     }
 }
-
 
 .v-card-item__append {
     gap: 8px;
@@ -369,7 +436,7 @@
         gap: 4px;
 
         .v-card-item__content {
-            margin-bottom: 4px;
+            margin-bottom: 0px;
         }
 
         .v-card-item__append {
@@ -453,4 +520,30 @@ $positions: (
     margin-top: 5px;
     width: 16px;
     text-align: center;
+}
+
+.form-align-right input {
+    text-align: right;
+}
+
+.bg-menu-active {
+    background: var(--menu-active, linear-gradient(270deg, rgba(0, 144, 255, 0.70) 0%, #0090FF 100%)) !important;
+}
+
+.v-overlay .v-card-text button {
+    flex: 1;
+}
+
+.help-center-breadcrumbs {
+    .v-breadcrumbs-item {
+        color: var(--theme-text-scondary) !important;
+        opacity: 1 !important;
+        font-weight: 200;
+
+        .v-breadcrumbs-item--disabled {
+            color: var(--theme-text-primary) !important;
+            opacity: 1 !important;
+            font-weight: 500;
+        }
+    }
 }

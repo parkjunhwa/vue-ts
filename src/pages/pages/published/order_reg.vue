@@ -6,12 +6,10 @@ const inputValue = ref("");
 const onClear = () => {
   inputValue.value = "";
 };
-
-const selectedValue = ref(10); // 기본값을 10으로 설정
 </script>
 
 <template>
-  <div class="d-flex flex-wrap justify-start mb-2">
+  <div class="d-flex flex-wrap justify-start mb-2 align-center">
     <VIcon size="18" icon="tabler-smart-home" />
     <VBreadcrumbs
       class="px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"

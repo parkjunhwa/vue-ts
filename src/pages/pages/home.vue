@@ -1,4 +1,6 @@
 <script setup>
+import STitleArea from "@/layouts/components/STitleArea.vue";
+import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import { ref } from "vue";
 
@@ -6,7 +8,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
 </script>
 
 <template>
-  <div class="d-flex flex-wrap justify-start mb-2">
+  <div class="d-flex flex-wrap justify-start mb-2 align-center">
     <VIcon size="18" icon="tabler-smart-home" />
     <VBreadcrumbs
       class="px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"
@@ -16,9 +18,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
       ]"
     />
   </div>
-  <div
-    class="page-title-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-6 mb-6 align-items-center"
-  >
+  <TitleArea>
     <div class="d-flex justify-start flex-wrap">
       <h3 class="d-flex text-h3 font-weight-medium align-center">제목</h3>
     </div>
@@ -27,8 +27,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
       <VBtn size="large" color="secondary">취소</VBtn>
       <VBtn size="large" color="primary">저장</VBtn>
     </div>
-  </div>
-
+  </TitleArea>
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
@@ -106,9 +105,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
 
   <VRow>
     <VCol cols="12" class="card-table-infinity">
-      <div
-        class="page-stitle-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-2 mb-2 align-items-center"
-      >
+      <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
             주문등록
@@ -119,7 +116,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
           <VBtn size="small" color="secondary" variant="tonal"> 취소 </VBtn>
           <VBtn size="small"> 저장 </VBtn>
         </div>
-      </div>
+      </STitleArea>
       <DemoDataTableCardInfinity />
     </VCol>
   </VRow>
