@@ -11,6 +11,7 @@ const onClear = () => {
     v-model="date"
     label="Human Friendly"
     placeholder="날자 선택"
+    prepend-inner-icon="tabler-calendar-event"
     :config="{ dateFormat: 'Y년 n월 j일' }"
     clearable
     @keydown.esc="onClear"

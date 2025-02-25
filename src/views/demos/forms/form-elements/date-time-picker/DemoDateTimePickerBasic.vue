@@ -10,6 +10,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="date"
     label="Default"
+    prepend-inner-icon="tabler-calendar-event"
     placeholder="날자 선택"
     clearable
     @keydown.esc="onClear"

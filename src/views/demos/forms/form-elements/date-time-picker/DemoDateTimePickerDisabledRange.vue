@@ -14,8 +14,10 @@ const onClear = () => {
     v-model="date"
     label="Disabled Range"
     placeholder="날자 선택"
+    prepend-inner-icon="tabler-calendar-event"
     :config="{
       dateFormat: 'Y-m-d',
+      rangeSeparator: ' ~ ',
       disable: [
         {
           from: `${currentYear}-${currentMonth}-20`,
