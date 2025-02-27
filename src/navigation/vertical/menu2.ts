@@ -13,12 +13,8 @@ export default [
         to: '',
       },
       {
-        title: 'title',
-        children: [
-          { title: 'title', to: '' },
-          { title: 'title', to: '' },
-          { title: 'title', to: '' },
-        ],
+        title: '주문내역조회(임시)',
+        to: '',
       },
     ],
   },

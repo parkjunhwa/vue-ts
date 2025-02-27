@@ -234,7 +234,66 @@ const onClear = (inputRef) => {
           </div>
         </VCardText>
       </VCard>
-
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div
+              class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
+            >
+              <div class="section01">
+                <div class="item num01">
+                  <VCheckbox />
+                </div>
+                <div class="item num02">
+                  <span class="item-cell-title"> (IGT104) 이가탄에프캡슐</span>
+                </div>
+              </div>
+              <div class="section02">
+                <div class="item num03">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">임시반품번호</span>
+                      <span class="item-text"> MIDIDIDID </span>
+                    </div>
+                  </VChip>
+                </div>
+                <div class="item num04">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">반품사유</span>
+                      <span class="item-text"> 폐기성(유효기간임박)</span>
+                    </div>
+                  </VChip>
+                </div>
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">포장단위</span>
+                <span class="item-text">30T</span>
+              </div>
+              <div class="item">
+                <span class="item-title">수량</span>
+                <span class="item-text">30</span>
+              </div>
+              <div class="item">
+                <span class="item-title">낱알수량</span>
+                <span class="item-text">30</span>
+              </div>
+              <div class="item">
+                <span class="item-title">단가</span>
+                <span class="item-text">50,000</span>
+              </div>
+              <div class="item">
+                <span class="item-title">공급가액</span>
+                <span class="item-text">80,000</span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
       <div class="d-flex mt-2 flex-wrap justify-center w-100 card-more-btn">
         <VBtn size="small" color="secondary" variant="tonal">
           <VIcon start icon="tabler-plus" />
