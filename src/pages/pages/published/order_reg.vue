@@ -509,6 +509,172 @@ export default {
 .creditfield.error--text :deep(.v-field__input) {
   color: var(--error-main);
 }
+
+.card-table-infinity {
+  .data {
+    gap: 8px 16px;
+
+    .gap-2 {
+      gap: 4px 16px;
+    }
+
+    .justify-content-start {
+      gap: 8px 16px;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .item {
+        align-items: center;
+        &.num01 {
+          width: 24px;
+          height: 24px;
+          overflow: visible;
+
+          :deep(.v-selection-control__wrapper) {
+            margin: -6px;
+          }
+        }
+
+        &.num02 {
+          flex: 1;
+        }
+
+        &.num03,
+        &.num04 {
+          .v-chip {
+            width: 100%;
+          }
+        }
+
+        &.num03 {
+          width: 170px;
+        }
+
+        &.num04 {
+          width: 200px;
+        }
+      }
+    }
+
+    .justify-content-end {
+      gap: 8px 16px;
+      align-items: center;
+
+      .item {
+        width: 86px;
+        align-items: center;
+
+        &:nth-child(1) {
+          width: 100px;
+        }
+
+        &:nth-child(2) {
+          width: 80px;
+        }
+
+        &:nth-child(3) {
+          width: 100px;
+        }
+
+        &:nth-child(4),
+        &:nth-child(5) {
+          justify-content: space-between;
+        }
+
+        &:nth-child(4) {
+          width: 140px;
+        }
+
+        &:nth-child(5) {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+.section01 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row !important;
+  flex: 1;
+  min-width: 300px;
+}
+.section02 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-direction: row !important;
+  justify-content: flex-end;
+}
+
+// ✅ 반응형 스타일
+@media (max-width: 960px) {
+  .top-search-area {
+    .v-btn[variant="tonal"] {
+      width: 100%;
+    }
+  }
+  .justify-content-start {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .section02 {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px 16px;
+  }
+  .top-search-return-start {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: column !important;
+    align-items: normal;
+  }
+
+  .top-search-return-end {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    flex-direction: row !important;
+    align-items: normal;
+    justify-content: space-between;
+
+    .item {
+      min-width: calc(50% - 8px);
+    }
+  }
+
+  .card-table-infinity {
+    .data {
+      .justify-content-start {
+        flex-direction: column !important;
+        justify-content: left;
+        gap: 4px;
+        align-items: normal;
+      }
+
+      .justify-content-end {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+
+        .item {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .v-card.data {
+    .gap-2 {
+      gap: 4px;
+    }
+  }
+}
+
 // ✅ 하단 영역 스타일
 .botttom-total-area {
   padding: 24px;
