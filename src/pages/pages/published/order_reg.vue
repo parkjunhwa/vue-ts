@@ -1,5 +1,6 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import STitleArea from "@/layouts/components/STitleArea.vue";
 import { ref } from "vue";
 const inputValue = ref("");
 
@@ -157,7 +158,7 @@ const onClear = () => {
         </VCol>
 
         <VCol cols="12" class="d-flex flex-wrap justify-center">
-          <div class="d-flex gap-2 mt-2 flex-wrap justify-center w-100">
+          <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
             >
@@ -178,19 +179,17 @@ const onClear = () => {
     </VCol>
 
     <VCol cols="12" class="card-table-infinity">
-      <VCard title="카드형 테이블">
-        <template #append>
-          <VSelect
-            v-model="selectedValue"
-            :items="[5, 10, 25, 50, 100]"
-            style="max-inline-size: 4rem; min-inline-size: 5rem"
-            density="compact"
-          />
-          개씩
-          <VBtn size="small" color="secondary" variant="tonal"> 취소 </VBtn>
-          <VBtn size="small"> 저장 </VBtn>
-        </template>
-      </VCard>
+      <STitleArea>
+        <div class="d-flex justify-start flex-wrap">
+          <h5 class="d-flex text-h5 font-weight-medium align-center">
+            반품 정보 등록
+          </h5>
+        </div>
+        <div class="d-flex gap-2 align-center flex-wrap">
+          <VBtn size="small" color="secondary" variant="tonal"> 선택삭제 </VBtn>
+          <VBtn size="small">반품추가</VBtn>
+        </div>
+      </STitleArea>
       <DemoDataTableCardInfinity />
     </VCol>
   </VRow>

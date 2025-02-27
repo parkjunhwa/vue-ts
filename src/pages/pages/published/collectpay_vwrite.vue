@@ -816,13 +816,11 @@ export default {
     display: none;
   }
 }
-.card-table-infinity {
-  overflow: visible !important; /* 부모 컨테이너가 sticky를 방해하지 않도록 설정 */
-}
-.v-container {
-  overflow: visible !important; /* 상위 요소에서도 overflow를 제거 */
-}
+.card-table-infinity,
+.v-container,
 .v-row {
-  align-items: flex-start; /* sticky 효과를 방해하지 않도록 조정 */
+  overflow: visible !important;
+  align-items: flex-start;
+  position: static !important;
 }
 </style>

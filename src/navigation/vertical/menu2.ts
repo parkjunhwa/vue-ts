@@ -25,12 +25,30 @@ export default [
   {
     title: '반품',
     icon: { icon: 'tabler-box' },
-    to: '',
+    children: [
+      {
+        title: '반품등록',
+        to: 'pages-published-return-reg',
+      },
+      {
+        title: '반품내역조회',
+        to: 'pages-published-return-list',
+      },
+      {
+        title: '반품내역조회(임시)',
+        to: 'pages-published-return-view',
+      },
+    ],
   },
   {
-    title: '거래원장조회',
+    title: '거래원장',
     icon: { icon: 'tabler-list-search' },
-    to: '',
+    children: [
+      {
+        title: '거래원장조회',
+        to: 'pages-published-eledger-list',
+      },
+    ],
   },
   {
     title: '수금',

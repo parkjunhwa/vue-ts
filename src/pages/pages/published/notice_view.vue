@@ -88,9 +88,9 @@ const file = ref(null);
             label="첨부파일"
             prependInnerIcon="tabler-paperclip"
             prepend-icon=""
-            single-line
             hide-details="auto"
             persistent-placeholder
+            multiple
             class="custom-input"
             :readonly="isReadonly"
           />
@@ -99,7 +99,7 @@ const file = ref(null);
           </div>
         </VCol>
         <VCol cols="12" class="d-flex flex-wrap justify-center">
-          <div class="d-flex gap-2 mt-2 flex-wrap justify-center w-100">
+          <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn color="secondary">취소</VBtn>
             <VBtn color="primary">저장</VBtn>
           </div>

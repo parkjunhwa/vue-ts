@@ -444,12 +444,17 @@ export default {
   .card-table-infinity .data .justify-content-start {
     flex-direction: column !important;
     justify-content: left;
-    gap: 8px;
+    gap: 4px;
   }
   .card-table-infinity .data .justify-content-end {
     justify-content: space-between;
-    .item {
+    .item:last-child {
       justify-content: space-between;
+    }
+  }
+  .v-card.data {
+    .gap-2 {
+      gap: 4px;
     }
   }
 }
