@@ -710,6 +710,7 @@ export default {
 }
 .card-table-infinity .data .justify-content-start .item:nth-child(1) {
   width: 24px;
+  min-width: 24px;
   height: 24px;
   overflow: visible;
   :deep(.v-selection-control__wrapper) {
@@ -730,6 +731,7 @@ export default {
     width: 140px;
   }
 }
+
 .card-table-infinity .data .justify-content-end {
   gap: 8px 16px;
   align-items: center;
@@ -755,7 +757,6 @@ export default {
   .card-table-infinity .data .justify-content-start {
     flex-direction: row !important;
     justify-content: left;
-    align-items: bottom;
     gap: 4px;
     .item:nth-child(4) {
       width: 100%;
@@ -764,14 +765,14 @@ export default {
   .card-table-infinity .data .justify-content-end {
     flex-direction: row !important;
     flex-wrap: wrap;
-    gap: 4px;
-    justify-content: space-between;
+    gap: 4px 16px;
+    justify-content: left;
   }
   .card-table-infinity .data .justify-content-end .item:nth-child(1) {
-    min-width: calc(50% - 2px);
+    min-width: calc(50% - 8px);
   }
   .card-table-infinity .data .justify-content-end .item:nth-child(2) {
-    min-width: calc(50% - 2px);
+    min-width: calc(50% - 8px);
     justify-content: space-between;
   }
   .card-table-infinity .data .justify-content-end .item:nth-child(3) {

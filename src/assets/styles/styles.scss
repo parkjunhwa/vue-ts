@@ -317,12 +317,14 @@
 
             &.bg-secondary {
                 flex: 0;
+                min-width: 33%;
             }
         }
     }
 
     .page-stitle-area {
         flex-direction: column !important;
+        gap: 8px;
 
         .v-btn {
             flex: 1;
@@ -588,4 +590,54 @@ $positions: (
     font-size: 15px;
     letter-spacing: normal;
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+}
+
+.basic-editor-card {
+    .v-card-text {
+        padding: 16px;
+
+        @media (max-width: 960px) {
+            padding: 0px !important;
+        }
+    }
+}
+
+.ProseMirror {
+    padding: 1rem !important;
+}
+
+.file {
+    display: flex;
+    flex-direction: column;
+
+    .custom-input {
+        :deep(.v-label) {
+            display: none !important;
+        }
+
+    }
+
+    label {
+        padding-top: 4px;
+    }
+
+    /* readonly 상태일 때 label 및 메시지 색상 변경 */
+    &.readonly-mode label,
+    .custom-input.v-input.v-input--readonly~.v-messages {
+        color: rgba(var(--v-theme-on-surface), 0.38) !important;
+    }
+}
+
+.custom-field {
+
+    /* required가 있을 때만 아이콘 추가 */
+    &:has([required]) :deep(.v-label)::after {
+        content: "\2A";
+        /* Unicode for '*' */
+        font-family: "tabler-icons";
+        font-size: 16px;
+        color: red;
+        margin-left: 5px;
+        display: inline-block;
+    }
 }

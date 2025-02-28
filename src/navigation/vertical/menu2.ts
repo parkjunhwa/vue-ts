@@ -10,11 +10,11 @@ export default [
       },
       {
         title: '주문내역조회',
-        to: '',
+        to: 'pages-published-order-list',
       },
       {
         title: '주문내역조회(임시)',
-        to: '',
+        to: 'pages-published-order-view',
       },
     ],
   },

@@ -2,9 +2,14 @@
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
-const textareaValue = ref(
-  "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
-);
+const basicEditorContent = ref(`
+<p>
+  텍스트 입력을 자유롭게 할 수 있습니다.
+</p>
+<p>
+  간단한 에디터를 제공합니다.
+</p>
+`);
 
 const file = ref(null);
 </script>
@@ -67,16 +72,7 @@ const file = ref(null);
           <AppTextField label="번호" placeholder="번호" value="30" readonly />
         </VCol>
 
-        <VCol
-          cols="12"
-          lg="12"
-          md="12"
-          sm="12"
-          xs="12"
-          class="file"
-          :class="{ 'readonly-mode': isReadonly }"
-          v-show="expanded"
-        >
+        <VCol cols="12" lg="12" md="12" sm="12" xs="12" v-show="expanded">
           <label
             class="v-label mb-1 text-body-2 text-wrap"
             style="line-height: 15px"
@@ -88,17 +84,19 @@ const file = ref(null);
             label="첨부파일"
             prependInnerIcon="tabler-paperclip"
             prepend-icon=""
-            hide-details="auto"
-            persistent-placeholder
             multiple
             class="custom-input"
             :readonly="isReadonly"
           />
-          <div class="v-messages">
+          <div class="v-messages mt-1">
             (이미지/문서 파일 최대 3개, 파일 1개 용량 10MB 제한)
           </div>
         </VCol>
-        <VCol cols="12" class="d-flex flex-wrap justify-center">
+        <VCol
+          cols="12"
+          class="d-flex flex-wrap justify-center"
+          v-show="expanded"
+        >
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn color="secondary">취소</VBtn>
             <VBtn color="primary">저장</VBtn>
@@ -111,10 +109,9 @@ const file = ref(null);
     <VCol cols="12"
       ><VCard class="basic-editor-card">
         <VCardText
-          ><AppTextarea
-            v-model="textareaValue"
-            placeholder="Placeholder Text"
-            auto-grow
+          ><TiptapEditor
+            v-model="basicEditorContent"
+            class="border rounded basic-editor"
         /></VCardText>
       </VCard>
     </VCol>
@@ -133,44 +130,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.basic-editor-card {
-  .v-card-text {
-    padding: 16px;
-
-    @media (max-width: 960px) {
-      padding: 0px !important;
-    }
-  }
-}
-.file {
-  display: flex;
-  flex-direction: column;
-
-  .custom-input {
-    :deep(.v-label) {
-      display: none !important;
-    }
-  }
-  label {
-    padding-top: 4px;
-  }
-  /* readonly 상태일 때 label 및 메시지 색상 변경 */
-  &.readonly-mode label,
-  .custom-input.v-input.v-input--readonly ~ .v-messages {
-    color: rgba(var(--v-theme-on-surface), 0.38) !important;
-  }
-}
-.custom-field {
-  /* required가 있을 때만 아이콘 추가 */
-  &:has([required]) :deep(.v-label)::after {
-    content: "\2A"; /* Unicode for '*' */
-    font-family: "tabler-icons";
-    font-size: 16px;
-    color: red;
-    margin-left: 5px;
-    display: inline-block;
-  }
-}
-</style>

@@ -670,7 +670,7 @@ export default {
   }
 }
 .card-table-infinity .data .justify-content-end {
-  gap: 8px 16px;
+  gap: 4px 16px;
   align-items: center;
 }
 .card-table-infinity .data .justify-content-end .item {
@@ -698,14 +698,14 @@ export default {
   .top-search-return-start {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px 16px;
     flex-direction: column !important;
     align-items: normal;
   }
   .top-search-return-end {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 4px 16px;
     flex-direction: row !important;
     align-items: normal;
     justify-content: space-between;
@@ -722,7 +722,7 @@ export default {
   .card-table-infinity .data .justify-content-end {
     flex-direction: row !important;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 4px 16px;
   }
   .card-table-infinity .data .justify-content-end .item {
     width: 100%;

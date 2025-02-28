@@ -95,7 +95,7 @@ const currentTab = ref("window1");
           </div>
         </VCol>
 
-        <VCol cols="12" class="d-flex flex-wrap justify-center">
+        <VCol cols="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
@@ -337,7 +337,6 @@ export default {
 }
 .page-stitle-area {
   @media (max-width: 960px) {
-    gap: 8px;
     .v-slide-group {
       width: 100%;
     }

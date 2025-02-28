@@ -75,7 +75,7 @@ const onClear = (inputRef) => {
           </VBtn>
         </VCol>
 
-        <VCol cols="12" class="d-flex flex-wrap justify-center">
+        <VCol cols="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
@@ -370,6 +370,7 @@ export default {
         align-items: center;
         &.num01 {
           width: 24px;
+          min-width: 24px;
           height: 24px;
           overflow: visible;
 

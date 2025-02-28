@@ -36,7 +36,7 @@ import TitleArea from "@/layouts/components/TitleArea.vue";
         <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
           <DemoDateTimePickerRange />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
+        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-end w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn

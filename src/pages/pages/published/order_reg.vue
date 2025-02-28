@@ -11,6 +11,7 @@ const inputE = ref("여신초과");
 const onClear = () => {
   inputValue.value = "";
 };
+const currentTab = ref("window1");
 </script>
 
 <template>
@@ -126,7 +127,7 @@ const onClear = () => {
           </VBtn>
         </VCol>
 
-        <VCol cols="12" class="d-flex flex-wrap justify-center">
+        <VCol cols="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
@@ -144,12 +145,203 @@ const onClear = () => {
       <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
-            반품 정보 등록
+            기존발주 품목 리스트
+          </h5>
+          <VTabs v-model="currentTab" class="v-tabs-pill ml-0">
+            <VTab>전체</VTab>
+            <VTab>ETC</VTab>
+            <VTab>OTC</VTab>
+          </VTabs>
+        </div>
+        <div class="d-flex gap-2 align-center flex-wrap">
+          <VBtn size="small"
+            ><VIcon start icon="tabler-plus" />기존발주 품목 주문추가</VBtn
+          >
+        </div>
+      </STitleArea>
+      <VWindow v-model="currentTab" style="overflow: visible">
+        <VWindowItem v-for="item in 3" :key="`window${item}`">
+          <VCard class="data">
+            <VCardText>
+              <div class="d-flex flex-column flex-md-row gap-2 w-100">
+                <!-- 왼쪽 컨텐츠 -->
+                <div
+                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
+                >
+                  <div class="section01">
+                    <div class="item num01">
+                      <VCheckbox />
+                    </div>
+                    <div class="item num03">
+                      <span class="item-cell-title text-primary">
+                        (IGT104) 이가탄에프캡슐</span
+                      >
+                    </div>
+                  </div>
+                  <div class="section02">
+                    <div class="item num05">
+                      <VChip color="primary" size="small">
+                        <div class="chip-item">
+                          <span class="item-title">마지막발주</span>
+                          <span class="item-text">2024.12.12</span>
+                        </div>
+                      </VChip>
+                    </div>
+                  </div>
+                </div>
+                <!-- 오른쪽 컨텐츠 -->
+                <div class="d-flex flex-row justify-content-end">
+                  <div class="item">
+                    <span class="item-title">규격</span>
+                    <span class="item-text">100C</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">수량</span>
+                    <span class="item-text">
+                      <AppTextField value="10" density="compact" readonly
+                    /></span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">단가</span>
+                    <span class="item-text">50,000</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">공급가액</span>
+                    <span class="item-text">80,000</span>
+                  </div>
+                </div>
+              </div>
+            </VCardText>
+          </VCard>
+          <VCard class="data">
+            <VCardText>
+              <div class="d-flex flex-column flex-md-row gap-2 w-100">
+                <!-- 왼쪽 컨텐츠 -->
+                <div
+                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
+                >
+                  <div class="section01">
+                    <div class="item num01">
+                      <VCheckbox />
+                    </div>
+                    <div class="item num03">
+                      <span class="item-cell-title text-primary">
+                        (IGT104) 이가탄에프캡슐</span
+                      >
+                    </div>
+                  </div>
+                  <div class="section02">
+                    <div class="item num05">
+                      <VChip color="primary" size="small">
+                        <div class="chip-item">
+                          <span class="item-title">마지막발주</span>
+                          <span class="item-text">2024.12.12</span>
+                        </div>
+                      </VChip>
+                    </div>
+                  </div>
+                </div>
+                <!-- 오른쪽 컨텐츠 -->
+                <div class="d-flex flex-row justify-content-end">
+                  <div class="item">
+                    <span class="item-title">규격</span>
+                    <span class="item-text">100C</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">수량</span>
+                    <span class="item-text">
+                      <AppTextField value="10" density="compact" readonly
+                    /></span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">단가</span>
+                    <span class="item-text">50,000</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">공급가액</span>
+                    <span class="item-text">80,000</span>
+                  </div>
+                </div>
+              </div>
+            </VCardText>
+          </VCard>
+          <VCard class="data">
+            <VCardText>
+              <div class="d-flex flex-column flex-md-row gap-2 w-100">
+                <!-- 왼쪽 컨텐츠 -->
+                <div
+                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
+                >
+                  <div class="section01">
+                    <div class="item num01">
+                      <VCheckbox />
+                    </div>
+                    <div class="item num03">
+                      <span class="item-cell-title text-primary">
+                        (IGT104) 이가탄에프캡슐</span
+                      >
+                    </div>
+                  </div>
+                  <div class="section02">
+                    <div class="item num05">
+                      <VChip color="primary" size="small">
+                        <div class="chip-item">
+                          <span class="item-title">마지막발주</span>
+                          <span class="item-text">2024.12.12</span>
+                        </div>
+                      </VChip>
+                    </div>
+                  </div>
+                </div>
+                <!-- 오른쪽 컨텐츠 -->
+                <div class="d-flex flex-row justify-content-end">
+                  <div class="item">
+                    <span class="item-title">규격</span>
+                    <span class="item-text">100C</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">수량</span>
+                    <span class="item-text">
+                      <AppTextField value="10" density="compact" readonly
+                    /></span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">단가</span>
+                    <span class="item-text">50,000</span>
+                  </div>
+                  <div class="item">
+                    <span class="item-title">공급가액</span>
+                    <span class="item-text">80,000</span>
+                  </div>
+                </div>
+              </div>
+            </VCardText>
+          </VCard>
+          <div class="d-flex mt-2 flex-wrap justify-center w-100 card-more-btn">
+            <VBtn size="small" color="secondary" variant="tonal">
+              <VIcon start icon="tabler-plus" />
+              더보기
+            </VBtn>
+          </div>
+        </VWindowItem>
+      </VWindow>
+    </VCol>
+  </VRow>
+  <VRow>
+    <VCol cols="12" class="card-table-infinity">
+      <STitleArea>
+        <div class="d-flex justify-start flex-wrap">
+          <h5 class="d-flex text-h5 font-weight-medium align-center">
+            주문 품목 리스트
           </h5>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small" color="secondary" variant="tonal"> 선택삭제 </VBtn>
-          <VBtn size="small">반품추가</VBtn>
+          <VBtn size="small" color="secondary" variant="tonal"
+            ><VIcon start icon="tabler-minus" />삭제
+          </VBtn>
+          <VBtn size="small"
+            ><VIcon start icon="tabler-plus" />신규등록 주문추가</VBtn
+          >
         </div>
       </STitleArea>
       <VCard class="data">
@@ -164,23 +356,33 @@ const onClear = () => {
                   <VCheckbox />
                 </div>
                 <div class="item num02">
-                  <span class="item-cell-title"> (IGT104) 이가탄에프캡슐</span>
-                </div>
-              </div>
-              <div class="section02">
-                <div class="item num03">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">임시반품번호</span>
-                      <span class="item-text"> MIDIDIDID </span>
+                      <span class="item-title">유형</span>
+                      <span class="item-text"> ETC-메디키넷</span>
                     </div>
                   </VChip>
                 </div>
+                <div class="item num03" style="flex: none">
+                  <span class="item-cell-title text-primary">
+                    (IGT104) 이가탄에프캡슐</span
+                  >
+                </div>
+              </div>
+              <div class="section02">
                 <div class="item num04">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">반품사유</span>
-                      <span class="item-text"> 폐기성(유효기간임박)</span>
+                      <span class="item-title">임시주문번호</span>
+                      <span class="item-text"> MIDIDID</span>
+                    </div>
+                  </VChip>
+                </div>
+                <div class="item num05">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">마지막발주</span>
+                      <span class="item-text"> 주문확정시발급</span>
                     </div>
                   </VChip>
                 </div>
@@ -189,16 +391,14 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
-                <span class="item-title">포장단위</span>
-                <span class="item-text">30T</span>
+                <span class="item-title">규격</span>
+                <span class="item-text">100C</span>
               </div>
               <div class="item">
                 <span class="item-title">수량</span>
-                <span class="item-text">30</span>
-              </div>
-              <div class="item">
-                <span class="item-title">낱알수량</span>
-                <span class="item-text">30</span>
+                <span class="item-text">
+                  <AppTextField value="10" density="compact"
+                /></span>
               </div>
               <div class="item">
                 <span class="item-title">단가</span>
@@ -224,23 +424,33 @@ const onClear = () => {
                   <VCheckbox />
                 </div>
                 <div class="item num02">
-                  <span class="item-cell-title"> (IGT104) 이가탄에프캡슐</span>
-                </div>
-              </div>
-              <div class="section02">
-                <div class="item num03">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">임시반품번호</span>
-                      <span class="item-text"> MIDIDIDID </span>
+                      <span class="item-title">유형</span>
+                      <span class="item-text"> ETC-메디키넷</span>
                     </div>
                   </VChip>
                 </div>
+                <div class="item num03" style="flex: none">
+                  <span class="item-cell-title text-primary">
+                    (IGT104) 이가탄에프캡슐</span
+                  >
+                </div>
+              </div>
+              <div class="section02">
                 <div class="item num04">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">반품사유</span>
-                      <span class="item-text"> 폐기성(유효기간임박)</span>
+                      <span class="item-title">임시주문번호</span>
+                      <span class="item-text"> MIDIDID</span>
+                    </div>
+                  </VChip>
+                </div>
+                <div class="item num05">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">마지막발주</span>
+                      <span class="item-text"> 주문확정시발급</span>
                     </div>
                   </VChip>
                 </div>
@@ -249,16 +459,82 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
-                <span class="item-title">포장단위</span>
-                <span class="item-text">30T</span>
+                <span class="item-title">규격</span>
+                <span class="item-text">100C</span>
               </div>
               <div class="item">
                 <span class="item-title">수량</span>
-                <span class="item-text">30</span>
+                <span class="item-text">
+                  <AppTextField value="10" density="compact"
+                /></span>
               </div>
               <div class="item">
-                <span class="item-title">낱알수량</span>
-                <span class="item-text">30</span>
+                <span class="item-title">단가</span>
+                <span class="item-text">50,000</span>
+              </div>
+              <div class="item">
+                <span class="item-title">공급가액</span>
+                <span class="item-text">80,000</span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div
+              class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
+            >
+              <div class="section01">
+                <div class="item num01">
+                  <VCheckbox />
+                </div>
+                <div class="item num02">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">유형</span>
+                      <span class="item-text"> ETC-메디키넷</span>
+                    </div>
+                  </VChip>
+                </div>
+                <div class="item num03" style="flex: none">
+                  <span class="item-cell-title text-primary">
+                    (IGT104) 이가탄에프캡슐</span
+                  >
+                </div>
+              </div>
+              <div class="section02">
+                <div class="item num04">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">임시주문번호</span>
+                      <span class="item-text"> MIDIDID</span>
+                    </div>
+                  </VChip>
+                </div>
+                <div class="item num05">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">마지막발주</span>
+                      <span class="item-text"> 주문확정시발급</span>
+                    </div>
+                  </VChip>
+                </div>
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">규격</span>
+                <span class="item-text">100C</span>
+              </div>
+              <div class="item">
+                <span class="item-title">수량</span>
+                <span class="item-text">
+                  <AppTextField value="10" density="compact"
+                /></span>
               </div>
               <div class="item">
                 <span class="item-title">단가</span>
@@ -527,6 +803,7 @@ export default {
         align-items: center;
         &.num01 {
           width: 24px;
+          min-width: 24px;
           height: 24px;
           overflow: visible;
 
@@ -534,24 +811,24 @@ export default {
             margin: -6px;
           }
         }
-
-        &.num02 {
+        &.num03 {
           flex: 1;
         }
-
-        &.num03,
-        &.num04 {
+        &.num02,
+        &.num04,
+        &.num05 {
           .v-chip {
             width: 100%;
           }
         }
-
-        &.num03 {
-          width: 170px;
+        &.num02 {
+          width: 140px;
         }
-
         &.num04 {
-          width: 200px;
+          width: 160px;
+        }
+        &.num05 {
+          width: 180px;
         }
       }
     }
@@ -563,29 +840,29 @@ export default {
       .item {
         width: 86px;
         align-items: center;
-
         &:nth-child(1) {
-          width: 100px;
-        }
-
-        &:nth-child(2) {
           width: 80px;
         }
 
-        &:nth-child(3) {
+        &:nth-child(2) {
           width: 100px;
-        }
-
-        &:nth-child(4),
-        &:nth-child(5) {
+          .item-text {
+            width: 100%;
+            max-width: 80px;
+          }
           justify-content: space-between;
         }
 
+        &:nth-child(3),
         &:nth-child(4) {
+          justify-content: space-between;
+        }
+
+        &:nth-child(3) {
           width: 140px;
         }
 
-        &:nth-child(5) {
+        &:nth-child(4) {
           width: 150px;
         }
       }
@@ -598,7 +875,6 @@ export default {
   gap: 8px;
   flex-direction: row !important;
   flex: 1;
-  min-width: 300px;
 }
 .section02 {
   display: flex;
@@ -608,7 +884,6 @@ export default {
   justify-content: flex-end;
 }
 
-// ✅ 반응형 스타일
 @media (max-width: 960px) {
   .top-search-area {
     .v-btn[variant="tonal"] {
@@ -620,13 +895,21 @@ export default {
     flex-direction: column !important;
     align-items: flex-start !important;
   }
+  .section01 {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
   .section02 {
     display: flex;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 4px 16px;
+    gap: 4px 8px;
   }
-  .top-search-return-start {
+  .num03 {
+    display: block !important;
+    width: 100% !important;
+  }
+  .top-search-order-start {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -634,7 +917,7 @@ export default {
     align-items: normal;
   }
 
-  .top-search-return-end {
+  .top-search-order-end {
     display: flex;
     flex-wrap: wrap;
     gap: 8px 16px;
@@ -652,7 +935,7 @@ export default {
       .justify-content-start {
         flex-direction: column !important;
         justify-content: left;
-        gap: 4px;
+        gap: 4px 8px;
         align-items: normal;
       }
 
@@ -660,9 +943,8 @@ export default {
         flex-direction: row !important;
         flex-wrap: wrap;
         gap: 4px 16px;
-
         .item {
-          width: 100%;
+          width: calc(50% - 8px) !important;
         }
       }
     }
@@ -675,7 +957,6 @@ export default {
   }
 }
 
-// ✅ 하단 영역 스타일
 .botttom-total-area {
   padding: 24px;
 
