@@ -1,5 +1,5 @@
 export default [
-  { heading: 'Menu' },
+  { heading: 'Menu(MR)' },
   {
     title: '주문',
     icon: { icon: 'tabler-shopping-cart' },
