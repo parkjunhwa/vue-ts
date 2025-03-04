@@ -312,11 +312,6 @@ export default {
     }
   }
 }
-.otcfield.error--text :deep(.v-field__input),
-.etcfield.error--text :deep(.v-field__input),
-.creditfield.error--text :deep(.v-field__input) {
-  color: var(--error-main);
-}
 
 .basic-table-card {
   padding: 16px;

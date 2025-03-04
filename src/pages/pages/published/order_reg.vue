@@ -45,7 +45,7 @@ const currentTab = ref("window1");
           <AppTextField
             prepend-inner-icon="tabler-asterisk-simple"
             append-inner-icon="tabler-search"
-            placeholder="거래코드, 거래처명을 선택하세요."
+            placeholder="거래처코드, 거래처명을 선택하세요."
           />
         </VCol>
         <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
@@ -780,12 +780,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.otcfield.error--text :deep(.v-field__input),
-.etcfield.error--text :deep(.v-field__input),
-.creditfield.error--text :deep(.v-field__input) {
-  color: var(--error-main);
-}
-
 .card-table-infinity {
   .data {
     gap: 8px 16px;

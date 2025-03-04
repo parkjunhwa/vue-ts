@@ -1,8 +1,23 @@
 <script setup>
-import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import { ref } from "vue";
+import Alert001 from "./published/alert/alert001.vue";
+import Alert002 from "./published/alert/alert002.vue";
+import Alert003 from "./published/alert/alert003.vue";
+import Alert004 from "./published/alert/alert004.vue";
+import Alert005 from "./published/alert/alert005.vue";
+import Alert006 from "./published/alert/alert006.vue";
+import Alert007 from "./published/alert/alert007.vue";
+import Popup001 from "./published/popup/popup001.vue";
+import Popup002 from "./published/popup/popup002.vue";
+import Popup003 from "./published/popup/popup003.vue";
+import Popup004 from "./published/popup/popup004.vue";
+import Popup005 from "./published/popup/popup005.vue";
+import Popup006 from "./published/popup/popup006.vue";
+import Popup007 from "./published/popup/popup007.vue";
+import Popup008 from "./published/popup/popup008.vue";
+import Popup009 from "./published/popup/popup009.vue";
 
 const selectedValue = ref(10); // 기본값을 10으로 설정
 </script>
@@ -95,7 +110,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
         </VCol>
         <VCol cols="12" class="d-flex flex-wrap justify-center">
           <div class="d-flex gap-2 mt-2 flex-wrap justify-center w-100">
-            <VBtn color="secondary">취소</VBtn>
+            <VBtn variant="outlined" color="secondary">취소</VBtn>
             <VBtn color="primary">저장</VBtn>
           </div>
         </VCol>
@@ -105,19 +120,40 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
 
   <VRow>
     <VCol cols="12" class="card-table-infinity">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            주문등록
-          </h5>
-        </div>
-
-        <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small" color="secondary" variant="tonal"> 취소 </VBtn>
-          <VBtn size="small"> 저장 </VBtn>
-        </div>
-      </STitleArea>
-      <DemoDataTableCardInfinity />
+      <div class="d-flex justify-start flex-wrap">
+        <h5 class="d-flex text-h5 font-weight-medium align-center">팝업목록</h5>
+      </div>
+    </VCol>
+  </VRow>
+  <VRow>
+    <VCol cols="12" class="d-flex flex-wrap gap-2">
+      <Popup001 />
+      <Popup002 />
+      <Popup003 />
+      <Popup004 />
+      <Popup005 />
+      <Popup006 />
+      <Popup007 />
+      <Popup008 />
+      <Popup009 />
+    </VCol>
+  </VRow>
+  <VRow>
+    <VCol cols="12">
+      <div class="d-flex justify-start flex-wrap">
+        <h5 class="d-flex text-h5 font-weight-medium align-center">얼럿</h5>
+      </div>
+    </VCol>
+  </VRow>
+  <VRow>
+    <VCol cols="12" class="d-flex flex-wrap gap-2">
+      <Alert001 />
+      <Alert002 />
+      <Alert003 />
+      <Alert004 />
+      <Alert005 />
+      <Alert006 />
+      <Alert007 />
     </VCol>
   </VRow>
 </template>
