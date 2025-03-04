@@ -79,9 +79,7 @@ const file = ref(null);
     <!-- Dialog Content -->
     <VCard title="주문등록 엑셀업로드">
       <VCardText>
-        <VRow
-          class="d-flex gap-2 flex-row justify-center w-100 popup-top-between"
-        >
+        <VRow class="d-flex gap-2 justify-center popup-top-between">
           <VCol cols="9">
             <VFileInput
               chips
@@ -111,12 +109,12 @@ const file = ref(null);
           hide-default-footer
         >
           <template v-slot:item="{ item, index }">
-            <tr class="cursor-pointer">
+            <tr>
               <td>{{ item.item01 }}</td>
-              <td>{{ item.item02 }}</td>
+              <td style="min-width: 120px">{{ item.item02 }}</td>
               <td>{{ item.item03 }}</td>
               <td>{{ item.item04 }}</td>
-              <td>
+              <td style="width: 100px">
                 <AppTextField
                   placeholder="수량"
                   density="compact"
