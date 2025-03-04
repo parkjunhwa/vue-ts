@@ -120,6 +120,7 @@ export default {
     return {
       expanded: true,
       values: "",
+      items: ["Option 1", "Option 2", "Option 3"],
       nameRules: [(v) => !!v || "필수 항목입니다"],
     };
   },
