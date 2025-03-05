@@ -32,11 +32,15 @@ const currentTab = ref("window1");
       </h3>
     </div>
 
-    <div class="d-flex gap-4 align-center flex-wrap"></div>
+    <div class="d-flex gap-4 align-center flex-wrap">
+      <VBtn size="large" color="primary">잔고확인 조회</VBtn>
+    </div>
   </div>
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
+
+        
         <VCol cols="12" lg="12" md="12" sm="12" xs="12">
           <div class="top-search-eledgerlist-start">
             <AppTextField
@@ -118,11 +122,7 @@ const currentTab = ref("window1");
             <VTab>OTC</VTab>
           </VTabs>
         </div>
-        <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small"
-            ><VIcon start icon="tabler-plus" />거래원장 전자서명</VBtn
-          >
-        </div>
+        <div class="d-flex gap-2 align-center flex-wrap"></div>
       </STitleArea>
       <VCard class="basic-table-card">
         <VWindow v-model="currentTab">
@@ -138,7 +138,6 @@ const currentTab = ref("window1");
                   <th>공급가액</th>
                   <th>부가세</th>
                   <th>잔고</th>
-                  <th>서명확인</th>
                 </tr>
               </thead>
 
@@ -152,7 +151,6 @@ const currentTab = ref("window1");
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">-</td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>24.12.12</td>
@@ -163,7 +161,6 @@ const currentTab = ref("window1");
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>24.12.12</td>
@@ -174,7 +171,6 @@ const currentTab = ref("window1");
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>24.12.12</td>
@@ -185,7 +181,6 @@ const currentTab = ref("window1");
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">-</td>
                   <td class="text-right">1,000,000</td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>24.12.12</td>
@@ -196,7 +191,6 @@ const currentTab = ref("window1");
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>24.12.12</td>
@@ -207,7 +201,6 @@ const currentTab = ref("window1");
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
                   <td class="text-right">1,000,000</td>
-                  <td></td>
                 </tr>
                 <tr class="total-line">
                   <td>24.01</td>
@@ -218,7 +211,6 @@ const currentTab = ref("window1");
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">-</td>
-                  <td></td>
                 </tr>
                 <tr class="total-line">
                   <td>24.01</td>
@@ -229,12 +221,6 @@ const currentTab = ref("window1");
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">1,000,000</td>
                   <td class="text-right font-weight-bold">-</td>
-                  <td>
-                    <VBtn size="x-small" color="success">
-                      거래원장 전자서명
-                    </VBtn>
-                    <span class="ml-2"> 2024.12.12 </span>
-                  </td>
                 </tr>
               </tbody>
             </VTable>

@@ -6,15 +6,15 @@ import { StarterKit } from "@tiptap/starter-kit";
 import { EditorContent, useEditor } from "@tiptap/vue-3";
 
 const props = defineProps<{
-  modelValue: string
-  placeholder?: string
-}>()
+  modelValue: string;
+  placeholder?: string;
+  readonly?: boolean;
+}>();
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void
-}>()
-
-const editorRef = ref()
+  (e: "update:modelValue", value: string): void;
+}>();
+const editorRef = ref();
 
 const editor = useEditor({
   content: props.modelValue,
@@ -30,29 +30,37 @@ const editor = useEditor({
     Underline,
   ],
   onUpdate() {
-    if (!editor.value)
-      return
-
-    emit('update:modelValue', editor.value.getHTML())
+    if (!editor.value) return;
+    emit("update:modelValue", editor.value.getHTML());
   },
-})
+});
 
-watch(() => props.modelValue, () => {
-  const isSame = editor.value?.getHTML() === props.modelValue
+// ✅ readonly 속성 변경 시, editor의 `editable` 상태 업데이트
+watch(
+  () => props.readonly,
+  (newVal) => {
+    if (editor.value) {
+      editor.value.setOptions({ editable: !newVal });
+    }
+  }
+);
 
-  if (isSame)
-    return
-
-  editor.value?.commands.setContent(props.modelValue)
-})
+watch(
+  () => props.modelValue,
+  () => {
+    const isSame = editor.value?.getHTML() === props.modelValue;
+    if (isSame) return;
+    editor.value?.commands.setContent(props.modelValue);
+  }
+);
 </script>
 
 <template>
   <div>
     <!-- 툴바는 readonly일 때 숨김 -->
     <div
-      v-if="editor"
-      class="d-flex gap-2 py-2 px-6 flex-wrap align-center editor"
+      v-if="editor && !readonly"
+      class="d-flex gap-2 py-2 px-2 flex-wrap align-center editor"
     >
       <IconBtn
         size="small"
@@ -141,9 +149,11 @@ watch(() => props.modelValue, () => {
 
     <VDivider v-if="!readonly" />
 
+    <!-- ✅ readonly 시, 스타일 적용 -->
     <EditorContent
       ref="editorRef"
       :editor="editor"
+      :class="{ 'editor-readonly': readonly }"
     />
   </div>
 </template>
