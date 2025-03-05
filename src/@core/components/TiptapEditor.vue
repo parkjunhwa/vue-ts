@@ -1,56 +1,65 @@
 <script setup lang="ts">
-import { Placeholder } from '@tiptap/extension-placeholder'
-import { TextAlign } from '@tiptap/extension-text-align'
-import { Underline } from '@tiptap/extension-underline'
-import { StarterKit } from '@tiptap/starter-kit'
-import { EditorContent, useEditor } from '@tiptap/vue-3'
+import { Placeholder } from "@tiptap/extension-placeholder";
+import { TextAlign } from "@tiptap/extension-text-align";
+import { Underline } from "@tiptap/extension-underline";
+import { StarterKit } from "@tiptap/starter-kit";
+import { EditorContent, useEditor } from "@tiptap/vue-3";
 
 const props = defineProps<{
-  modelValue: string
-  placeholder?: string
-}>()
+  modelValue: string;
+  placeholder?: string;
+  readonly?: boolean; // ✅ readonly 추가
+}>();
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void
-}>()
-
-const editorRef = ref()
+  (e: "update:modelValue", value: string): void;
+}>();
 
 const editor = useEditor({
   content: props.modelValue,
+  editable: !props.readonly, // ✅ readonly 상태 반영
   extensions: [
     StarterKit,
     TextAlign.configure({
-      types: ['heading', 'paragraph'],
+      types: ["heading", "paragraph"],
     }),
     Placeholder.configure({
-      placeholder: props.placeholder ?? 'Write something here...',
+      placeholder: props.placeholder ?? "Write something here...",
     }),
     Underline,
   ],
   onUpdate() {
-    if (!editor.value)
-      return
-
-    emit('update:modelValue', editor.value.getHTML())
+    if (!editor.value) return;
+    emit("update:modelValue", editor.value.getHTML());
   },
-})
+});
 
-watch(() => props.modelValue, () => {
-  const isSame = editor.value?.getHTML() === props.modelValue
+// ✅ readonly 속성 변경 시, editor의 `editable` 상태 업데이트
+watch(
+  () => props.readonly,
+  (newVal) => {
+    if (editor.value) {
+      editor.value.setOptions({ editable: !newVal });
+    }
+  }
+);
 
-  if (isSame)
-    return
-
-  editor.value?.commands.setContent(props.modelValue)
-})
+watch(
+  () => props.modelValue,
+  () => {
+    const isSame = editor.value?.getHTML() === props.modelValue;
+    if (isSame) return;
+    editor.value?.commands.setContent(props.modelValue);
+  }
+);
 </script>
 
 <template>
   <div>
+    <!-- 툴바는 readonly일 때 숨김 -->
     <div
-      v-if="editor"
-      class="d-flex gap-2 py-2 px-6 flex-wrap align-center editor"
+      v-if="editor && !readonly"
+      class="d-flex gap-2 py-2 px-2 flex-wrap align-center editor"
     >
       <IconBtn
         size="small"
@@ -79,10 +88,7 @@ watch(() => props.modelValue, () => {
         :color="editor.isActive('italic') ? 'primary' : 'default'"
         @click="editor.chain().focus().toggleItalic().run()"
       >
-        <VIcon
-          icon="tabler-italic"
-          class="font-weight-medium"
-        />
+        <VIcon icon="tabler-italic" class="font-weight-medium" />
       </IconBtn>
 
       <IconBtn
@@ -108,7 +114,9 @@ watch(() => props.modelValue, () => {
       <IconBtn
         size="small"
         rounded
-        :color="editor.isActive({ textAlign: 'center' }) ? 'primary' : 'default'"
+        :color="
+          editor.isActive({ textAlign: 'center' }) ? 'primary' : 'default'
+        "
         :variant="editor.isActive({ textAlign: 'center' }) ? 'tonal' : 'text'"
         @click="editor.chain().focus().setTextAlign('center').run()"
       >
@@ -129,18 +137,22 @@ watch(() => props.modelValue, () => {
         size="small"
         rounded
         :variant="editor.isActive({ textAlign: 'justify' }) ? 'tonal' : 'text'"
-        :color="editor.isActive({ textAlign: 'justify' }) ? 'primary' : 'default'"
+        :color="
+          editor.isActive({ textAlign: 'justify' }) ? 'primary' : 'default'
+        "
         @click="editor.chain().focus().setTextAlign('justify').run()"
       >
         <VIcon icon="tabler-align-justified" />
       </IconBtn>
     </div>
 
-    <VDivider />
+    <VDivider v-if="!readonly" />
 
+    <!-- ✅ readonly 시, 스타일 적용 -->
     <EditorContent
       ref="editorRef"
       :editor="editor"
+      :class="{ 'editor-readonly': readonly }"
     />
   </div>
 </template>
@@ -150,6 +162,7 @@ watch(() => props.modelValue, () => {
   padding: 0.5rem;
   min-block-size: 15vh;
   outline: none;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
 
   p {
     margin-block-end: 0;
@@ -157,10 +170,26 @@ watch(() => props.modelValue, () => {
 
   p.is-editor-empty:first-child::before {
     block-size: 0;
-    color: #adb5bd;
     content: attr(data-placeholder);
     float: inline-start;
     pointer-events: none;
   }
+}
+
+/* ✅ readonly 상태일 때 스타일 */
+.editor-readonly {
+  .v-divider {
+    display: none;
+
+    border-color: rgba(47, 43, 61, 0.7);
+  }
+  .ProseMirror {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  opacity: 1;
+  border-radius: 6px;
+  background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+  color: rgb(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 </style>

@@ -1,23 +1,23 @@
 <script setup>
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import Alert001 from "@/pages/pages/published/alert/alert001.vue";
+import Alert002 from "@/pages/pages/published/alert/alert002.vue";
+import Alert003 from "@/pages/pages/published/alert/alert003.vue";
+import Alert004 from "@/pages/pages/published/alert/alert004.vue";
+import Alert005 from "@/pages/pages/published/alert/alert005.vue";
+import Alert006 from "@/pages/pages/published/alert/alert006.vue";
+import Alert007 from "@/pages/pages/published/alert/alert007.vue";
+import Popup001 from "@/pages/pages/published/popup/popup001.vue";
+import Popup002 from "@/pages/pages/published/popup/popup002.vue";
+import Popup003 from "@/pages/pages/published/popup/popup003.vue";
+import Popup004 from "@/pages/pages/published/popup/popup004.vue";
+import Popup005 from "@/pages/pages/published/popup/popup005.vue";
+import Popup006 from "@/pages/pages/published/popup/popup006.vue";
+import Popup007 from "@/pages/pages/published/popup/popup007.vue";
+import Popup008 from "@/pages/pages/published/popup/popup008.vue";
+import Popup009 from "@/pages/pages/published/popup/popup009.vue";
 import { ref } from "vue";
-import Alert001 from "./published/alert/alert001.vue";
-import Alert002 from "./published/alert/alert002.vue";
-import Alert003 from "./published/alert/alert003.vue";
-import Alert004 from "./published/alert/alert004.vue";
-import Alert005 from "./published/alert/alert005.vue";
-import Alert006 from "./published/alert/alert006.vue";
-import Alert007 from "./published/alert/alert007.vue";
-import Popup001 from "./published/popup/popup001.vue";
-import Popup002 from "./published/popup/popup002.vue";
-import Popup003 from "./published/popup/popup003.vue";
-import Popup004 from "./published/popup/popup004.vue";
-import Popup005 from "./published/popup/popup005.vue";
-import Popup006 from "./published/popup/popup006.vue";
-import Popup007 from "./published/popup/popup007.vue";
-import Popup008 from "./published/popup/popup008.vue";
-import Popup009 from "./published/popup/popup009.vue";
 
 const selectedValue = ref(10); // 기본값을 10으로 설정
 </script>
