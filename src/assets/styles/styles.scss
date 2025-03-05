@@ -703,21 +703,19 @@ $positions: (
     margin: 0;
 
     @media (max-width: 800px) {
-        flex-flow: column;
-    }
+        .v-col {
+            padding: 0;
+            flex-wrap: nowrap;
+            flex-flow: row;
 
-    .v-col {
-        padding: 0;
-        flex-wrap: nowrap;
-        flex-flow: row;
-
-        @media (max-width: 800px) {
-            flex: 1;
-            max-width: 100%;
+            @media (max-width: 800px) {
+                flex: 1;
+                max-width: 100%;
+            }
         }
-    }
 
-    .v-col-9 {
-        flex: 1;
+        .v-col-9 {
+            flex: 1;
+        }
     }
 }

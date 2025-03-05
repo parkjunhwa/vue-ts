@@ -108,6 +108,7 @@ declare module 'vue-router/auto-routes' {
     'pages-published-order-list': RouteRecordInfo<'pages-published-order-list', '/pages/published/order_list', Record<never, never>, Record<never, never>>,
     'pages-published-order-reg': RouteRecordInfo<'pages-published-order-reg', '/pages/published/order_reg', Record<never, never>, Record<never, never>>,
     'pages-published-order-view': RouteRecordInfo<'pages-published-order-view', '/pages/published/order_view', Record<never, never>, Record<never, never>>,
+    'pages-published-order-view copy': RouteRecordInfo<'pages-published-order-view copy', '/pages/published/order_view copy', Record<never, never>, Record<never, never>>,
     'pages-published-popup-popup001': RouteRecordInfo<'pages-published-popup-popup001', '/pages/published/popup/popup001', Record<never, never>, Record<never, never>>,
     'pages-published-popup-popup002': RouteRecordInfo<'pages-published-popup-popup002', '/pages/published/popup/popup002', Record<never, never>, Record<never, never>>,
     'pages-published-popup-popup003': RouteRecordInfo<'pages-published-popup-popup003', '/pages/published/popup/popup003', Record<never, never>, Record<never, never>>,

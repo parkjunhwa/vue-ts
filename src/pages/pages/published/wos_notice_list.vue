@@ -34,7 +34,7 @@ import TitleArea from "@/layouts/components/TitleArea.vue";
           />
         </VCol>
         <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
-          <DemoDateTimePickerRange />
+          <DemoDateTimePickerRange readonly />
         </VCol>
         <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-end w-100">

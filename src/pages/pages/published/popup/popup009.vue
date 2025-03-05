@@ -114,7 +114,7 @@ const file = ref(null);
               <td style="min-width: 120px">{{ item.item02 }}</td>
               <td>{{ item.item03 }}</td>
               <td>{{ item.item04 }}</td>
-              <td style="min-width: 100px">
+              <td style="width: 100px">
                 <AppTextField
                   placeholder="수량"
                   density="compact"
