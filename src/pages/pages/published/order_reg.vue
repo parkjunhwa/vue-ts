@@ -88,10 +88,11 @@ const currentTab = ref("window1");
         <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
           <AppTextField
             v-model="inputC"
-            prefix="OTC회전여부"
-            type="text"
+            prefix="현잔고"
+            value="2,000,000"
             readonly
-            class="otcfield text-right"
+            suffix="원"
+            class="form-align-right"
           />
         </VCol>
         <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">

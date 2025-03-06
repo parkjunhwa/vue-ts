@@ -121,14 +121,12 @@ const file = ref(null);
                   v-model="tabledata[index].item05"
                 />
               </td>
-              <td>{{ item.item06 }}</td>
+              <td style="background: rgba(var(--v-theme-success), 0.08)">
+                {{ item.item06 }}
+              </td>
             </tr>
           </template>
         </VDataTable>
-      </VCardText>
-
-      <VCardText class="d-flex justify-end">
-        <VBtn @click="isDialogVisible = false"> 확인</VBtn>
       </VCardText>
     </VCard>
   </VDialog>

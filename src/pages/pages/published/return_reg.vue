@@ -4,8 +4,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -156,6 +159,11 @@ const onClear = (inputRef) => {
             </VCol>
           </VRow>
         </VCol>
+        <div class="d-flex gap-2 align-center justify-center w-100 pa-1">
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-plus" />반품추가</VBtn
+          >
+        </div>
       </BottomTotalArea>
     </VCol>
   </VRow>
@@ -519,7 +527,6 @@ export default {
   }
 }
 
-// ✅ 하단 영역 스타일
 .botttom-total-area {
   padding: 24px;
 

@@ -4,8 +4,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -37,42 +40,46 @@ const onClear = (inputRef) => {
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12">
           <AppTextField
             prepend-inner-icon="tabler-asterisk-simple"
             append-inner-icon="tabler-search"
-            placeholder="거래처코드, 거래처명을 검색하세요."
+            placeholder="간납처를 선택택하세요."
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
           <AppTextField
             prepend-inner-icon="tabler-asterisk-simple"
             append-inner-icon="tabler-search"
-            placeholder="간납처코드, 간납처명을 검색하세요."
+            placeholder="원외처방처를 선택하세요."
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
           <AppSelect
             :items="items"
-            placeholder="원외처방제를 선택하세요."
+            placeholder="수거지 주소를 선택하세요."
             prepend-inner-icon="tabler-asterisk-simple"
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded"
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded"
+          ><AppTextField
+            placeholder="수거처 상세주소 입력"
+            value="수거처 상세주소 출력"
+            readonly
+        /></VCol>
+        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+          <AppTextField placeholder="수거요청 사항을 입력하세요." />
+        </VCol>
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded"
           ><VRadioGroup v-model="inlineRadio" inline>
             <VRadio label="완제품 반품" value="radio-1" />
             <VRadio label="낱알반품" value="radio-2" /> </VRadioGroup
         ></VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <AppTextField
             append-inner-icon="tabler-search"
             placeholder="제품코드, 제품명을 검색하세요."
           />
-        </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
-          <VBtn variant="tonal" style="min-width: 120px"
-            ><VIcon start icon="tabler-scan" />제품스캔
-          </VBtn>
         </VCol>
 
         <VCol cols="12" v-show="expanded">
@@ -91,7 +98,7 @@ const onClear = (inputRef) => {
   <VRow>
     <VCol>
       <BottomTotalArea class="custom">
-        <VCol cols="12" lg="2" md="6" sm="12" xs="12">
+        <VCol cols="12" lg="6" md="6" sm="12" xs="12">
           <AppTextField
             label="제품명"
             placeholder="제품명입력"
@@ -115,6 +122,7 @@ const onClear = (inputRef) => {
                 placeholder="수량"
                 value="30"
                 disabled
+                class="required"
               />
             </VCol>
             <VCol cols="4">
@@ -126,26 +134,6 @@ const onClear = (inputRef) => {
             </VCol>
           </VRow>
         </VCol>
-        <VCol cols="12" lg="2" md="4" sm="12" xs="12">
-          <AppTextField
-            label="단가"
-            placeholder="단가입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="4" sm="12" xs="12">
-          <AppTextField
-            label="반품금액(VAT제외)"
-            placeholder="반품금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
         <VCol cols="12" lg="3" md="4" sm="12" xs="12">
           <VRow class="d-flex align-end">
             <VCol cols="12" lg="6" md="6" sm="12" xs="12">
@@ -156,6 +144,11 @@ const onClear = (inputRef) => {
             </VCol>
           </VRow>
         </VCol>
+        <div class="d-flex gap-2 align-center justify-center w-100 pa-1">
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-plus" />반품추가</VBtn
+          >
+        </div>
       </BottomTotalArea>
     </VCol>
   </VRow>
@@ -168,10 +161,15 @@ const onClear = (inputRef) => {
           </h5>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-arrow-bar-to-down" />엑셀다운로드</VBtn
+          >
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-arrow-bar-to-up" />엑셀업로드</VBtn
+          >
           <VBtn size="small" color="secondary" variant="tonal"
             ><VIcon start icon="tabler-minus" />선택삭제
           </VBtn>
-          <VBtn size="small"><VIcon start icon="tabler-plus" />반품추가</VBtn>
         </div>
       </STitleArea>
       <VCard class="data">
@@ -519,7 +517,6 @@ export default {
   }
 }
 
-// ✅ 하단 영역 스타일
 .botttom-total-area {
   padding: 24px;
 

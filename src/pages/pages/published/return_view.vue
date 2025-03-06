@@ -4,8 +4,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -621,6 +624,7 @@ export default {
 }
 .top-search-return-start {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;
@@ -638,6 +642,7 @@ export default {
 }
 .top-search-return-end {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;

@@ -7,6 +7,13 @@ const inputC = ref("이상없음");
 const inputD = ref("회전초과");
 const inputE = ref("여신초과");
 const currentTab = ref("window1");
+
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 <template>
   <div class="d-flex flex-wrap justify-start mb-2 align-center">
@@ -127,7 +134,15 @@ const currentTab = ref("window1");
       <VCard class="basic-table-card">
         <VWindow v-model="currentTab">
           <VWindowItem v-for="item in 3" :key="`window${item}`">
-            <VTable height="400" fixed-header class="text-no-wrap">
+            <VDataTable
+              :headers="headers"
+              :items="tabledata"
+              density="compact"
+              class="text-no-wrap"
+              fixed-header
+              style="max-height: 314"
+              hide-default-footer
+            >
               <thead>
                 <tr>
                   <th>일자</th>
@@ -237,7 +252,7 @@ const currentTab = ref("window1");
                   </td>
                 </tr>
               </tbody>
-            </VTable>
+            </VDataTable>
           </VWindowItem>
         </VWindow>
       </VCard>

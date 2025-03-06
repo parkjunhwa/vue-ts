@@ -1,6 +1,12 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 
 <template>

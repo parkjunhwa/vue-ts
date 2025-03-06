@@ -72,11 +72,14 @@ const tatbledata = [
         </BottomTotalArea>
         <VWindow v-model="currentTab" style="overflow: visible">
           <VWindowItem v-for="item in 3" :key="`window${item}`">
-            <VTable
-              fixed-header
+            <VDataTable
+              :headers="headers"
+              :items="tabledata"
               density="compact"
               class="text-no-wrap"
+              fixed-header
               style="max-height: 450px"
+              hide-default-footer
             >
               <thead>
                 <tr>
@@ -95,7 +98,7 @@ const tatbledata = [
                   </td>
                 </tr>
               </tbody>
-            </VTable>
+            </VDataTable>
           </VWindowItem>
         </VWindow>
       </VCardText>

@@ -2,6 +2,11 @@
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 const basicEditorContent = ref(`
 <p>
   텍스트 입력을 자유롭게 할 수 있습니다.

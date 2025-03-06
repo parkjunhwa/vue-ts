@@ -12,6 +12,12 @@ const basicEditorContent = ref(`
 `);
 
 const file = ref(null);
+
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 
 <template>

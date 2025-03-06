@@ -81,11 +81,14 @@ const tatbledata = [
           append-inner-icon="tabler-search"
           placeholder="제품코드, 제품명을 선택하세요."
         />
-        <VTable
-          fixed-header
+        <VDataTable
+          :headers="headers"
+          :items="tabledata"
           density="compact"
           class="text-no-wrap"
+          fixed-header
           style="max-height: 450px"
+          hide-default-footer
         >
           <thead>
             <tr>
@@ -111,7 +114,7 @@ const tatbledata = [
               </td>
             </tr>
           </tbody>
-        </VTable>
+        </VDataTable>
       </VCardText>
 
       <VCardText class="d-flex justify-end">

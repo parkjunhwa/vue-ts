@@ -753,6 +753,9 @@ export default {
     gap: 8px;
     flex-direction: column !important;
     align-items: normal;
+    .app-picker-field {
+      width: 340px;
+    }
   }
   .card-table-infinity .data .justify-content-start {
     flex-direction: row !important;

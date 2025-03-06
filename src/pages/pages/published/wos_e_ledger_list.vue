@@ -39,56 +39,50 @@ const currentTab = ref("window1");
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-
-        
-        <VCol cols="12" lg="12" md="12" sm="12" xs="12">
+        <VCol cols="12" class="top-search-eledgerlist">
           <div class="top-search-eledgerlist-start">
+            <div class="item">
+              <h6 class="d-flex text-h6 font-weight-medium align-center">
+                [IDIDID] 선택 거래처명
+              </h6>
+            </div>
+            <div class="item">
+              <VChip color="primary" size="small">
+                <div class="chip-item">
+                  <span class="item-title">사업자번호</span>
+                </div>
+              </VChip>
+              <span class="item-text">1234567890</span>
+            </div>
+            <div class="item">
+              <VChip color="primary" size="small">
+                <div class="chip-item">
+                  <span class="item-title">대표자</span>
+                </div>
+              </VChip>
+              <span class="item-text">홍길동</span>
+            </div>
+          </div>
+          <div class="top-search-eledgerlist-end">
+            <div class="item">
+              <span class="item-title">지점명</span>
+              <span class="item-text">1지부1팀</span>
+            </div>
+            <div class="item">
+              <span class="item-title">담당자</span>
+              <span class="item-text">김영업</span>
+            </div>
+            <div class="item">
+              <DemoDateTimePickerRange readonly />
+            </div>
+          </div>
+          <div class="top-search-eledgerlist-start2">
             <AppTextField
               prepend-inner-icon="tabler-asterisk-simple"
-              append-inner-icon="tabler-search"
-              placeholder="거래처코드, 거래처명을 검색하세요."
-            />
-            <AppTextField
-              v-model="inputA"
-              prefix="사업자번호"
-              type="number"
-              readonly
-              v-show="expanded"
-            />
-            <AppTextField
-              v-model="inputB"
-              prefix="대표자"
+              value="여신여부 이상없음"
               type="text"
+              class="creditfield"
               readonly
-              v-show="expanded"
-            />
-            <DemoDateTimePickerRange readonly v-show="expanded" />
-          </div>
-        </VCol>
-        <VCol cols="12" lg="12" md="12" sm="12" xs="12">
-          <div class="top-search-eledgerlist-end">
-            <AppTextField
-              v-model="inputC"
-              prefix="OTC회전여부"
-              type="text"
-              readonly
-              class="otcfield text-right"
-              v-show="expanded"
-            />
-            <AppTextField
-              v-model="inputD"
-              prefix="ETC회전여부"
-              type="text"
-              readonly
-              class="etcfield text-right error--text"
-              v-show="expanded"
-            />
-            <AppTextField
-              v-model="inputE"
-              prefix="여신여부"
-              type="text"
-              readonly
-              class="creditfield text-right error--text"
               v-show="expanded"
             />
             <div class="button" v-show="expanded">
@@ -127,7 +121,15 @@ const currentTab = ref("window1");
       <VCard class="basic-table-card">
         <VWindow v-model="currentTab">
           <VWindowItem v-for="item in 3" :key="`window${item}`">
-            <VTable height="400" fixed-header class="text-no-wrap">
+            <VDataTable
+              :headers="headers"
+              :items="tabledata"
+              density="compact"
+              class="text-no-wrap"
+              fixed-header
+              style="max-height: 314"
+              hide-default-footer
+            >
               <thead>
                 <tr>
                   <th>일자</th>
@@ -223,7 +225,7 @@ const currentTab = ref("window1");
                   <td class="text-right font-weight-bold">-</td>
                 </tr>
               </tbody>
-            </VTable>
+            </VDataTable>
           </VWindowItem>
         </VWindow>
       </VCard>
@@ -243,59 +245,79 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.top-search-eledgerlist {
+  display: flex;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .top-search-eledgerlist-start {
   display: flex;
-  gap: 8px;
+  gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;
-}
-
-.top-search-eledgerlist-start {
-  .app-text-field:nth-child(2) {
-    max-width: 220px;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
-  .app-text-field:nth-child(3) {
-    max-width: 150px;
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
   }
 }
-
 .top-search-eledgerlist-end {
   display: flex;
-  gap: 8px;
+  gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;
+  justify-content: flex-end;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 }
-.top-search-eledgerlist-end {
-  .app-text-field {
-    max-width: 180px;
+.top-search-eledgerlist-start2 {
+  display: flex;
+  gap: 8px 8px;
+  flex-direction: row !important;
+  align-items: center;
+  flex: 1;
+  min-width: 360px;
+  max-width: 360px;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px 4px;
   }
 }
 @media (max-width: 960px) {
   .top-search-eledgerlist-start {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 4px 16px;
     flex-direction: column !important;
     align-items: normal;
-    .app-text-field:nth-child(2) {
-      max-width: none;
-    }
-    .app-text-field:nth-child(3) {
-      max-width: none;
-    }
   }
   .top-search-eledgerlist-end {
     display: flex;
-    gap: 8px;
-    flex-direction: column !important;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    justify-content: flex-start;
+    flex-direction: row !important;
     align-items: normal;
-    .app-text-field {
-      max-width: none;
+    .item:nth-child(3) {
+      width: 100%;
     }
-    .button {
-      .v-btn {
-        width: 100%;
-      }
-    }
+  }
+  .top-search-eledgerlist-start2 {
+    max-width: 100%;
+  }
+  .app-picker-field {
+    width: 100%;
   }
 }
 

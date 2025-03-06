@@ -4,8 +4,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -33,7 +36,7 @@ const onClear = (inputRef) => {
             <div class="top-search-return-start">
               <div class="item">
                 <h6 class="d-flex text-h6 font-weight-medium align-center">
-                  [IDIDID] 선택 거래처명
+                  [IDIDID]로그인 거래처명
                 </h6>
               </div>
               <div class="item">
@@ -54,6 +57,22 @@ const onClear = (inputRef) => {
               </div>
               <div class="item">
                 <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">간납처</span>
+                  </div>
+                </VChip>
+                <span class="item-text">[IDIDID]선택 간납처명</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">처방처</span>
+                  </div>
+                </VChip>
+                <span class="item-text">[IDIDID]선택 처방처명</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
                   <div class="top-chip-item">
                     <span class="item-title">임시반품번호</span>
                     <span class="item-text"> MIDIDIDID </span>
@@ -71,13 +90,7 @@ const onClear = (inputRef) => {
             </div>
             <div class="top-search-return-end">
               <div class="item">
-                <span class="item-title">처리상태</span>
-                <span class="item-text">
-                  <VChip color="primary" size="small"> 처리완료 </VChip>
-                </span>
-              </div>
-              <div class="item">
-                <span class="item-title">반품신청일</span>
+                <span class="item-title">주문등록일</span>
                 <span class="item-text">2024.12.12</span>
               </div>
               <div class="item">
@@ -91,6 +104,24 @@ const onClear = (inputRef) => {
             </div>
           </div>
         </VCol>
+        <VCol cols="12" lg="3" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거지 주소"
+            value="[IDIDID]수거지 명칭"
+            readonly
+        /></VCol>
+        <VCol cols="12" lg="4" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거지 상세주소"
+            value="[IDIDID]수거지 명칭"
+            readonly
+        /></VCol>
+        <VCol cols="12" lg="5" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거요청사항항"
+            value="수거요청사항 내용이 출력됩니다."
+            readonly
+        /></VCol>
       </TopSearchArea>
     </VCol>
   </VRow>
@@ -621,6 +652,7 @@ export default {
 }
 .top-search-return-start {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;
@@ -638,6 +670,7 @@ export default {
 }
 .top-search-return-end {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;

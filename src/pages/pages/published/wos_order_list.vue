@@ -3,8 +3,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -31,44 +34,40 @@ const onClear = (inputRef) => {
       </h3>
     </div>
 
-    <div class="d-flex gap-4 align-center flex-wrap"></div>
+    <div class="d-flex gap-4 align-center flex-wrap">
+      <VBtn size="large" color="primary">주문등록</VBtn>
+    </div>
   </TitleArea>
 
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="3" md="6" sm="12" xs="12">
-          <AppTextField
-            prepend-inner-icon="tabler-asterisk-simple"
-            append-inner-icon="tabler-search"
-            placeholder="거래처코드, 거래처명을 검색하세요."
-          />
-        </VCol>
-        <VCol cols="12" lg="3" md="6" sm="12" xs="12" v-show="expanded">
-          <AppTextField
-            prepend-inner-icon="tabler-asterisk-simple"
-            append-inner-icon="tabler-search"
-            placeholder="부서 및 사원을 검색하세요."
-          />
-        </VCol>
-        <VCol cols="12" lg="3" md="6" sm="12" xs="12" v-show="expanded">
-          <DemoDateTimePickerRange readonly v-show="expanded" />
-        </VCol>
-        <VCol cols="12" lg="3" md="6" sm="12" xs="12" v-show="expanded"
-          ><VRadioGroup v-model="inlineRadio" inline>
-            <VRadio label="전체" value="radio-1" />
-            <VRadio label="OTC" value="radio-2" />
-            <VRadio label="ETC" value="radio-3" /> </VRadioGroup
-        ></VCol>
-        <VCol cols="12" v-show="expanded">
-          <div class="d-flex gap-2 flex-wrap justify-center w-100">
-            <VBtn variant="outlined" color="secondary"
-              ><VIcon start icon="tabler-refresh" />초기화</VBtn
-            >
-            <VBtn color="primary"
-              ><VIcon start icon="tabler-search" />조회</VBtn
-            >
+        <VCol cols="12" class="top-search-order">
+          <div class="top-search-order-start">
+            <div class="item">
+              <h6 class="d-flex text-h6 font-weight-medium align-center">
+                [IDIDID] 로그인 거래처명
+              </h6>
+            </div>
           </div>
+          <div class="top-search-order-mid" v-show="expanded">
+            <div class="item">
+              <DemoDateTimePickerRange readonly />
+            </div>
+            <div class="item">
+              <AppSelect :items="items" placeholder="처리상태" />
+            </div>
+          </div>
+          <Vcol class="top-search-order-end" v-show="expanded">
+            <div class="d-flex gap-2 justify-end w-100">
+              <VBtn variant="outlined" color="secondary"
+                ><VIcon start icon="tabler-refresh" />초기화</VBtn
+              >
+              <VBtn color="primary"
+                ><VIcon start icon="tabler-search" />조회</VBtn
+              >
+            </div>
+          </Vcol>
         </VCol>
       </TopSearchArea>
     </VCol>
@@ -83,11 +82,8 @@ const onClear = (inputRef) => {
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
           <VBtn size="small" color="secondary" variant="tonal"
-            ><VIcon start icon="tabler-minus" />삭제
+            ><VIcon start icon="tabler-minus" />선택택삭제
           </VBtn>
-          <VBtn size="small"
-            ><VIcon start icon="tabler-plus" />관리자 승인</VBtn
-          >
         </div>
       </STitleArea>
       <VCard class="data">
@@ -136,11 +132,6 @@ const onClear = (inputRef) => {
             <div class="grid02">
               <div class="d-flex flex-row flex-md-row gap-2 w-100">
                 <div class="item">
-                  <span class="item-cell-title">
-                    [IDIDID]거래처명거래처명거래처명거래처명거래처명</span
-                  >
-                </div>
-                <div class="item">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">간납처</span>
@@ -155,6 +146,14 @@ const onClear = (inputRef) => {
                     </div>
                   </VChip>
                   <span class="item-text">[ididid]선택 처방처명</span>
+                </div>
+                <div class="item">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">배송지</span>
+                    </div>
+                  </VChip>
+                  <span class="item-text">[ididid]배송지명 배송지 주소</span>
                 </div>
               </div>
             </div>
@@ -198,14 +197,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.top-search-order {
+  display: flex;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 .top-search-order-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
+  }
+}
+.top-search-order-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  @media (max-width: 1024px) {
+    flex: 0 0 100%;
+  }
+}
+.top-search-order-mid {
   display: flex;
   gap: 8px;
   flex-direction: row !important;
   align-items: center;
-
   .app-text-field {
     max-width: 300px;
+  }
+  .item:last-child {
+    min-width: 160px;
+    width: 100%;
   }
 }
 
@@ -258,15 +301,24 @@ export default {
         width: 100%;
         flex-wrap: wrap;
         .item {
-          &:nth-child(1) {
-            flex: 1;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+          .v-chip {
+            min-width: 54px;
           }
-          &:nth-child(2),
-          &:nth-child(3) {
+          &:nth-child(1),
+          &:nth-child(2) {
             flex: 0;
             min-width: 240px;
+          }
+          &:nth-child(3) {
+            flex: 1;
+            .item-text {
+              white-space: wrap;
+              text-overflow: ellipsis;
+              width: 260px;
+              @media (max-width: 960px) {
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -346,12 +398,38 @@ export default {
     gap: 8px;
     flex-direction: column !important;
     align-items: normal;
-
     .app-text-field {
       max-width: none;
     }
   }
+  .top-search-order-mid {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-direction: column !important;
+    align-items: center;
 
+    .app-text-field {
+      width: 100% !important;
+    }
+    .item {
+      width: 100%;
+    }
+  }
+  .top-search-order-end {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row !important;
+    align-items: center;
+
+    .app-text-field {
+      width: 100% !important;
+    }
+    .item {
+      width: 100%;
+    }
+  }
   .item-cell-title {
     display: block;
   }

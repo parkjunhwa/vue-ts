@@ -3,8 +3,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -361,5 +364,9 @@ export default {
       gap: 4px;
     }
   }
+}
+.app-picker-field {
+  width: 100%;
+  min-width: auto;
 }
 </style>

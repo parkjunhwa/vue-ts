@@ -4,8 +4,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -28,104 +31,105 @@ const onClear = (inputRef) => {
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="false">
-        <VCol cols="12" class="custom-grid">
-          <div class="grid1">
-            <div class="d-flex flex-row flex-md-row gap-2 w-100">
-              <div class="top-search-order-start">
-                <div class="item">
-                  <h6 class="d-flex text-h6 font-weight-medium align-center">
-                    [IDIDID] 선택 거래처명
-                  </h6>
-                </div>
+        <VCol cols="12" class="top-search-order">
+          <div class="d-flex flex-row flex-md-row gap-2 w-100">
+            <div class="top-search-order-start">
+              <div class="item">
+                <h6 class="d-flex text-h6 font-weight-medium align-center">
+                  [IDIDID] 선택 거래처명
+                </h6>
               </div>
-              <div class="top-search-order-end">
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="chip-item">
-                      <span class="item-title">사업자번호</span>
-                    </div>
-                  </VChip>
-                  <span class="item-text">1234567890</span>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="chip-item">
-                      <span class="item-title">대표자</span>
-                    </div>
-                  </VChip>
-                  <span class="item-text">홍길동</span>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="chip-item">
-                      <span class="item-title">간납처</span>
-                    </div>
-                  </VChip>
-                  <span class="item-text">[IDIDID] 선택 간납처명</span>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="chip-item">
-                      <span class="item-title">처방처</span>
-                    </div>
-                  </VChip>
-                  <span class="item-text">[IDIDID] 선택 처방처명</span>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="top-chip-item">
-                      <span class="item-title">임시반품번호</span>
-                      <span class="item-text"> MIDIDIDID </span>
-                    </div>
-                  </VChip>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="top-chip-item">
-                      <span class="item-title">주문번호호</span>
-                      <span class="item-text"> IDIDIDID </span>
-                    </div>
-                  </VChip>
-                </div>
-                <div class="item">
-                  <VChip color="primary" size="small">
-                    <div class="top-chip-item">
-                      <span class="item-title">유형</span>
-                      <span class="item-text"> ETC </span>
-                    </div>
-                  </VChip>
-                </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">사업자번호</span>
+                  </div>
+                </VChip>
+                <span class="item-text">1234567890</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">대표자</span>
+                  </div>
+                </VChip>
+                <span class="item-text">홍길동</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">간납처</span>
+                  </div>
+                </VChip>
+                <span class="item-text">[IDIDID] 선택 간납처명</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">처방처</span>
+                  </div>
+                </VChip>
+                <span class="item-text">[IDIDID] 선택 처방처명</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">임시반품번호</span>
+                    <span class="item-text"> MIDIDIDID </span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">주문번호호</span>
+                    <span class="item-text"> IDIDIDID </span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">유형</span>
+                    <span class="item-text"> ETC </span>
+                  </div>
+                </VChip>
               </div>
             </div>
-          </div>
-          <div class="grid2">
-            <div class="d-flex flex-column gap-2 w-100">
-              <div class="top-search-order-start">
-                <div class="item">
-                  <span class="item-title">주문등록일</span>
-                  <span class="item-text">2024.12.12</span>
-                </div>
-                <div class="item">
-                  <span class="item-title">지점명</span>
-                  <span class="item-text">1지부1팀</span>
-                </div>
-                <div class="item">
-                  <span class="item-title">담당자</span>
-                  <span class="item-text">김영업</span>
-                </div>
+            <div class="top-search-order-end">
+              <div class="item">
+                <span class="item-title">주문등록일</span>
+                <span class="item-text">2024.12.12</span>
               </div>
-              <div class="top-search-order-end">
-                <AppTextField
-                  placeholder="금액입력"
-                  value="2,000,000"
-                  readonly
-                  suffix="원"
-                  class="form-align-right"
-                />
+              <div class="item">
+                <span class="item-title">지점명</span>
+                <span class="item-text">1지부1팀</span>
+              </div>
+              <div class="item">
+                <span class="item-title">담당자</span>
+                <span class="item-text">김영업</span>
               </div>
             </div>
           </div>
         </VCol>
+        <VCol cols="12" lg="3" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거지 주소"
+            value="[IDIDID]수거지 명칭"
+            readonly
+        /></VCol>
+        <VCol cols="12" lg="4" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거지 상세주소"
+            value="[IDIDID]수거지 명칭"
+            readonly
+        /></VCol>
+        <VCol cols="12" lg="5" md="4" sm="12" xs="12"
+          ><AppTextField
+            placeholder="수거요청사항항"
+            value="수거요청사항 내용이 출력됩니다."
+            readonly
+        /></VCol>
       </TopSearchArea>
     </VCol>
   </VRow>
@@ -320,20 +324,14 @@ export default {
 :deep(.top-search-area-open-button-wrap) {
   display: none;
 }
-.custom-grid {
-  display: flex;
-  gap: 8px 16px;
-  flex-direction: row !important;
-  .grid2 {
-    display: flex;
-    flex-direction: column !important;
-  }
-}
+
 .top-search-order-start {
   display: flex;
   gap: 8px 16px;
+  flex-wrap: wrap;
   flex-direction: row !important;
   align-items: center;
+  flex: 1;
   .item {
     display: flex;
     align-items: center;
@@ -350,29 +348,6 @@ export default {
     display: flex;
     align-items: center;
     gap: 4px;
-  }
-}
-.grid1 {
-  display: flex;
-  gap: 4px 16px;
-  flex-direction: row !important;
-  flex: 1;
-  .d-flex {
-    align-items: flex-start;
-  }
-  .top-search-order-start {
-    display: flex;
-    flex-wrap: wrap;
-    .item:first-child {
-      flex: 1;
-      white-space: nowrap;
-    }
-  }
-  .top-search-order-end {
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: normal;
-    justify-content: right;
   }
 }
 .card-table-infinity .data {
@@ -410,35 +385,30 @@ export default {
   justify-content: space-between;
 }
 @media (max-width: 1280px) {
-  .grid1 {
+  .top-search-order {
     .d-flex {
       flex-direction: column !important;
     }
-    .top-search-order-start {
-      display: flex;
-      flex-wrap: wrap;
-      .item:first-child {
-        display: block;
-        min-width: 100%;
-        h6 {
-          align-items: normal !important;
-        }
+  }
+  .top-search-order-start {
+    display: flex;
+    flex-wrap: wrap;
+    .item:first-child {
+      display: block;
+      min-width: 100%;
+      h6 {
+        align-items: normal !important;
       }
     }
-    .top-search-order-end {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: normal;
-      justify-content: left;
-    }
+  }
+  .top-search-order-end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: normal;
+    justify-content: left;
   }
 }
 @media (max-width: 960px) {
-  .custom-grid {
-    display: flex;
-    gap: 4px 16px;
-    flex-direction: column !important;
-  }
   .top-search-order-start {
     display: flex;
     flex-wrap: wrap;
@@ -456,12 +426,6 @@ export default {
     justify-content: left;
   }
 
-  .grid2 {
-    .top-search-order-start {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
   .card-table-infinity .data .justify-content-start {
     flex-direction: column !important;
     justify-content: left;

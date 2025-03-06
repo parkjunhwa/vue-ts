@@ -3,8 +3,11 @@ import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 
-const onClear = (inputRef) => {
-  inputRef.value = "";
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
 };
 </script>
 
@@ -37,31 +40,32 @@ const onClear = (inputRef) => {
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="9" md="9" sm="12" xs="12">
+        <VCol cols="12" class="top-search-return">
           <div class="top-search-return-start">
-            <AppTextField
-              prepend-inner-icon="tabler-asterisk-simple"
-              append-inner-icon="tabler-search"
-              placeholder="거래처코드, 거래처명을 검색하세요."
-            />
-            <AppTextField
-              prepend-inner-icon="tabler-asterisk-simple"
-              append-inner-icon="tabler-search"
-              placeholder="부서 및 사원을 검색하세요."
-              v-show="expanded"
-            />
-            <DemoDateTimePickerRange readonly v-show="expanded" />
+            <div class="item">
+              <h6 class="d-flex text-h6 font-weight-medium align-center">
+                [IDIDID] 로그인 거래처명
+              </h6>
+            </div>
           </div>
-        </VCol>
-        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
-          <div class="d-flex gap-2 flex-wrap justify-end w-100">
-            <VBtn variant="outlined" color="secondary"
-              ><VIcon start icon="tabler-refresh" />초기화</VBtn
-            >
-            <VBtn color="primary"
-              ><VIcon start icon="tabler-search" />조회</VBtn
-            >
+          <div class="top-search-return-mid" v-show="expanded">
+            <div class="item">
+              <DemoDateTimePickerRange readonly />
+            </div>
+            <div class="item">
+              <AppSelect :items="items" placeholder="처리상태" />
+            </div>
           </div>
+          <Vcol class="top-search-return-end" v-show="expanded">
+            <div class="d-flex gap-2 justify-end w-100">
+              <VBtn variant="outlined" color="secondary"
+                ><VIcon start icon="tabler-refresh" />초기화</VBtn
+              >
+              <VBtn color="primary"
+                ><VIcon start icon="tabler-search" />조회</VBtn
+              >
+            </div>
+          </Vcol>
         </VCol>
       </TopSearchArea>
     </VCol>
@@ -106,7 +110,24 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text"
+                  >선택한 반품 수거지 선택한 반품 수거지</span
+                >
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text"
+                  >수거요청사항 글이 있습니다.수거요청사항 글이 있습니다.</span
+                >
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -151,7 +172,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 </span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -196,7 +230,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -241,7 +288,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -286,7 +346,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -331,7 +404,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -376,7 +462,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -421,7 +520,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -466,7 +578,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -511,7 +636,20 @@ const onClear = (inputRef) => {
                 </VChip>
               </div>
               <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품수거지</span>
+                  </div>
+                </VChip>
+                <span class="item-text">선택한 반품 수거지 주소 상세 출력</span>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">비고</span>
+                  </div>
+                </VChip>
+                <span class="item-text">수거요청사항 글이 있습니다.</span>
               </div>
             </div>
             <!-- 오른쪽 컨텐츠 -->
@@ -542,6 +680,7 @@ export default {
     return {
       expanded: true,
       values: "",
+      items: ["Option 1", "Option 2", "Option 3"],
       nameRules: [(v) => !!v || "필수 항목입니다"],
     };
   },
@@ -549,13 +688,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.top-search-return {
+  display: flex;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 .top-search-return-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
+  }
+}
+.top-search-return-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  @media (max-width: 1024px) {
+    flex: 0 0 100%;
+  }
+}
+.top-search-return-mid {
   display: flex;
   gap: 8px;
   flex-direction: row !important;
   align-items: center;
   .app-text-field {
     max-width: 300px;
+  }
+  .item:last-child {
+    min-width: 160px;
+    width: 100%;
   }
 }
 .card-table-infinity .data {
@@ -567,13 +751,31 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 }
+.card-table-infinity .data .justify-content-start .item {
+  align-items: center;
+}
 .card-table-infinity .data .justify-content-start .item:nth-child(1),
 .card-table-infinity .data .justify-content-start .item:nth-child(2),
 .card-table-infinity .data .justify-content-start .item:nth-child(3) {
-  width: 180px;
+  width: 160px;
   .v-chip {
     width: 100%;
   }
+}
+.card-table-infinity .data .justify-content-start .item:nth-child(4),
+.card-table-infinity .data .justify-content-start .item:nth-child(5) {
+  width: 300px;
+  display: flex;
+  flex-direction: row !important;
+  .item-text {
+    white-space: wrap;
+  }
+}
+.card-table-infinity .data .justify-content-start .item:nth-child(4) .v-chip {
+  min-width: 75px;
+}
+.card-table-infinity .data .justify-content-start .item:nth-child(5) .v-chip {
+  min-width: 42px;
 }
 .card-table-infinity .data .justify-content-end {
   gap: 8px 16px;
@@ -600,6 +802,34 @@ export default {
     gap: 4px;
     align-items: normal;
   }
+  .top-search-return-mid {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-direction: column !important;
+    align-items: center;
+
+    .app-text-field {
+      width: 100% !important;
+    }
+    .item {
+      width: 100%;
+    }
+  }
+  .top-search-return-end {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row !important;
+    align-items: center;
+
+    .app-text-field {
+      width: 100% !important;
+    }
+    .item {
+      width: 100%;
+    }
+  }
   .card-table-infinity .data .justify-content-end {
     flex-direction: row !important;
     flex-wrap: wrap;
@@ -612,6 +842,10 @@ export default {
     .gap-2 {
       gap: 4px;
     }
+  }
+  .card-table-infinity .data .justify-content-start .item:nth-child(4),
+  .card-table-infinity .data .justify-content-start .item:nth-child(5) {
+    width: 100%;
   }
 }
 </style>

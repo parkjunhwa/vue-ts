@@ -2,16 +2,13 @@
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import BottomTotalArea from "@/layouts/components/BottomTotalArea.vue";
 import STitleArea from "@/layouts/components/STitleArea.vue";
+import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
 const inputValue = ref("");
-const inputC = ref("이상없음");
-const inputD = ref("회전초과");
-const inputE = ref("여신초과");
 
 const onClear = () => {
   inputValue.value = "";
 };
-const currentTab = ref("window1");
 </script>
 
 <template>
@@ -25,9 +22,7 @@ const currentTab = ref("window1");
       ]"
     />
   </div>
-  <div
-    class="page-title-area d-flex flex-wrap justify-start justify-sm-space-between gap-x-6 mb-6 align-items-center"
-  >
+  <TitleArea>
     <div class="d-flex justify-start flex-wrap">
       <h3 class="d-flex text-h3 font-weight-medium align-center">주문등록</h3>
     </div>
@@ -36,40 +31,156 @@ const currentTab = ref("window1");
       <VBtn size="large" color="secondary">임시저장</VBtn>
       <VBtn size="large" color="primary">주문등록</VBtn>
     </div>
-  </div>
-
+  </TitleArea>
+  <VRow>
+    <VCol cols="12">
+      <TopSearchArea v-model:expanded="expanded" :openbutton="false">
+        <VCol cols="12">
+          <div class="d-flex flex-column flex-md-row flex-wrap gap-2 w-100">
+            <div class="top-search-order-start">
+              <div class="item">
+                <h6 class="d-flex text-h6 font-weight-medium align-center">
+                  [IDIDID]로그인 거래처명
+                </h6>
+              </div>
+              <div class="item" v-show="expanded">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">사업자번호</span>
+                  </div>
+                </VChip>
+                <span class="item-text">1234567890</span>
+              </div>
+              <div class="item" v-show="expanded">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">대표자</span>
+                  </div>
+                </VChip>
+                <span class="item-text">홍길동</span>
+              </div>
+            </div>
+            <div class="top-search-order-end" v-show="expanded">
+              <div class="item">
+                <span class="item-title">지점명</span>
+                <span class="item-text">1지부1팀</span>
+              </div>
+              <div class="item">
+                <span class="item-title">담당자</span>
+                <span class="item-text">김영업</span>
+              </div>
+            </div>
+          </div>
+        </VCol>
+        <VCol
+          cols="12"
+          lg="2"
+          md="2"
+          sm="12"
+          xs="12"
+          class="col-5"
+          v-show="expanded"
+          ><AppTextField
+            prefix="현재잔고"
+            placeholder="금액입력"
+            value="2,000,000"
+            readonly
+            suffix="원"
+            class="form-align-right"
+        /></VCol>
+        <VCol
+          cols="12"
+          lg="2"
+          md="2"
+          sm="12"
+          xs="12"
+          class="col-5"
+          v-show="expanded"
+          ><AppTextField
+            prefix="미도래"
+            placeholder="금액입력"
+            value="2,000,000"
+            readonly
+            suffix="원"
+            class="form-align-right"
+        /></VCol>
+        <VCol
+          cols="12"
+          lg="2"
+          md="2"
+          sm="12"
+          xs="12"
+          class="col-5"
+          v-show="expanded"
+          ><AppTextField
+            prefix="총대차"
+            placeholder="금액입력"
+            value="2,000,000"
+            readonly
+            suffix="원"
+            class="form-align-right"
+        /></VCol>
+        <VCol
+          cols="12"
+          lg="2"
+          md="2"
+          sm="12"
+          xs="12"
+          class="col-5"
+          v-show="expanded"
+          ><AppTextField
+            prefix="담보금액"
+            placeholder="금액입력"
+            value="2,000,000"
+            readonly
+            suffix="원"
+            class="form-align-right"
+        /></VCol>
+        <VCol
+          cols="12"
+          lg="2"
+          md="2"
+          sm="12"
+          xs="12"
+          class="col-5"
+          v-show="expanded"
+          ><AppTextField
+            prefix="잔여여신"
+            placeholder="금액입력"
+            value="2,000,000"
+            readonly
+            suffix="원"
+            class="form-align-right"
+        /></VCol>
+      </TopSearchArea>
+    </VCol>
+  </VRow>
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12">
           <AppTextField
             prepend-inner-icon="tabler-asterisk-simple"
             append-inner-icon="tabler-search"
-            placeholder="거래처코드, 거래처명을 선택하세요."
+            placeholder="간납처를 선택하세요."
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
           <AppSelect
             :items="items"
-            placeholder="간납코드,간납처명을 선택하세요."
+            placeholder="원외처방처를 선택하세요."
             prepend-inner-icon="tabler-asterisk-simple"
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
-          <AppSelect
-            :items="items"
-            placeholder="원외처방제를 선택하세요."
-            prepend-inner-icon="tabler-asterisk-simple"
-          />
-        </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
           <AppSelect
             :items="items"
             placeholder="배송지 주소를 선택하세요."
             prepend-inner-icon="tabler-asterisk-simple"
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <AppTextField
             v-model="text"
             placeholder="Placeholder Text"
@@ -77,7 +188,7 @@ const currentTab = ref("window1");
             readonly
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <AppTextField
             v-model="inputValue"
             placeholder="배송요청 사항을 입력하세요."
@@ -85,48 +196,6 @@ const currentTab = ref("window1");
             @keydown.esc="onClear"
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
-          <AppTextField
-            v-model="inputC"
-            prefix="OTC회전여부"
-            type="text"
-            readonly
-            class="otcfield text-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">
-          <AppTextField
-            v-model="text"
-            prefix="OTC회전여부"
-            value="이상없음"
-            class="text-right"
-            readonly
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">
-          <AppTextField
-            v-model="inputD"
-            prefix="ETC회전여부"
-            type="text"
-            readonly
-            class="etcfield text-right error--text"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">
-          <AppTextField
-            v-model="inputE"
-            prefix="여신여부"
-            type="text"
-            readonly
-            class="creditfield text-right error--text"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">
-          <VBtn variant="tonal"
-            ><VIcon start icon="tabler-refresh" />거래내역 조회
-          </VBtn>
-        </VCol>
-
         <VCol cols="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
@@ -145,199 +214,18 @@ const currentTab = ref("window1");
       <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
-            기존발주 품목 리스트
+            제품 등록 리스트
           </h5>
-          <VTabs v-model="currentTab" class="v-tabs-pill ml-0">
-            <VTab>전체</VTab>
-            <VTab>ETC</VTab>
-            <VTab>OTC</VTab>
-          </VTabs>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small"
-            ><VIcon start icon="tabler-plus" />기존발주 품목 주문추가</VBtn
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-arrow-bar-to-down" />엑셀다운로드</VBtn
           >
-        </div>
-      </STitleArea>
-      <VWindow v-model="currentTab" style="overflow: visible">
-        <VWindowItem v-for="item in 3" :key="`window${item}`">
-          <VCard class="data">
-            <VCardText>
-              <div class="d-flex flex-column flex-md-row gap-2 w-100">
-                <!-- 왼쪽 컨텐츠 -->
-                <div
-                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
-                >
-                  <div class="section01">
-                    <div class="item num01">
-                      <VCheckbox />
-                    </div>
-                    <div class="item num03">
-                      <span class="item-cell-title text-primary">
-                        (IGT104) 이가탄에프캡슐</span
-                      >
-                    </div>
-                  </div>
-                  <div class="section02">
-                    <div class="item num05">
-                      <VChip color="primary" size="small">
-                        <div class="chip-item">
-                          <span class="item-title">마지막발주</span>
-                          <span class="item-text">2024.12.12</span>
-                        </div>
-                      </VChip>
-                    </div>
-                  </div>
-                </div>
-                <!-- 오른쪽 컨텐츠 -->
-                <div class="d-flex flex-row justify-content-end">
-                  <div class="item">
-                    <span class="item-title">규격</span>
-                    <span class="item-text">100C</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">수량</span>
-                    <span class="item-text">
-                      <AppTextField value="10" density="compact" readonly
-                    /></span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">단가</span>
-                    <span class="item-text">50,000</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">공급가액</span>
-                    <span class="item-text">80,000</span>
-                  </div>
-                </div>
-              </div>
-            </VCardText>
-          </VCard>
-          <VCard class="data">
-            <VCardText>
-              <div class="d-flex flex-column flex-md-row gap-2 w-100">
-                <!-- 왼쪽 컨텐츠 -->
-                <div
-                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
-                >
-                  <div class="section01">
-                    <div class="item num01">
-                      <VCheckbox />
-                    </div>
-                    <div class="item num03">
-                      <span class="item-cell-title text-primary">
-                        (IGT104) 이가탄에프캡슐</span
-                      >
-                    </div>
-                  </div>
-                  <div class="section02">
-                    <div class="item num05">
-                      <VChip color="primary" size="small">
-                        <div class="chip-item">
-                          <span class="item-title">마지막발주</span>
-                          <span class="item-text">2024.12.12</span>
-                        </div>
-                      </VChip>
-                    </div>
-                  </div>
-                </div>
-                <!-- 오른쪽 컨텐츠 -->
-                <div class="d-flex flex-row justify-content-end">
-                  <div class="item">
-                    <span class="item-title">규격</span>
-                    <span class="item-text">100C</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">수량</span>
-                    <span class="item-text">
-                      <AppTextField value="10" density="compact" readonly
-                    /></span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">단가</span>
-                    <span class="item-text">50,000</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">공급가액</span>
-                    <span class="item-text">80,000</span>
-                  </div>
-                </div>
-              </div>
-            </VCardText>
-          </VCard>
-          <VCard class="data">
-            <VCardText>
-              <div class="d-flex flex-column flex-md-row gap-2 w-100">
-                <!-- 왼쪽 컨텐츠 -->
-                <div
-                  class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
-                >
-                  <div class="section01">
-                    <div class="item num01">
-                      <VCheckbox />
-                    </div>
-                    <div class="item num03">
-                      <span class="item-cell-title text-primary">
-                        (IGT104) 이가탄에프캡슐</span
-                      >
-                    </div>
-                  </div>
-                  <div class="section02">
-                    <div class="item num05">
-                      <VChip color="primary" size="small">
-                        <div class="chip-item">
-                          <span class="item-title">마지막발주</span>
-                          <span class="item-text">2024.12.12</span>
-                        </div>
-                      </VChip>
-                    </div>
-                  </div>
-                </div>
-                <!-- 오른쪽 컨텐츠 -->
-                <div class="d-flex flex-row justify-content-end">
-                  <div class="item">
-                    <span class="item-title">규격</span>
-                    <span class="item-text">100C</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">수량</span>
-                    <span class="item-text">
-                      <AppTextField value="10" density="compact" readonly
-                    /></span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">단가</span>
-                    <span class="item-text">50,000</span>
-                  </div>
-                  <div class="item">
-                    <span class="item-title">공급가액</span>
-                    <span class="item-text">80,000</span>
-                  </div>
-                </div>
-              </div>
-            </VCardText>
-          </VCard>
-          <div class="d-flex mt-2 flex-wrap justify-center w-100 card-more-btn">
-            <VBtn size="small" color="secondary" variant="tonal">
-              <VIcon start icon="tabler-plus" />
-              더보기
-            </VBtn>
-          </div>
-        </VWindowItem>
-      </VWindow>
-    </VCol>
-  </VRow>
-  <VRow>
-    <VCol cols="12" class="card-table-infinity">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            주문 품목 리스트
-          </h5>
-        </div>
-        <div class="d-flex gap-2 align-center flex-wrap">
+          <VBtn size="small" variant="outlined"
+            ><VIcon start icon="tabler-arrow-bar-to-up" />엑셀업로드</VBtn
+          >
           <VBtn size="small" color="secondary" variant="tonal"
-            ><VIcon start icon="tabler-minus" />삭제
+            ><VIcon start icon="tabler-minus" />선택삭제
           </VBtn>
           <VBtn size="small"
             ><VIcon start icon="tabler-plus" />신규등록 주문추가</VBtn
@@ -592,178 +480,6 @@ const currentTab = ref("window1");
       </BottomTotalArea>
     </VCol>
   </VRow>
-  <VRow>
-    <VCol cols="12" lg="8" md="8" sm="12" xs="12">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            회전초과금액
-          </h5>
-        </div>
-        <div class="d-flex gap-2 align-center flex-wrap"></div>
-      </STitleArea>
-      <BottomTotalArea>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-          <AppTextField
-            label="ETC"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-          <AppTextField
-            label="OTC"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-          <AppTextField
-            label="합계금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-      </BottomTotalArea>
-    </VCol>
-    <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            수금예정금액
-          </h5>
-        </div>
-        <div class="d-flex gap-2 align-center flex-wrap"></div>
-      </STitleArea>
-      <BottomTotalArea>
-        <VCol cols="12" lg="6" md="6" sm="12" xs="12">
-          <AppTextField
-            label="필요금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="6" md="6" sm="12" xs="12">
-          <AppTextField
-            label="수금예정금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-      </BottomTotalArea>
-    </VCol>
-  </VRow>
-  <VRow>
-    <VCol cols="12" lg="8" md="8" sm="12" xs="12">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            여신초과금액
-          </h5>
-        </div>
-        <div class="d-flex gap-2 align-center flex-wrap"></div>
-      </STitleArea>
-      <BottomTotalArea class="custom">
-        <VCol cols="12" lg="2" md="4" sm="12" xs="12">
-          <AppTextField
-            label="총잔고"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="4" sm="12" xs="12">
-          <AppTextField
-            label="미도래"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="4" sm="12" xs="12">
-          <AppTextField
-            label="총대차"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="6" sm="12" xs="12">
-          <AppTextField
-            label="담보금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="6" sm="12" xs="12">
-          <AppTextField
-            label="발주금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-      </BottomTotalArea>
-    </VCol>
-    <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-      <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
-          <h5 class="d-flex text-h5 font-weight-medium align-center">
-            수금예정금액
-          </h5>
-        </div>
-        <div class="d-flex gap-2 align-center flex-wrap"></div>
-      </STitleArea>
-      <BottomTotalArea>
-        <VCol cols="12" lg="6" md="6" sm="12" xs="12">
-          <AppTextField
-            label="여신"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-        <VCol cols="12" lg="6" md="6" sm="12" xs="12">
-          <AppTextField
-            label="수금예정금액"
-            placeholder="금액입력"
-            value="2,000,000"
-            readonly
-            suffix="원"
-            class="form-align-right"
-          />
-        </VCol>
-      </BottomTotalArea>
-    </VCol>
-  </VRow>
 </template>
 
 <script>
@@ -877,31 +593,46 @@ export default {
   flex-direction: row !important;
   justify-content: flex-end;
 }
-
-@media (max-width: 960px) {
-  .top-search-area {
-    .v-btn[variant="tonal"] {
-      width: 100%;
-    }
+.top-search-order-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  flex: 1;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
+  }
+}
+.top-search-order-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+.col-5 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+@media (max-width: 960px) {
   .justify-content-start {
     display: flex;
     flex-direction: column !important;
     align-items: flex-start !important;
-  }
-  .section01 {
-    flex-wrap: wrap;
-    gap: 4px 8px;
-  }
-  .section02 {
-    display: flex;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px 8px;
-  }
-  .num03 {
-    display: block !important;
-    width: 100% !important;
   }
   .top-search-order-start {
     display: flex;
@@ -922,6 +653,10 @@ export default {
     .item {
       min-width: calc(50% - 8px);
     }
+  }
+  .col-5 {
+    flex: none;
+    max-width: 100%;
   }
 
   .card-table-infinity {

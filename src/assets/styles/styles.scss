@@ -574,6 +574,23 @@ $positions: (
     font-weight: 400;
     transition: inherit;
     white-space: nowrap;
+    line-height: normal;
+}
+
+.v-field.v-field--appended .v-field__input {
+    padding-inline-end: 4px;
+}
+
+.v-field.v-field--prepended .v-field__input {
+    padding-inline-start: 4px;
+}
+
+.v-text-field--suffixed .v-field__input {
+    padding-inline-end: 4px;
+}
+
+.v-text-field--prefixed .v-field__input {
+    padding-inline-start: 4px;
 }
 
 .v-tabs-pill {
@@ -660,7 +677,10 @@ $positions: (
 
 .v-data-table tbody tr:hover {
     color: rgb(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
-    background-color: #f9f9f9 !important;
+
+    td {
+        background-color: rgba(var(--v-theme-on-background), 0.025);
+    }
 }
 
 .v-data-table tbody tr.selected {
@@ -698,24 +718,46 @@ $positions: (
     }
 }
 
+
 .popup-top-between {
     padding: 0;
     margin: 0;
 
-    @media (max-width: 800px) {
-        .v-col {
-            padding: 0;
-            flex-wrap: nowrap;
-            flex-flow: row;
+    @media (max-width: 600px) {
+        flex-flow: column;
+    }
 
-            @media (max-width: 800px) {
-                flex: 1;
-                max-width: 100%;
-            }
-        }
+    .v-col {
+        padding: 0;
+        flex-wrap: nowrap;
+        flex-flow: row;
 
-        .v-col-9 {
+        @media (max-width: 600px) {
             flex: 1;
+            max-width: 100%;
         }
     }
+
+    .v-col-9 {
+        flex: 1;
+    }
+}
+
+
+.app-picker-field {
+    width: 340px;
+
+    .flat-picker-custom-style {
+        padding: 0 0 0 4px !important;
+        width: 100%;
+    }
+}
+
+.v-alert--variant-outlined,
+.v-avatar--variant-outlined,
+.v-btn.v-btn--variant-outlined,
+.v-card--variant-outlined,
+.v-chip--variant-outlined,
+.v-list-item--variant-outlined {
+    background: #fff;
 }
