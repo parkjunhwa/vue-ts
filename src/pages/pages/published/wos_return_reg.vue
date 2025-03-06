@@ -36,7 +36,49 @@ const onClear = () => {
       <VBtn size="large" color="primary">반품등록</VBtn>
     </div>
   </TitleArea>
-
+  <VRow>
+    <VCol cols="12">
+      <TopSearchArea v-model:expanded="expanded" :openbutton="false">
+        <VCol cols="12">
+          <div class="d-flex flex-column flex-md-row flex-wrap gap-2 w-100">
+            <div class="top-search-return-start">
+              <div class="item">
+                <h6 class="d-flex text-h6 font-weight-medium align-center">
+                  [IDIDID]로그인 거래처명
+                </h6>
+              </div>
+              <div class="item" v-show="expanded">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">사업자번호</span>
+                  </div>
+                </VChip>
+                <span class="item-text">1234567890</span>
+              </div>
+              <div class="item" v-show="expanded">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">대표자</span>
+                  </div>
+                </VChip>
+                <span class="item-text">홍길동</span>
+              </div>
+            </div>
+            <div class="top-search-return-end" v-show="expanded">
+              <div class="item">
+                <span class="item-title">지점명</span>
+                <span class="item-text">1지부1팀</span>
+              </div>
+              <div class="item">
+                <span class="item-title">담당자</span>
+                <span class="item-text">김영업</span>
+              </div>
+            </div>
+          </div>
+        </VCol>
+      </TopSearchArea>
+    </VCol>
+  </VRow>
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
@@ -351,6 +393,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.top-search-return-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  flex: 1;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
+  }
+}
+.top-search-return-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
 .card-table-infinity {
   .data {
     gap: 8px 16px;
@@ -456,6 +529,9 @@ export default {
     .v-btn[variant="tonal"] {
       width: 100%;
     }
+    .gap-2 {
+      gap: 4px;
+    }
   }
   .justify-content-start {
     display: flex;
@@ -482,11 +558,7 @@ export default {
     gap: 8px 16px;
     flex-direction: row !important;
     align-items: normal;
-    justify-content: space-between;
-
-    .item {
-      min-width: calc(50% - 8px);
-    }
+    justify-content: flex-start;
   }
 
   .card-table-infinity {
