@@ -76,7 +76,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 처리완료 </VChip>
+                  <VChip color="primary" size="small"> 반품완료 </VChip>
                 </span>
               </div>
               <div class="item">

@@ -117,7 +117,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text"
-                  ><VChip size="small"> 등록 </VChip>
+                  ><VChip color="error" size="small"> 반품불가</VChip>
                 </span>
               </div>
             </div>
@@ -162,7 +162,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 처리완료 </VChip>
+                  <VChip color="primary" size="small"> 반품완료 </VChip>
                 </span>
               </div>
             </div>
@@ -207,7 +207,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 주문생성 </VChip>
+                  <VChip color="info" size="small"> 진행중 </VChip>
                 </span>
               </div>
             </div>
@@ -252,7 +252,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text"
-                  ><VChip size="small"> 등록 </VChip>
+                  ><VChip size="small"> 반품등록</VChip>
                 </span>
               </div>
             </div>
@@ -297,7 +297,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 처리완료 </VChip>
+                  <VChip color="primary" size="small"> 반품완료 </VChip>
                 </span>
               </div>
             </div>
@@ -342,7 +342,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 주문생성 </VChip>
+                  <VChip color="info" size="small"> 진행중 </VChip>
                 </span>
               </div>
             </div>
@@ -387,7 +387,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text"
-                  ><VChip size="small"> 등록 </VChip>
+                  ><VChip size="small"> 반품등록</VChip>
                 </span>
               </div>
             </div>
@@ -432,7 +432,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 처리완료 </VChip>
+                  <VChip color="primary" size="small"> 반품완료 </VChip>
                 </span>
               </div>
             </div>
@@ -477,7 +477,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 주문생성 </VChip>
+                  <VChip color="info" size="small"> 진행중 </VChip>
                 </span>
               </div>
             </div>
@@ -522,7 +522,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 주문생성 </VChip>
+                  <VChip color="info" size="small"> 진행중 </VChip>
                 </span>
               </div>
             </div>
@@ -585,7 +585,15 @@ export default {
 .card-table-infinity .data .justify-content-end .item {
   width: 120px;
   align-items: center;
+  .item-text {
+    width: 68px;
+  }
+  .v-chip {
+    width: 100%;
+    justify-content: center;
+  }
 }
+
 @media (max-width: 960px) {
   .top-search-return-start {
     display: flex;
@@ -607,6 +615,9 @@ export default {
     flex-direction: row !important;
     flex-wrap: wrap;
     gap: 4px;
+    .item-text {
+      width: auto;
+    }
   }
   .card-table-infinity .data .justify-content-end .item {
     width: 100%;
