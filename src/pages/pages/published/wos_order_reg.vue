@@ -262,7 +262,7 @@ const onClear = () => {
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> MIDIDID</span>
+                      <span class="item-text"> WIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -330,7 +330,7 @@ const onClear = () => {
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> MIDIDID</span>
+                      <span class="item-text"> WIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -398,7 +398,7 @@ const onClear = () => {
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> MIDIDID</span>
+                      <span class="item-text"> WIDIDID</span>
                     </div>
                   </VChip>
                 </div>
