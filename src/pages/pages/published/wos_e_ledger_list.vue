@@ -73,7 +73,7 @@ const currentTab = ref("window1");
               <span class="item-text">김영업</span>
             </div>
             <div class="item">
-              <DemoDateTimePickerRange readonly />
+              <DemoDateTimePickermoon readonly />
             </div>
           </div>
           <div class="top-search-eledgerlist-start2">

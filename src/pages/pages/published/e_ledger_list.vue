@@ -65,7 +65,8 @@ const onClear = () => {
               readonly
               v-show="expanded"
             />
-            <DemoDateTimePickerRange readonly v-show="expanded" />
+
+            <DemoDateTimePickermoon readonly v-show="expanded" />
           </div>
         </VCol>
         <VCol cols="12" lg="12" md="12" sm="12" xs="12">

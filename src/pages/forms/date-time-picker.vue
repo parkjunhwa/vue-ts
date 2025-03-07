@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as demoCode from "@/views/demos/forms/form-elements/date-time-picker/demoCodeDateTimePicker";
+import DemoDateTimePickermoon from "@/views/demos/forms/form-elements/date-time-picker/DemoDateTimePickermoon.vue";
 </script>
 
 <template>
@@ -56,6 +57,13 @@ import * as demoCode from "@/views/demos/forms/form-elements/date-time-picker/de
     <VCol cols="12" md="6">
       <AppCardCode title="Disabled Range" :code="demoCode.disabledRange">
         <DemoDateTimePickerDisabledRange />
+      </AppCardCode>
+    </VCol>
+
+    <!-- 👉 moon -->
+    <VCol cols="12" md="6">
+      <AppCardCode title="Moon" :code="demoCode.moon">
+        <DemoDateTimePickermoon />
       </AppCardCode>
     </VCol>
 

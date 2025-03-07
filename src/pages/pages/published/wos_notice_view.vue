@@ -83,16 +83,15 @@ const onClear = () => {
             class="v-label mb-1 text-body-2 text-wrap"
             style="line-height: 15px"
             >첨부파일</label
-          ><vicon> </vicon>
+          >
           <VFileInput
             chips
             placeholder="첨부파일 선택"
-            label="첨부파일"
             prependInnerIcon="tabler-paperclip"
             prepend-icon=""
             multiple
             class="custom-input"
-            :readonly="isReadonly"
+            readonly
           />
           <div class="v-messages mt-1">
             (이미지/문서 파일 최대 3개, 파일 1개 용량 10MB 제한)

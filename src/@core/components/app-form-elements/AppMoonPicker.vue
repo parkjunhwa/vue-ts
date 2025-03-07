@@ -1,23 +1,20 @@
 <script setup lang="ts">
+import monthSelectPlugin from "flatpickr/dist/plugins/monthSelect/index";
+import "flatpickr/dist/plugins/monthSelect/style.css";
+import { nextTick, ref, watch } from "vue";
 import FlatPickr from "vue-flatpickr-component";
 import { useTheme } from "vuetify";
 
-// @ts-expect-error There won't be declaration file for it
 import {
   VField,
   filterFieldProps,
   makeVFieldProps,
 } from "vuetify/lib/components/VField/VField";
 
-// @ts-expect-error There won't be declaration file for it
+import { useConfigStore } from "@core/stores/config";
 import { VInput, makeVInputProps } from "vuetify/lib/components/VInput/VInput";
-
-// @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from "vuetify/lib/util/helpers";
 
-import { useConfigStore } from "@core/stores/config";
-
-// inherit Attribute make false
 defineOptions({
   inheritAttrs: false,
 });
@@ -36,6 +33,7 @@ const props = defineProps({
     default: "text",
   },
   modelModifiers: Object as PropType<Record<string, boolean>>,
+  range: Boolean,
   ...makeVInputProps({
     density: "comfortable",
     hideDetails: "auto",
@@ -46,30 +44,16 @@ const props = defineProps({
   }),
 });
 
-const emit = defineEmits<Emit>();
-
-interface Emit {
-  (e: "click:control", val: MouseEvent): true;
-  (e: "mousedown:control", val: MouseEvent): true;
-  (e: "update:focused", val: MouseEvent): true;
-  (e: "update:modelValue", val: string): void;
-  (e: "click:clear", el: MouseEvent): void;
-}
-
+const emit = defineEmits(["update:modelValue", "click:clear"]);
 const configStore = useConfigStore();
 const attrs = useAttrs();
-
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs);
 const inputProps = ref(VInput.filterProps(props));
 const fieldProps = ref(filterFieldProps(props));
-
 const refFlatPicker = ref();
-
-const { focused } = useFocus(refFlatPicker);
 const isCalendarOpen = ref(false);
 const isInlinePicker = ref(false);
 
-// flat picker prop manipulation
 if (compAttrs.config && compAttrs.config.inline) {
   isInlinePicker.value = compAttrs.config.inline;
   Object.assign(compAttrs, { altInputClass: "inlinePicker" });
@@ -121,7 +105,7 @@ compAttrs.config = {
       ],
     },
   },
-  dateFormat: "Y.m.d",
+  mode: props.range ? "range" : "single",
   rangeSeparator: " ~ ",
   onReady: (selectedDates, dateStr, instance) => {
     instance._input.value = instance._input.value.replace(/ to /g, " ~ ");
@@ -129,35 +113,30 @@ compAttrs.config = {
   onChange: (selectedDates, dateStr, instance) => {
     instance._input.value = instance._input.value.replace(/ to /g, " ~ ");
   },
+  plugins: [
+    monthSelectPlugin({
+      shorthand: true,
+      dateFormat: "Y.m",
+      altFormat: "F Y",
+    }),
+  ],
   prevArrow:
     '<i class="tabler-chevron-left v-icon" style="font-size: 20px; height: 20px; width: 20px;"></i>',
   nextArrow:
     '<i class="tabler-chevron-right v-icon" style="font-size: 20px; height: 20px; width: 20px;"></i>',
 };
 
-// v-field clear prop
 const onClear = (el: MouseEvent) => {
   el.stopPropagation();
-
   nextTick(() => {
-    emit("update:modelValue", "");
-
+    emit("update:modelValue", props.range ? ["", ""] : "");
     emit("click:clear", el);
   });
 };
 
 const vuetifyTheme = useTheme();
-
-const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value);
-
-// Themes class added to flat-picker component for light and dark support
 const updateThemeClassInCalendar = () => {
-  // ℹ️ Flatpickr don't render it's instance in mobile and device simulator
-  if (!refFlatPicker.value.fp.calendarContainer) return;
-
-  vuetifyThemesName.forEach((t) => {
-    refFlatPicker.value.fp.calendarContainer.classList.remove(`v-theme--${t}`);
-  });
+  if (!refFlatPicker.value?.fp?.calendarContainer) return;
   refFlatPicker.value.fp.calendarContainer.classList.add(
     `v-theme--${vuetifyTheme.global.name.value}`
   );
@@ -165,34 +144,21 @@ const updateThemeClassInCalendar = () => {
 
 watch(() => configStore.theme, updateThemeClassInCalendar);
 
-onMounted(() => {
-  updateThemeClassInCalendar();
-});
+onMounted(updateThemeClassInCalendar);
 
-const emitModelValue = (val: string) => {
+const emitModelValue = (val: string | string[]) => {
   emit("update:modelValue", val);
 };
 
-watch(
-  () => props,
-  () => {
-    fieldProps.value = filterFieldProps(props);
-    inputProps.value = VInput.filterProps(props);
-  },
-  {
-    deep: true,
-    immediate: true,
+const updateMoonClass = () => {
+  if (refFlatPicker.value?.fp?.calendarContainer) {
+    if (props.moon) {
+      refFlatPicker.value.fp.calendarContainer.classList.add("moonth");
+    } else {
+      refFlatPicker.value.fp.calendarContainer.classList.remove("moonth");
+    }
   }
-);
-
-const elementId = computed(() => {
-  const _elementIdToken =
-    fieldProps.id || fieldProps.label || inputProps.value.id;
-
-  const _id = useId();
-
-  return _elementIdToken ? `app-picker-field-${_elementIdToken}` : _id;
-});
+};
 </script>
 
 <template>
@@ -252,7 +218,10 @@ const elementId = computed(() => {
                 :readonly="isReadonly.value"
                 class="flat-picker-custom-style h-100 w-100"
                 :disabled="isReadonly.value"
-                @on-open="isCalendarOpen = true"
+                @on-open="
+                  isCalendarOpen = true;
+                  updateMoonClass();
+                "
                 @on-close="
                   isCalendarOpen = false;
                   validate();
@@ -326,7 +295,6 @@ input[altinputclass="inlinePicker"] {
 
 .flatpickr-calendar {
   @include mixins.elevation(6);
-
   background-color: rgb(var(--v-theme-surface));
   inline-size: 16.875rem;
 
@@ -363,12 +331,6 @@ input[altinputclass="inlinePicker"] {
 
   .flatpickr-day {
     color: $body-color;
-    &:nth-child(7n + 1) {
-      color: var(--error-main);
-    }
-    &:nth-child(7n) {
-      color: var(--primary-main);
-    }
 
     &.today {
       &:not(.selected) {
@@ -551,8 +513,6 @@ input[altinputclass="inlinePicker"] {
 
 // Month and year section
 .flatpickr-current-month {
-  flex-direction: row-reverse;
-  place-content: flex-end !important;
   .flatpickr-monthDropdown-months {
     appearance: none;
   }
@@ -657,5 +617,89 @@ input[altinputclass="inlinePicker"] {
     opacity: 1 !important;
     font-size: 12px !important;
   }
+}
+
+.flatpickr-monthSelect-months {
+  justify-content: center !important;
+  margin: 0 12px 12px 12px;
+}
+.flatpickr-monthSelect-month {
+  background: none;
+  border: none;
+  border-radius: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #393939;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  justify-content: center;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  width: calc(33% - 1px);
+  font-size: 15px;
+  line-height: 2rem;
+  margin-block-start: 0 !important;
+  padding: 0;
+}
+.flatpickr-monthSelect-month:hover {
+  border-color: transparent;
+  background: rgba(var(--v-theme-on-surface), 0.06);
+}
+.flatpickr-monthSelect-month.today {
+  border: none !important;
+  border-radius: 16px;
+}
+.flatpickr-monthSelect-month.inRange,
+.flatpickr-monthSelect-month.inRange:hover {
+  border: none;
+  background: rgba(
+    var(--v-theme-primary),
+    var(--v-activated-opacity)
+  ) !important;
+  box-shadow: none !important;
+  color: rgb(var(--v-theme-primary));
+}
+
+.flatpickr-monthSelect-month.inRange {
+  border-radius: 0;
+  border: none !important;
+  background: rgba(var(--v-theme-primary), 0.24);
+  color: rgb(var(--v-theme-primary));
+  box-shadow: none;
+}
+.flatpickr-monthSelect-month.selected,
+.flatpickr-monthSelect-month.startRange,
+.flatpickr-monthSelect-month.endRange {
+  border-color: rgb(var(--v-theme-primary)) !important;
+  background: rgb(var(--v-theme-primary)) !important;
+  color: rgb(var(--v-theme-on-primary)) !important;
+  box-shadow: none;
+}
+
+.flatpickr-monthSelect-month.today:not(.selected) {
+  background: rgba(var(--v-theme-primary), 0.24);
+  color: rgb(var(--v-theme-primary));
+}
+.flatpickr-monthSelect-month.today:not(.startRange),
+.flatpickr-monthSelect-month.today:not(.endRange) {
+  background: rgba(var(--v-theme-primary), 0.24);
+  color: rgb(var(--v-theme-primary));
+}
+.flatpickr-monthSelect-month.startRange {
+  border-radius: 16px 0 0 16px !important;
+  box-shadow: 0 2px 6px 0 rgba(var(--v-theme-primary), 0.3);
+}
+.flatpickr-monthSelect-month.endRange {
+  border-radius: 0 16px 16px 0 !important;
+  box-shadow: 0 2px 6px 0 rgba(var(--v-theme-primary), 0.3);
+}
+.flatpickr-monthSelect-theme-light,
+.flatpickr-monthSelect-theme-dark {
+  width: 200px !important;
 }
 </style>

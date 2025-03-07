@@ -104,6 +104,40 @@ const date = ref('')
 `,
 }
 
+export const moon = {
+  ts: `<script setup lang="ts">
+const moon = ref("");
+// 입력 값 초기화 함수
+const onClear = () => {
+  moon.value = "";
+};
+</script>
+
+<template>
+  <AppMoonPicker
+    v-model="dateRange"
+    placeholder="해당 월 선택"
+    prefix="월선택"
+    prepend-inner-icon="tabler-calendar-event"
+    clearable
+    @keydown.esc="onClear"
+  />
+  <AppMoonPicker
+    v-model="dateRange"
+    placeholder="날자 선택"
+    prefix="조회기간"
+    prepend-inner-icon="tabler-calendar-event"
+    clearable
+    range
+    @keydown.esc="onClear"
+  />
+</template>
+
+`,
+  js: `
+`,
+}
+
 export const humanFriendly = {
   ts: `<script setup lang="ts">
 const date = ref('')
