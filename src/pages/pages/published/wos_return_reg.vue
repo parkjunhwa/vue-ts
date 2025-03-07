@@ -529,6 +529,9 @@ export default {
     .v-btn[variant="tonal"] {
       width: 100%;
     }
+    .gap-2 {
+      gap: 4px;
+    }
   }
   .justify-content-start {
     display: flex;
