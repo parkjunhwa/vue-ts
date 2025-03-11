@@ -100,7 +100,7 @@ export default [
         to: 'pages-published-mt-wos-vwrite',
       },
       {
-        title: '단가계약마스터',
+        title: '단가마스터',
         to: 'pages-published-price-sys',
       },
     ],

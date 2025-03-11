@@ -19,6 +19,9 @@ import Popup008 from "@/pages/pages/published/popup/popup008.vue";
 import Popup009 from "@/pages/pages/published/popup/popup009.vue";
 import Popup010 from "@/pages/pages/published/popup/popup010.vue";
 import Popup011 from "@/pages/pages/published/popup/popup011.vue";
+import Popup012 from "@/pages/pages/published/popup/popup012.vue";
+import Popup013 from "@/pages/pages/published/popup/popup013.vue";
+import Popup014 from "@/pages/pages/published/popup/popup014.vue";
 </script>
 
 <template>
@@ -137,6 +140,9 @@ import Popup011 from "@/pages/pages/published/popup/popup011.vue";
       <Popup009 />
       <Popup010 />
       <Popup011 />
+      <Popup012 />
+      <Popup013 />
+      <Popup014 />
     </VCol>
   </VRow>
   <VRow>
