@@ -82,11 +82,53 @@ export default [
   {
     title: '마스터관리',
     icon: { icon: 'tabler-server' },
-    to: '',
+    children: [
+      {
+        title: '제품마스터',
+        to: 'pages-published-mt-product-list',
+      },
+      {
+        title: '거래처마스터',
+        to: 'pages-published-mt-company-list',
+      },
+      {
+        title: '사용자마스터',
+        to: 'pages-published-mt-user-list',
+      },
+      {
+        title: '도매상마스터',
+        to: 'pages-published-mt-wos-vwrite',
+      },
+      {
+        title: '단가계약마스터',
+        to: 'pages-published-price-sys',
+      },
+    ],
   },
   {
     title: '시스템관리',
     icon: { icon: 'tabler-settings' },
-    to: '',
+    children: [
+      {
+        title: '메뉴관리',
+        to: 'pages-published-menu-sys',
+      },
+      {
+        title: '코드관리',
+        to: 'pages-published-code-sys',
+      },
+      {
+        title: '공지사항',
+        to: 'pages-published-notice-sys-list',
+      },
+      {
+        title: '공지사항(쓰기)',
+        to: 'pages-published-notice-sys-write',
+      },
+      {
+        title: '공지사항(보기)',
+        to: 'pages-published-notice-sys-view',
+      },
+    ],
   },
 ]
