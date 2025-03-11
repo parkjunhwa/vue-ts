@@ -807,3 +807,7 @@ $positions: (
         color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
     }
 }
+
+.v-table .v-selection-control {
+    --v-selection-control-size: 24px !important;
+}

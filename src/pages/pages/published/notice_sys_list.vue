@@ -3,10 +3,6 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
 const inputValue = ref("");
-
-const onClear = () => {
-  inputValue.value = "";
-};
 </script>
 
 <template>
@@ -19,6 +15,7 @@ const onClear = () => {
           title: 'Home',
           to: { name: 'pages-home' },
         },
+        { title: '공지사항' },
         { title: '공지사항' },
       ]"
     />
@@ -498,7 +495,6 @@ export default {
 .app-picker-field {
   width: auto;
 }
-
 
 @media (max-width: 960px) {
   .card-table-infinity .data .justify-content-end {

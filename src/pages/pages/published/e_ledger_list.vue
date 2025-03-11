@@ -141,7 +141,7 @@ const onClear = () => {
               density="compact"
               class="text-no-wrap"
               fixed-header
-              style="max-height: 314"
+              style="max-height: 314px"
               hide-default-footer
             >
               <thead>
