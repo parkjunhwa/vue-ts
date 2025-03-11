@@ -162,13 +162,14 @@ const updateMoonClass = () => {
 </script>
 
 <template>
-  <div class="app-picker-field">
+  <div :class="[props.class]" class="app-picker-field">
     <!-- v-input -->
     <VLabel
       v-if="fieldProps.label"
       class="mb-1 text-body-2"
       :for="elementId"
       :text="fieldProps.label"
+      style="line-height: 15px"
     />
 
     <VInput
@@ -183,7 +184,6 @@ const updateMoonClass = () => {
             props.variant
           ),
         },
-        props.class,
       ]"
       class="position-relative v-text-field"
       :style="props.style"

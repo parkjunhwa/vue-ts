@@ -857,5 +857,9 @@ export default {
   .card-table-infinity .data .justify-content-start .item:nth-child(5) {
     width: 100%;
   }
+
+  .app-picker-field {
+    width: 100%;
+  }
 }
 </style>

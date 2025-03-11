@@ -1,5 +1,6 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
 const basicEditorContent = ref(`
@@ -31,7 +32,6 @@ const onClear = () => {
     </div>
 
     <div class="d-flex gap-4 align-center flex-wrap">
-      <VBtn size="large" color="secondary">취소</VBtn>
       <VBtn size="large" color="primary">저장</VBtn>
     </div>
   </TitleArea>
@@ -92,23 +92,26 @@ const onClear = () => {
             multiple
             class="custom-input"
             readonly
-          />
+            hide-details
+          ></VFileInput>
           <div class="v-messages mt-1">
             (이미지/문서 파일 최대 3개, 파일 1개 용량 10MB 제한)
           </div>
-        </VCol>
-        <VCol
-          cols="12"
-          class="d-flex flex-wrap justify-center"
-          v-show="expanded"
-        >
         </VCol>
       </TopSearchArea>
     </VCol>
   </VRow>
   <VRow>
-    <VCol cols="12"
-      ><VCard class="basic-editor-card">
+    <VCol cols="12">
+      <STitleArea>
+        <div class="d-flex justify-start flex-wrap">
+          <h5 class="d-flex text-h5 font-weight-medium align-center">
+            공지 입력 내용
+          </h5>
+        </div>
+        <div class="d-flex gap-2 align-center flex-wrap"></div>
+      </STitleArea>
+      <VCard class="basic-editor-card">
         <VCardText
           ><TiptapEditor
             v-model="basicEditorContent"

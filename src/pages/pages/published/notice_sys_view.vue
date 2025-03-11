@@ -44,7 +44,7 @@ const file = ref(null);
             placeholder="제목입력"
             value="제목이 이렇게 들어갑니다."
             readonly
-            class="required"
+            class="required readonly"
             variant="outlined"
           />
         </VCol>

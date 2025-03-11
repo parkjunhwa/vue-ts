@@ -121,7 +121,6 @@ compAttrs.config = {
       ],
     },
   },
-  dateFormat: "Y.m.d",
   rangeSeparator: " ~ ",
   onReady: (selectedDates, dateStr, instance) => {
     instance._input.value = instance._input.value.replace(/ to /g, " ~ ");
@@ -196,13 +195,14 @@ const elementId = computed(() => {
 </script>
 
 <template>
-  <div class="app-picker-field">
+  <div :class="[props.class]" class="app-picker-field">
     <!-- v-input -->
     <VLabel
       v-if="fieldProps.label"
       class="mb-1 text-body-2"
       :for="elementId"
       :text="fieldProps.label"
+      style="line-height: 15px"
     />
 
     <VInput
@@ -217,7 +217,6 @@ const elementId = computed(() => {
             props.variant
           ),
         },
-        props.class,
       ]"
       class="position-relative v-text-field"
       :style="props.style"

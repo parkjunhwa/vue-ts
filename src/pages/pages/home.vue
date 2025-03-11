@@ -18,6 +18,7 @@ import Popup007 from "@/pages/pages/published/popup/popup007.vue";
 import Popup008 from "@/pages/pages/published/popup/popup008.vue";
 import Popup009 from "@/pages/pages/published/popup/popup009.vue";
 import Popup010 from "@/pages/pages/published/popup/popup010.vue";
+import Popup011 from "@/pages/pages/published/popup/popup011.vue";
 import { ref } from "vue";
 
 const selectedValue = ref(10); // 기본값을 10으로 설정
@@ -138,6 +139,7 @@ const selectedValue = ref(10); // 기본값을 10으로 설정
       <Popup008 />
       <Popup009 />
       <Popup010 />
+      <Popup011 />
     </VCol>
   </VRow>
   <VRow>

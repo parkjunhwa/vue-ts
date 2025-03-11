@@ -300,6 +300,9 @@ export default {
     max-width: 180px;
   }
 }
+.app-picker-field {
+  flex: 1;
+}
 @media (max-width: 960px) {
   .top-search-eledgerlist-start {
     display: flex;
@@ -326,6 +329,9 @@ export default {
         width: 100%;
       }
     }
+  }
+  .app-picker-field {
+    width: 100%;
   }
 }
 

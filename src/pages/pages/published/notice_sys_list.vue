@@ -32,17 +32,22 @@ const onClear = () => {
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12">
           <AppTextField
-            prepend-inner-icon="tabler-asterisk-simple"
             append-inner-icon="tabler-search"
             placeholder="제목 작성자를 검색하세요."
           />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <DemoDateTimePickerRange />
         </VCol>
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
+          <AppSelect
+            :items="items"
+            placeholder="게시판 카테고리를 선택하세요."
+          />
+        </VCol>
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-end w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
@@ -83,6 +88,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -115,6 +124,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -144,6 +157,10 @@ const onClear = () => {
             </div>
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
               <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
@@ -175,6 +192,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -204,6 +225,10 @@ const onClear = () => {
             </div>
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
               <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
@@ -235,6 +260,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -264,6 +293,10 @@ const onClear = () => {
             </div>
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
               <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
@@ -295,6 +328,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -325,6 +362,10 @@ const onClear = () => {
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
+              <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
               </div>
@@ -354,6 +395,10 @@ const onClear = () => {
             </div>
             <!-- 오른쪽 컨텐츠 -->
             <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">게시판 카테고리</span>
+                <span class="item-text">카테고리명</span>
+              </div>
               <div class="item">
                 <span class="item-title">작성자</span>
                 <span class="item-text">김영업</span>
@@ -426,9 +471,9 @@ export default {
   align-items: center;
 }
 .item-cell-title {
-  white-space: nowrap; /* 줄바꿈 방지 */
-  overflow: hidden; /* 넘치는 텍스트 숨김 */
-  text-overflow: ellipsis; /* ...으로 표시 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-table-infinity .data .justify-content-start .item:nth-child(2) {
   align-items: center;
@@ -439,18 +484,27 @@ export default {
   gap: 4px 16px;
 }
 .card-table-infinity .data .justify-content-end .item:nth-child(1) {
-  width: 93px;
+  width: 160px;
 }
 .card-table-infinity .data .justify-content-end .item:nth-child(2) {
-  width: 121px;
+  width: 93px;
 }
 .card-table-infinity .data .justify-content-end .item:nth-child(3) {
+  width: 121px;
+}
+.card-table-infinity .data .justify-content-end .item:nth-child(4) {
   width: 120px;
 }
+.app-picker-field {
+  width: auto;
+}
+
+
 @media (max-width: 960px) {
   .card-table-infinity .data .justify-content-end {
     justify-content: space-between;
     gap: 4px 16px;
+    flex-wrap: wrap;
   }
   .card-table-infinity .data .justify-content-start .item:nth-child(1) {
     width: inherit;

@@ -593,7 +593,9 @@ export default {
     justify-content: center;
   }
 }
-
+.app-picker-field {
+  width: 340px;
+}
 @media (max-width: 960px) {
   .top-search-return-start {
     display: flex;
@@ -626,6 +628,10 @@ export default {
     .gap-2 {
       gap: 4px;
     }
+  }
+
+  .app-picker-field {
+    width: 100%;
   }
 }
 </style>

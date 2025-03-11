@@ -435,6 +435,9 @@ export default {
   overflow: hidden;
   gap: 4px;
 }
+.card-table-infinity .data .justify-content-end {
+  gap: 4px 16px;
+}
 .card-table-infinity .data .justify-content-end .item:nth-child(1) {
   width: 93px;
 }
@@ -447,6 +450,7 @@ export default {
 @media (max-width: 960px) {
   .card-table-infinity .data .justify-content-end {
     justify-content: space-between;
+    gap: 4px 16px;
   }
   .card-table-infinity .data .justify-content-start .item:nth-child(1) {
     width: inherit;
@@ -460,6 +464,9 @@ export default {
     align-items: center;
     gap: 4px;
     overflow: hidden;
+  }
+  .app-picker-field {
+    width: 100%;
   }
 }
 .v-chip.bg-error {
