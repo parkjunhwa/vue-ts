@@ -19,6 +19,7 @@ const onClear = () => {
           title: 'Home',
           to: { name: 'pages-home' },
         },
+        { title: '공지관리' },
         { title: '공지사항' },
       ]"
     />

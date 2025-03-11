@@ -18,6 +18,7 @@ const onClear = () => {
       class="px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"
       :items="[
         { title: 'Home', to: { name: 'pages-home' }, class: 'text-primary' },
+        { title: '주문' },
         { title: '주문등록' },
       ]"
     />

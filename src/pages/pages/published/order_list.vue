@@ -21,7 +21,7 @@ const onClear = () => {
           title: 'Home',
           to: { name: 'pages-home' },
         },
-        { title: '반품' },
+        { title: '주문' },
         { title: '주문내역조회' },
       ]"
     />
