@@ -34,7 +34,7 @@ export const basic2 = {
     clearable
     clear-icon="tabler-x"
     append-inner-icon="tabler-calendar"
-    :config="{ dateFormat: 'Y-m-d', allowInput: true }"
+    :config="{ dateFormat: 'Y.m.d', allowInput: true }"
   />
 </template>`,
   js: ``,
@@ -82,7 +82,7 @@ const date = ref('')
     v-model="date"
     label="Disabled Range"
     placeholder="날자 선택"
-    :config="{ dateFormat: 'Y-m-d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
+    :config="{ dateFormat: 'Y.m.d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
   />
 </template>
 `,
@@ -98,7 +98,7 @@ const date = ref('')
     v-model="date"
     label="Disabled Range"
     placeholder="날자 선택"
-    :config="{ dateFormat: 'Y-m-d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
+    :config="{ dateFormat: 'Y.m.d', disable: [{ from: \`\${currentYear}-\${currentMonth}-20\`, to: \`\${currentYear}-\${currentMonth}-25\` }] }"
   />
 </template>
 `,
@@ -206,7 +206,7 @@ const multipleDate = ref('')
     v-model="multipleDate"
     label="Multiple Dates"
     placeholder="날자 선택"
-    :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
+    :config="{ mode: 'multiple', dateFormat: 'Y.m.d' }"
   />
 </template>
 `,
@@ -219,7 +219,7 @@ const multipleDate = ref('')
     v-model="multipleDate"
     label="Multiple Dates"
     placeholder="날자 선택"
-    :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
+    :config="{ mode: 'multiple', dateFormat: 'Y.m.d' }"
   />
 </template>
 `,

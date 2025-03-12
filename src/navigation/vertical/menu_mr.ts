@@ -91,6 +91,11 @@ export default [
         title: '거래처마스터',
         to: 'pages-published-mt-company-list',
       },
+      
+      {
+        title: '거래처마스터 상세',
+        to: 'pages-published-mt-company-vwrite',
+      },
       {
         title: '사용자마스터',
         to: 'pages-published-mt-user-list',

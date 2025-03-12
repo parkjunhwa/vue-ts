@@ -25,7 +25,7 @@ const onClear = () => {
   <AppDateTimePicker
     v-model="date"
     label="날짜 선택"
-    :config="{ dateFormat: 'Y-m-d', allowInput: true }"
+    :config="{ dateFormat: 'Y.m.d', allowInput: true }"
     prepend-inner-icon="tabler-calendar-event"
     clearable
     @keydown.esc="onClear"

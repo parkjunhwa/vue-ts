@@ -45,7 +45,6 @@ const file = ref(null);
             value="제목이 이렇게 들어갑니다."
             readonly
             class="required"
-            variant="outlined"
           />
         </VCol>
         <VCol cols="6" lg="1" md="1" sm="6" xs="6" v-show="expanded">

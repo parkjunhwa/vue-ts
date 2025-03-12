@@ -811,3 +811,19 @@ $positions: (
 .v-table .v-selection-control {
     --v-selection-control-size: 24px !important;
 }
+
+.basic-table-card {
+    .v-card-text {
+        padding: 16px;
+    }
+}
+
+.botttom-total-area {
+    padding: 24px;
+
+    .v-col-12 {
+        .flex-grow-1 {
+            margin: -8px;
+        }
+    }
+}

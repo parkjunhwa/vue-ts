@@ -157,6 +157,18 @@ const items = ["Y", "N"];
     </VCol>
   </VRow>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      expanded: true,
+      values: "",
+      items: ["Option 1", "Option 2", "Option 3"],
+      nameRules: [(v) => !!v || "필수 항목입니다"],
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
 .app-picker-field {
   flex: 1;
@@ -189,14 +201,22 @@ const items = ["Y", "N"];
   display: flex;
   flex-direction: column !important;
 }
+
 .sticky-area {
   position: sticky;
   top: 60px;
   z-index: 10; /* 다른 요소 위에 고정되도록 설정 */
   @media (max-width: 1280px) {
-    display: none;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+    .v-data-table {
+      max-height: auto !important;
+      min-height: auto !important;
+    }
   }
 }
+
 .card-table-infinity,
 .v-container,
 .v-row {
@@ -212,14 +232,6 @@ const items = ["Y", "N"];
 .basic-table-card {
   .v-card-text {
     padding: 16px;
-  }
-}
-.botttom-total-area {
-  padding: 24px;
-  .v-col-12 {
-    .flex-grow-1 {
-      margin: -8px;
-    }
   }
 }
 </style>

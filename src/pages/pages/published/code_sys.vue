@@ -57,7 +57,6 @@ const items = ["Y", "N"];
   </VRow>
   <VRow>
     <VCol cols="12" lg="3" class="sticky-area">
-      <!-- md이하 모드에서 숨김-->
       <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
@@ -230,7 +229,7 @@ const items = ["Y", "N"];
                 </thead>
 
                 <tbody>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -249,7 +248,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -268,7 +267,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -287,7 +286,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -306,7 +305,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -325,7 +324,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -344,7 +343,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -363,7 +362,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -382,7 +381,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -401,7 +400,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -420,7 +419,7 @@ const items = ["Y", "N"];
                     <td>내용</td>
                     <td>내용내용내용내용내용내용</td>
                   </tr>
-                  <tr class="total-line">
+                  <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
                     <td>승인인</td>
@@ -448,6 +447,18 @@ const items = ["Y", "N"];
     </VCol>
   </VRow>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      expanded: true,
+      values: "",
+      items: ["Option 1", "Option 2", "Option 3"],
+      nameRules: [(v) => !!v || "필수 항목입니다"],
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
 .app-picker-field {
   flex: 1;
@@ -465,7 +476,10 @@ const items = ["Y", "N"];
   top: 60px;
   z-index: 10; /* 다른 요소 위에 고정되도록 설정 */
   @media (max-width: 1280px) {
-    display: none;
+    .v-data-table {
+      max-height: auto !important;
+      min-height: auto !important;
+    }
   }
 }
 .card-table-infinity,
@@ -478,19 +492,6 @@ const items = ["Y", "N"];
 .side-card {
   .v-card-text {
     padding: 16px;
-  }
-}
-.basic-table-card {
-  .v-card-text {
-    padding: 16px;
-  }
-}
-.botttom-total-area {
-  padding: 24px;
-  .v-col-12 {
-    .flex-grow-1 {
-      margin: -8px;
-    }
   }
 }
 </style>

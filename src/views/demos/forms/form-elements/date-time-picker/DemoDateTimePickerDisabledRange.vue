@@ -16,7 +16,7 @@ const onClear = () => {
     placeholder="날자 선택"
     prepend-inner-icon="tabler-calendar-event"
     :config="{
-      dateFormat: 'Y-m-d',
+      dateFormat: 'Y.m.d',
       rangeSeparator: ' ~ ',
       disable: [
         {

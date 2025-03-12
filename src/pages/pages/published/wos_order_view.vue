@@ -446,14 +446,6 @@ export default {
     }
   }
 }
-.botttom-total-area {
-  padding: 24px;
-  .v-col-12 {
-    .flex-grow-1 {
-      margin: -8px;
-    }
-  }
-}
 .card-table-infinity .data.del {
   background: var(--color-secondary-gray-100);
   .justify-content-end {

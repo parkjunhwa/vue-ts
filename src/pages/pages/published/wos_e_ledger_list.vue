@@ -322,7 +322,6 @@ export default {
 }
 
 .basic-table-card {
-  padding: 16px;
 
   @media (max-width: 960px) {
     padding: 0px !important;

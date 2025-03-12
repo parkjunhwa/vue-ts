@@ -12,7 +12,7 @@ const onClear = () => {
     label="Multiple Dates"
     placeholder="날자 선택"
     prepend-inner-icon="tabler-calendar-event"
-    :config="{ mode: 'multiple', dateFormat: 'Y-m-d' }"
+    :config="{ mode: 'multiple', dateFormat: 'Y.m.d' }"
     clearable
     @keydown.esc="onClear"
   />
