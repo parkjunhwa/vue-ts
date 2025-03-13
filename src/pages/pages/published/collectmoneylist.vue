@@ -39,7 +39,7 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
               <div class="gap-2 flex-wrap justify-start w-100 top-chip-item">
                 <v-icon class="tabler-calendar-event"></v-icon>
                 <span class="item-title">조회기간</span>
-                <span class="item-text">2025-02-02 ~ 2025-02-02</span>
+                <span class="item-text">2025.02.02 ~ 2025.02.02</span>
               </div>
             </VChip>
             <AppTextField

@@ -60,7 +60,9 @@ const isDialogVisible = ref(false);
         </VCol>
         <VCol cols="12" lg="6" md="6" sm="12" xs="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-end w-100">
-            <VBtn color="primary" class="bg-menu-active"
+            <VBtn
+              color="primary"
+              style="background-color: var(--bg-facebook) !important"
               ><VIcon start icon="tabler-search" />토스결제내역 조회</VBtn
             >
           </div>
@@ -818,6 +820,10 @@ export default {
   z-index: 10; /* 다른 요소 위에 고정되도록 설정 */
   @media (max-width: 1280px) {
     display: none;
+
+    position: relative;
+    top: 0px;
+    z-index: 1;
   }
 }
 .card-table-infinity,
