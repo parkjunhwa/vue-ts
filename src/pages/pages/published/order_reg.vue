@@ -376,7 +376,7 @@ const currentTab = ref("window1");
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> WIDIDID</span>
+                      <span class="item-text"> WIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -444,7 +444,7 @@ const currentTab = ref("window1");
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> WIDIDID</span>
+                      <span class="item-text"> WIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -512,7 +512,7 @@ const currentTab = ref("window1");
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">임시주문번호</span>
-                      <span class="item-text"> WIDIDID</span>
+                      <span class="item-text"> WIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>

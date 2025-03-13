@@ -89,7 +89,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -151,7 +151,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -209,7 +209,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -267,7 +267,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -325,7 +325,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -383,7 +383,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -441,7 +441,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -499,7 +499,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -557,7 +557,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -615,7 +615,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDID</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>

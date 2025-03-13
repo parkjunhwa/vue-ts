@@ -96,8 +96,8 @@ const items = ["Y", "N"];
                 <label
                   class="v-label mb-1 text-body-2 text-wrap"
                   style="line-height: 15px"
-                  >메뉴명</label
-                >
+                  >메뉴명
+                </label>
                 <ul
                   class="v-breadcrumbs v-breadcrumbs--density-default px-0 pb-0 pt-0 m-0 help-center-breadcrumbs"
                   style="line-height: 38px"

@@ -75,14 +75,14 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="top-chip-item">
                     <span class="item-title">임시반품번호</span>
-                    <span class="item-text"> MIDIDIDID </span>
+                    <span class="item-text"> MIDIDIDIDIDID </span>
                   </div>
                 </VChip>
               </div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="top-chip-item">
-                    <span class="item-title">주문번호호</span>
+                    <span class="item-title">주문번호</span>
                     <span class="item-text"> IDIDIDID </span>
                   </div>
                 </VChip>

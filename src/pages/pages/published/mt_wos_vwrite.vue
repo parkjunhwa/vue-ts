@@ -238,4 +238,11 @@ export default {
     }
   }
 }
+.card-table-infinity,
+.v-container,
+.v-row {
+  overflow: visible !important;
+  align-items: flex-start;
+  position: static !important;
+}
 </style>

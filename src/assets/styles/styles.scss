@@ -786,21 +786,21 @@ $positions: (
     }
 }
 
-.app-text-field {
-    &:has(.v-input.v-input--readonly) {
-        .v-label {
-            color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+// .app-text-field {
+//     &:has(.v-input.v-input--readonly) {
+//         .v-label {
+//             color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
 
-            &:has(+ .v-input .v-field.v-field--focused .v-field__outline.text-primary) {
-                color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
-            }
-        }
+//             &:has(+ .v-input .v-field.v-field--focused .v-field__outline.text-primary) {
+//                 color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+//             }
+//         }
 
-        .v-field.v-field--focused .v-field__outline.text-primary {
-            color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
-        }
-    }
-}
+//         .v-field.v-field--focused .v-field__outline.text-primary {
+//             color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+//         }
+//     }
+// }
 
 .v-file-input.v-input--readonly {
     .v-field.v-field--focused .v-field__outline.text-primary {
@@ -826,4 +826,37 @@ $positions: (
             margin: -8px;
         }
     }
+}
+
+.v-switch .v-selection-control--dirty {
+    .v-switch__track {
+        background-color: rgb(var(--v-theme-primary)) !important;
+    }
+}
+
+.v-list-group {
+    .v-list-group__items {
+        .v-list-item {
+            padding-inline-start: calc(20px + 32px) !important;
+            border-radius: 6px;
+        }
+
+        .v-list-group__items {
+            .v-list-item {
+                padding-inline-start: calc(20px + 64px) !important;
+            }
+
+            .v-list-group__items {
+                .v-list-item {
+                    padding-inline-start: calc(20px + 96px) !important;
+                }
+            }
+        }
+
+    }
+}
+
+.v-list-item--density-compact.v-list-item--one-line {
+    border-radius: 6px;
+
 }

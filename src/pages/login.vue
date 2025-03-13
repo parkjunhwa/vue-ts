@@ -226,7 +226,7 @@ const onClear3 = () => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@core/scss/template/pages/page-auth";
 .text-h2 {
   font-weight: 700;

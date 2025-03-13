@@ -5,9 +5,25 @@ import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 const selectedItem = ref("");
 const items = ["아이템1", "아이템2"];
-
 import { ref } from "vue";
-const inputValue = ref("");
+const switchOn = ref("on");
+const switchOnDisabled = ref("on");
+const open = ref(["menu00"]);
+const menu00 = [
+  ["종병본부장", "tabler-user"],
+  ["복합본부장", "tabler-user"],
+  ["도매본부장", "tabler-user"],
+];
+const menu01 = [
+  ["종병유통 1지부 1팀", "tabler-folder"],
+  ["종병유통 1지부 2팀", "tabler-folder"],
+];
+const menu02 = [
+  ["종병유통 2지부 1팀", "tabler-folder"],
+  ["종병유통 2지부 2팀", "tabler-folder"],
+  ["종병유통 2지부 3팀", "tabler-folder"],
+  ["종병유통 2지부 4팀", "tabler-folder"],
+];
 </script>
 
 <template>
@@ -83,6 +99,79 @@ const inputValue = ref("");
             </div>
             <div class="d-flex gap-2 align-center flex-wrap"></div>
           </STitleArea>
+          <VList style="max-height: 314px; min-height: calc(100vh - 235px)">
+            <VListGroup value="총괄본부(사장)">
+              <template #activator="{ props }">
+                <VListItem
+                  v-bind="props"
+                  prepend-icon="tabler-folder"
+                  title="총괄본부(사장)"
+                />
+              </template>
+
+              <VListItem
+                v-for="([title, icon], i) in menu00"
+                :key="i"
+                :value="title"
+                :title="title"
+                :prepend-icon="icon"
+              />
+            </VListGroup>
+            <VListSubheader class="mt-4">지점선택</VListSubheader>
+            <VListGroup value="종병본부장">
+              <VListItem
+                v-bind="props"
+                prepend-icon="tabler-user"
+                title="종병본부장"
+                value="종병본부장"
+              />
+            </VListGroup>
+            <VListGroup value="서울종병">
+              <template #activator="{ props }">
+                <VListItem
+                  v-bind="props"
+                  prepend-icon="tabler-folder"
+                  title="서울종병"
+                />
+              </template>
+
+              <VListGroup value="종병유통 1지부">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="종병유통 1지부"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu01"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="종병유통 2지부">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="종병유통 2지부"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu02"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+            </VListGroup>
+          </VList>
         </VCardText>
       </VCard>
     </VCol>
@@ -114,7 +203,7 @@ const inputValue = ref("");
               >
                 <thead>
                   <tr>
-                    <th><VCheckbox /></th>
+                    <th><VCheckbox disabled /></th>
                     <th>부서명명</th>
                     <th>사용자ID</th>
                     <th>사용자명</th>
@@ -129,7 +218,7 @@ const inputValue = ref("");
 
                 <tbody>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -139,11 +228,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch v-model="switchOnDisabled" value="on" disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -153,11 +242,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -167,11 +256,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -181,11 +270,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -195,11 +284,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -209,11 +298,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -223,11 +312,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -237,11 +326,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -251,11 +340,11 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 60px"><VCheckbox /></td>
+                    <td style="width: 60px"><VCheckbox disabled /></td>
                     <td>부서명</td>
                     <td>IDIDID</td>
                     <td>김영업</td>
@@ -265,7 +354,7 @@ const inputValue = ref("");
                     <td>010-0000-0000</td>
                     <td>사용</td>
                     <td style="width: 130px">
-                      <VSwitch />
+                      <VSwitch disabled />
                     </td>
                   </tr>
                 </tbody>
@@ -296,7 +385,7 @@ const inputValue = ref("");
                 readonly
               />
             </VCol>
-            <VCol cols="12" lg="1" md="1" sm="12" xs="12">
+            <VCol cols="12" lg="2" md="2" sm="12" xs="12">
               <AppTextField
                 label="책임센터코드"
                 type="text"
@@ -304,7 +393,7 @@ const inputValue = ref("");
                 readonly
               />
             </VCol>
-            <VCol cols="12" lg="7" md="7" sm="12" xs="12">
+            <VCol cols="12" lg="5" md="5" sm="12" xs="12">
               <AppTextField
                 label="책임센터명"
                 type="text"
@@ -313,7 +402,7 @@ const inputValue = ref("");
                 readonly
               />
             </VCol>
-            <VCol cols="12" lg="1" md="1" sm="12" xs="12">
+            <VCol cols="12" lg="2" md="2" sm="12" xs="12">
               <AppTextField
                 label="위치코드"
                 type="text"
@@ -458,10 +547,23 @@ export default {
     }
   }
 }
+.card-table-infinity,
+.v-container,
+.v-row {
+  overflow: visible !important;
+  align-items: flex-start;
+  position: static !important;
+}
 .botttom-total-area {
   .app-picker-field {
     margin: -8px;
     width: calc(100% + 16px);
+  }
+}
+.side-card {
+  .v-card-text {
+    padding: 16px;
+    gap: 16px;
   }
 }
 </style>
