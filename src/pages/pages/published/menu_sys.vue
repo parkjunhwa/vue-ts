@@ -5,6 +5,39 @@ import TitleArea from "@/layouts/components/TitleArea.vue";
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 const selectedItem = ref("Y");
 const items = ["Y", "N"];
+
+const open = ref(["menu0101"]);
+const menu0101 = [
+  ["주문등록", "tabler-file"],
+  ["주문내역조회", "tabler-file"],
+];
+const menu0102 = [
+  ["반품등록", "tabler-file"],
+  ["반품조회", "tabler-file"],
+];
+const menu0103 = [["거래원장조회", "tabler-file"]];
+const menu0104 = [
+  ["카드수금등록", "tabler-file"],
+  ["수금내역조회", "tabler-file"],
+];
+const menu0105 = [["공지사항", "tabler-file"]];
+const menu0106 = [["현황통계", "tabler-file"]];
+
+const menu0201 = [
+  ["주문등록", "tabler-file"],
+  ["주문내역조회", "tabler-file"],
+];
+const menu0202 = [
+  ["반품등록", "tabler-file"],
+  ["반품조회", "tabler-file"],
+];
+const menu0203 = [["거래원장조회", "tabler-file"]];
+const menu0204 = [
+  ["카드수금등록", "tabler-file"],
+  ["수금내역조회", "tabler-file"],
+];
+const menu0205 = [["공지사항", "tabler-file"]];
+const menu0206 = [["현황통계", "tabler-file"]];
 </script>
 
 <template>
@@ -66,7 +99,247 @@ const items = ["Y", "N"];
       </STitleArea>
 
       <VCard class="side-card">
-        <VCardText>1 </VCardText>
+        <VCardText>
+          <VList
+            style="
+              max-height: 314px;
+              min-height: calc(100vh - 235px);
+              padding: 0;
+            "
+          >
+            <VListSubheader>MYUNG IN PHARM</VListSubheader>
+            <VListGroup value="MR(영업) Main">
+              <template #activator="{ props }">
+                <VListItem
+                  v-bind="props"
+                  prepend-icon="tabler-folder"
+                  title="MR(영업) Main"
+                />
+              </template>
+
+              <VListGroup value="주문1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="주문"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0101"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="반품1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="반품"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0102"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="개래원장1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="거래원장"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0103"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+              <VListGroup value="수금1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="수금"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0104"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+              <VListGroup value="공지사항1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="공지사항"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0105"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="현황/통계1">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="현황/통계"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0106"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+            </VListGroup>
+            <VListGroup value="WOS(도매상) Main">
+              <template #activator="{ props }">
+                <VListItem
+                  v-bind="props"
+                  prepend-icon="tabler-folder"
+                  title="WOS(도매상) Main"
+                />
+              </template>
+
+              <VListGroup value="주문2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="주문"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0201"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="반품2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="반품"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0202"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="개래원장2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="거래원장"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0203"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+              <VListGroup value="수금2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="수금"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0204"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+              <VListGroup value="공지사항2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="공지사항"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0205"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+
+              <VListGroup value="현황/통계2">
+                <template #activator="{ props }">
+                  <VListItem
+                    v-bind="props"
+                    prepend-icon="tabler-folder"
+                    title="현황/통계"
+                  />
+                </template>
+
+                <VListItem
+                  v-for="([title, icon], i) in menu0206"
+                  :key="i"
+                  :value="title"
+                  :title="title"
+                  :prepend-icon="icon"
+                />
+              </VListGroup>
+            </VListGroup>
+          </VList>
+        </VCardText>
       </VCard>
     </VCol>
     <VCol cols="12" lg="9" md="12" sm="12" xs="12">

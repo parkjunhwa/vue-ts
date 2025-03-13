@@ -99,7 +99,13 @@ const menu02 = [
             </div>
             <div class="d-flex gap-2 align-center flex-wrap"></div>
           </STitleArea>
-          <VList style="max-height: 314px; min-height: calc(100vh - 235px)">
+          <VList
+            style="
+              max-height: 314px;
+              min-height: calc(100vh - 235px);
+              padding: 0;
+            "
+          >
             <VListGroup value="총괄본부(사장)">
               <template #activator="{ props }">
                 <VListItem

@@ -821,7 +821,7 @@ export default {
           width: 140px;
         }
         &.num04 {
-          width: 160px;
+          width: 190px;
         }
         &.num05 {
           width: 180px;

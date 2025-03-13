@@ -399,7 +399,7 @@ export default {
         }
 
         &.num03 {
-          width: 170px;
+          width: 190px;
         }
 
         &.num04 {

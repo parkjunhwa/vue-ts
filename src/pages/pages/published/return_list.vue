@@ -96,7 +96,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -141,7 +141,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -186,7 +186,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -231,7 +231,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -276,7 +276,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -321,7 +321,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -366,7 +366,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -411,7 +411,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -456,7 +456,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -501,7 +501,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDID</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                   </div>
                 </VChip>
               </div>
@@ -570,8 +570,18 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 }
-.card-table-infinity .data .justify-content-start .item:nth-child(1),
-.card-table-infinity .data .justify-content-start .item:nth-child(2),
+.card-table-infinity .data .justify-content-start .item:nth-child(1) {
+  width: 190px;
+  .v-chip {
+    width: 100%;
+  }
+}
+.card-table-infinity .data .justify-content-start .item:nth-child(2) {
+  width: 210px;
+  .v-chip {
+    width: 100%;
+  }
+}
 .card-table-infinity .data .justify-content-start .item:nth-child(3) {
   width: 180px;
   .v-chip {

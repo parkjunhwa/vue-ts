@@ -536,7 +536,7 @@ export default {
           width: 140px;
         }
         &.num04 {
-          width: 160px;
+          width: 190px;
         }
         &.num05 {
           width: 180px;
@@ -634,6 +634,9 @@ export default {
     display: flex;
     flex-direction: column !important;
     align-items: flex-start !important;
+    .section02 {
+      gap: 8px;
+    }
   }
   .top-search-order-start {
     display: flex;
@@ -646,7 +649,7 @@ export default {
   .top-search-order-end {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 8px;
     flex-direction: row !important;
     align-items: normal;
     justify-content: space-between;

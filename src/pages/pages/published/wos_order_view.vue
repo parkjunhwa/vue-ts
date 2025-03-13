@@ -83,7 +83,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="top-chip-item">
                     <span class="item-title">주문번호</span>
-                    <span class="item-text"> IDIDIDID </span>
+                    <span class="item-text"> IDIDIDIDIDIDIDIDIDID </span>
                   </div>
                 </VChip>
               </div>

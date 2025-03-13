@@ -126,7 +126,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -141,7 +141,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -156,7 +156,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -171,7 +171,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -186,7 +186,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -201,7 +201,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -216,7 +216,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -231,7 +231,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>
@@ -246,7 +246,7 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음음</td>
+                <td>있음</td>
                 <td>010-0000-0000</td>
                 <td>-</td>
                 <td>대표자명</td>

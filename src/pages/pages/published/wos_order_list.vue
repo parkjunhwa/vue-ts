@@ -107,7 +107,7 @@ const onClear = () => {
                   <VChip color="primary" size="small">
                     <div class="chip-item">
                       <span class="item-title">주문번호</span>
-                      <span class="item-text">IDIDIDID</span>
+                      <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -284,14 +284,28 @@ export default {
             }
           }
 
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(4),
+          &:nth-child(2) {
+            width: 190px;
+            .v-chip {
+              width: 100%;
+            }
+          }
+          &:nth-child(3) {
+            width: 210px;
+            .v-chip {
+              width: 100%;
+            }
+          }
+          &:nth-child(4) {
+            width: 160px;
+            .v-chip {
+              width: 100%;
+            }
+          }
           &:nth-child(5) {
             width: 160px;
-
             .v-chip {
-              width: 160%;
+              width: 100%;
             }
           }
         }
@@ -361,8 +375,12 @@ export default {
         flex-wrap: wrap !important;
 
         .item {
-          &:nth-child(2),
-          &:nth-child(3),
+          &:nth-child(2) {
+            width: 190px;
+          }
+          &:nth-child(3) {
+            width: 210px;
+          }
           &:nth-child(4) {
             width: 160px;
           }
