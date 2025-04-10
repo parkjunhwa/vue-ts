@@ -121,7 +121,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품사유</span>
-                    <span class="item-text"> 폐기성(유효기간임박) </span>
+                    <span class="item-text"> 납품도매변경 </span>
                   </div>
                 </VChip>
               </div>
@@ -211,7 +211,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품사유</span>
-                    <span class="item-text"> 폐기성(유효기간임박) </span>
+                    <span class="item-text"> 처방(소진)부진 </span>
                   </div>
                 </VChip>
               </div>
@@ -256,7 +256,7 @@ const onClear = () => {
                 <VChip color="primary" size="small">
                   <div class="chip-item">
                     <span class="item-title">반품사유</span>
-                    <span class="item-text"> 폐기성(유효기간임박) </span>
+                    <span class="item-text"> 파손 </span>
                   </div>
                 </VChip>
               </div>

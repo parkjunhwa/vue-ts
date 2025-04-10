@@ -2,7 +2,6 @@
 import BottomTotalArea from "@/layouts/components/BottomTotalArea.vue";
 import STitleArea from "@/layouts/components/STitleArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
-import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 const selectedItem = ref("Y");
 const items = ["Y", "N"];
 
@@ -64,28 +63,6 @@ const menu0206 = [["현황통계", "tabler-file"]];
     <div class="d-flex gap-4 align-center flex-wrap"></div>
   </TitleArea>
 
-  <VRow>
-    <VCol cols="12">
-      <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-          <AppTextField
-            append-inner-icon="tabler-search"
-            placeholder="그룹코드, 그룹명을 검색하세요."
-          />
-        </VCol>
-        <VCol cols="12" lg="9" md="9" sm="12" xs="12" v-show="expanded">
-          <div class="d-flex gap-2 flex-wrap justify-end w-100">
-            <VBtn variant="outlined" color="secondary"
-              ><VIcon start icon="tabler-refresh" />초기화</VBtn
-            >
-            <VBtn color="primary"
-              ><VIcon start icon="tabler-search" />조회</VBtn
-            >
-          </div>
-        </VCol>
-      </TopSearchArea>
-    </VCol>
-  </VRow>
   <VRow>
     <VCol cols="12" lg="3" class="sticky-area">
       <!-- md이하 모드에서 숨김-->

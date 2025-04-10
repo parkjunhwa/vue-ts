@@ -36,7 +36,7 @@ const inputValue = ref("");
           />
         </VCol>
         <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
-          <DemoDateTimePickerRange />
+          <DemoDateTimePickerRange readonly />
         </VCol>
         <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <AppSelect

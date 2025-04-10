@@ -29,9 +29,7 @@ const items = ["Y", "N"];
       </h3>
     </div>
 
-    <div class="d-flex gap-4 align-center flex-wrap">
-      <VBtn size="large" color="primary">저장</VBtn>
-    </div>
+    <div class="d-flex gap-4 align-center flex-wrap"></div>
   </TitleArea>
   <VRow>
     <VCol cols="12">
@@ -63,14 +61,7 @@ const items = ["Y", "N"];
             도매상 리스트
           </h5>
         </div>
-        <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small" variant="outlined" color="secondary"
-            ><VIcon start icon="tabler-minus" />삭제</VBtn
-          >
-          <VBtn size="small" variant="outlined" color="secondary"
-            ><VIcon start icon="tabler-plus" />신규등록</VBtn
-          >
-        </div>
+        <div class="d-flex gap-2 align-center flex-wrap"></div>
       </STitleArea>
 
       <VCard class="side-card">
@@ -86,7 +77,6 @@ const items = ["Y", "N"];
           >
             <thead>
               <tr>
-                <th><VCheckbox /></th>
                 <th>도매상코드</th>
                 <th>도매상명명</th>
               </tr>
@@ -94,32 +84,26 @@ const items = ["Y", "N"];
 
             <tbody>
               <tr>
-                <td style="min-width: 60px; width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
               <tr>
-                <td style="min-width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
               <tr>
-                <td style="min-width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
               <tr>
-                <td style="min-width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
               <tr>
-                <td style="min-width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
               <tr>
-                <td style="min-width: 60px"><VCheckbox /></td>
                 <td>IDIDIDID</td>
                 <td>거래처(매출처)명</td>
               </tr>
@@ -174,14 +158,6 @@ const items = ["Y", "N"];
             </VCol>
             <VCol cols="12" lg="4" md="4" sm="12" xs="12">
               <AppTextField
-                label="현재 비밀번호"
-                type="password"
-                value="******"
-                class="required"
-              />
-            </VCol>
-            <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-              <AppTextField
                 label="새 비밀번호"
                 type="password"
                 value="******"
@@ -196,7 +172,7 @@ const items = ["Y", "N"];
                 class="required"
               />
             </VCol>
-            <VCol cols="12" lg="12" md="12" sm="12" xs="12">
+            <VCol cols="12" lg="4" md="4" sm="12" xs="12">
               <AppTextField
                 label="이메일 주소"
                 type="text"

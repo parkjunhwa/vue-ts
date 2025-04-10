@@ -232,7 +232,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -251,7 +251,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -270,7 +270,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -289,7 +289,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -308,7 +308,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -327,7 +327,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -346,7 +346,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -365,7 +365,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -384,7 +384,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -403,7 +403,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect
@@ -422,7 +422,7 @@ const items = ["Y", "N"];
                   <tr>
                     <td style="min-width: 60px"><VCheckbox /></td>
                     <td>A1</td>
-                    <td>승인인</td>
+                    <td>승인</td>
                     <td>1</td>
                     <td style="min-width: 100px">
                       <AppSelect

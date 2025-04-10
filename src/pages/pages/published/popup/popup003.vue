@@ -38,7 +38,7 @@ const desserts = [
     <DialogCloseBtn @click="isDialogVisible = !isDialogVisible" />
 
     <!-- Dialog Content -->
-    <VCard title="거래처 여신신 내역">
+    <VCard title="거래처 여신 내역">
       <VCardText>
         <h6 class="d-flex text-h6 font-weight-bold align-center">
           [ IDIDID] 선택 거래처명-도매일 때

@@ -137,7 +137,7 @@ const onClear = () => {
       <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
-            반품 정보 목록
+            주문 정보 리스트
           </h5>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap"></div>

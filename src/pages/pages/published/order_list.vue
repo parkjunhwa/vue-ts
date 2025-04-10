@@ -323,7 +323,7 @@ export default {
 
         .item {
           &:nth-child(2) {
-            width: 190px;
+            width: 180px;
             .v-chip {
               width: 100%;
             }

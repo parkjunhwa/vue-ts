@@ -110,6 +110,7 @@ const onClear = () => {
                 <th>부가세등록번호</th>
                 <th>항증취급허가증여부</th>
                 <th>전화번호</th>
+                <th>매출가격그룹룹</th>
                 <th>유통구분</th>
                 <th>대표자</th>
                 <th>주소</th>
@@ -126,8 +127,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>CASE-A</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -141,8 +143,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>CASE-B</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -156,8 +159,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>CASE-C</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -171,8 +175,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>도매매</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -186,8 +191,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>직거래병원,약국</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -201,8 +207,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>-</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -216,8 +223,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>-</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -231,8 +239,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip size="small"> 없음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>-</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>
@@ -246,8 +255,9 @@ const onClear = () => {
                 <td>홍길동</td>
                 <td>E-mail</td>
                 <td>IDIDID</td>
-                <td>있음</td>
+                <td><VChip color="primary" size="small"> 있음 </VChip></td>
                 <td>010-0000-0000</td>
+                <td>-</td>
                 <td>-</td>
                 <td>대표자명</td>
                 <td>주소입니다.</td>

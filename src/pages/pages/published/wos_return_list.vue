@@ -50,7 +50,7 @@ const onClear = () => {
           </div>
           <div class="top-search-return-mid" v-show="expanded">
             <div class="item">
-              <DemoDateTimePickerRange readonly />
+              <DemoDateTimePickerRange readonly style="min-width: 320px" />
             </div>
             <div class="item">
               <AppSelect :items="items" placeholder="처리상태" />

@@ -8,6 +8,7 @@ import Alert004 from "@/pages/pages/published/alert/alert004.vue";
 import Alert005 from "@/pages/pages/published/alert/alert005.vue";
 import Alert006 from "@/pages/pages/published/alert/alert006.vue";
 import Alert007 from "@/pages/pages/published/alert/alert007.vue";
+import Alert008 from "@/pages/pages/published/alert/alert008.vue";
 import Popup001 from "@/pages/pages/published/popup/popup001.vue";
 import Popup002 from "@/pages/pages/published/popup/popup002.vue";
 import Popup003 from "@/pages/pages/published/popup/popup003.vue";
@@ -22,6 +23,7 @@ import Popup011 from "@/pages/pages/published/popup/popup011.vue";
 import Popup012 from "@/pages/pages/published/popup/popup012.vue";
 import Popup013 from "@/pages/pages/published/popup/popup013.vue";
 import Popup014 from "@/pages/pages/published/popup/popup014.vue";
+import Popup015 from "@/pages/pages/published/popup/popup015.vue";
 </script>
 
 <template>
@@ -143,6 +145,7 @@ import Popup014 from "@/pages/pages/published/popup/popup014.vue";
       <Popup012 />
       <Popup013 />
       <Popup014 />
+      <Popup015 />
     </VCol>
   </VRow>
   <VRow>
@@ -161,6 +164,7 @@ import Popup014 from "@/pages/pages/published/popup/popup014.vue";
       <Alert005 />
       <Alert006 />
       <Alert007 />
+      <Alert008 />
     </VCol>
   </VRow>
 </template>

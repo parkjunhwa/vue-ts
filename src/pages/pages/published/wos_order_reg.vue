@@ -73,6 +73,44 @@ const onClear = () => {
             </div>
           </div>
         </VCol>
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12">
+          <AppTextField
+            prepend-inner-icon="tabler-asterisk-simple"
+            append-inner-icon="tabler-search"
+            placeholder="간납처를 선택하세요."
+          />
+        </VCol>
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
+          <AppSelect
+            :items="items"
+            placeholder="원외처방처를 선택하세요."
+            prepend-inner-icon="tabler-asterisk-simple"
+          />
+        </VCol>
+
+        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
+          <AppSelect
+            :items="items"
+            placeholder="배송지 주소를 선택하세요."
+            prepend-inner-icon="tabler-asterisk-simple"
+          />
+        </VCol>
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
+          <AppTextField
+            v-model="text"
+            placeholder="Placeholder Text"
+            value="배송지 상세주소 출력"
+            readonly
+          />
+        </VCol>
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
+          <AppTextField
+            v-model="inputValue"
+            placeholder="배송요청 사항을 입력하세요."
+            clearable
+            @keydown.esc="onClear"
+          />
+        </VCol>
         <VCol
           cols="12"
           lg="2"
@@ -153,57 +191,11 @@ const onClear = () => {
             suffix="원"
             class="form-align-right"
         /></VCol>
-      </TopSearchArea>
-    </VCol>
-  </VRow>
-  <VRow>
-    <VCol cols="12">
-      <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="2" md="2" sm="12" xs="12">
-          <AppTextField
-            prepend-inner-icon="tabler-asterisk-simple"
-            append-inner-icon="tabler-search"
-            placeholder="간납처를 선택하세요."
-          />
-        </VCol>
-        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
-          <AppSelect
-            :items="items"
-            placeholder="원외처방처를 선택하세요."
-            prepend-inner-icon="tabler-asterisk-simple"
-          />
-        </VCol>
 
-        <VCol cols="12" lg="2" md="2" sm="12" xs="12" v-show="expanded">
-          <AppSelect
-            :items="items"
-            placeholder="배송지 주소를 선택하세요."
-            prepend-inner-icon="tabler-asterisk-simple"
-          />
-        </VCol>
-        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
-          <AppTextField
-            v-model="text"
-            placeholder="Placeholder Text"
-            value="배송지 상세주소 출력"
-            readonly
-          />
-        </VCol>
-        <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
-          <AppTextField
-            v-model="inputValue"
-            placeholder="배송요청 사항을 입력하세요."
-            clearable
-            @keydown.esc="onClear"
-          />
-        </VCol>
         <VCol cols="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-center w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
-            >
-            <VBtn color="primary"
-              ><VIcon start icon="tabler-search" />조회</VBtn
             >
           </div>
         </VCol>
@@ -213,10 +205,14 @@ const onClear = () => {
   <VRow>
     <VCol cols="12" class="card-table-infinity">
       <STitleArea>
-        <div class="d-flex justify-start flex-wrap">
+        <div class="d-flex justify-start flex-wrap align-center gap-2">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
             제품 등록 리스트
           </h5>
+          <p class="text-body-2 mb-0">
+            ※ 신규품목이 있을 경우 : “품목 주문추가” 후 엑셀양식다운로드를
+            진행하여 주세요.
+          </p>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
           <VBtn size="small" variant="outlined"
@@ -225,9 +221,6 @@ const onClear = () => {
           <VBtn size="small" variant="outlined"
             ><VIcon start icon="tabler-arrow-bar-to-up" />엑셀업로드</VBtn
           >
-          <VBtn size="small" color="secondary" variant="tonal"
-            ><VIcon start icon="tabler-minus" />선택삭제
-          </VBtn>
           <VBtn size="small"
             ><VIcon start icon="tabler-plus" />신규등록 주문추가</VBtn
           >
@@ -241,9 +234,6 @@ const onClear = () => {
               class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
             >
               <div class="section01">
-                <div class="item num01">
-                  <VCheckbox />
-                </div>
                 <div class="item num02">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
@@ -270,8 +260,8 @@ const onClear = () => {
                 <div class="item num05">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">마지막발주</span>
-                      <span class="item-text"> 주문확정시발급</span>
+                      <span class="item-title">주문번호호</span>
+                      <span class="item-text"> IDIDIDIDIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -309,9 +299,6 @@ const onClear = () => {
               class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
             >
               <div class="section01">
-                <div class="item num01">
-                  <VCheckbox />
-                </div>
                 <div class="item num02">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
@@ -338,8 +325,8 @@ const onClear = () => {
                 <div class="item num05">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">마지막발주</span>
-                      <span class="item-text"> 주문확정시발급</span>
+                      <span class="item-title">주문번호호</span>
+                      <span class="item-text"> IDIDIDIDIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -377,9 +364,6 @@ const onClear = () => {
               class="d-flex flex-row flex-grow-1 gap-2 justify-content-start"
             >
               <div class="section01">
-                <div class="item num01">
-                  <VCheckbox />
-                </div>
                 <div class="item num02">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
@@ -406,8 +390,8 @@ const onClear = () => {
                 <div class="item num05">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
-                      <span class="item-title">마지막발주</span>
-                      <span class="item-text"> 주문확정시발급</span>
+                      <span class="item-title">주문번호호</span>
+                      <span class="item-text"> IDIDIDIDIDIDIDIDIDID</span>
                     </div>
                   </VChip>
                 </div>
@@ -536,10 +520,10 @@ export default {
           width: 140px;
         }
         &.num04 {
-          width: 190px;
+          width: 180px;
         }
         &.num05 {
-          width: 180px;
+          width: 210px;
         }
       }
     }
@@ -655,7 +639,7 @@ export default {
     justify-content: space-between;
 
     .item {
-      min-width: calc(50% - 8px);
+      width: calc(50% - 8px);
     }
   }
   .col-5 {

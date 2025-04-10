@@ -190,11 +190,7 @@ const menu02 = [
                 부서원 리스트
               </h5>
             </div>
-            <div class="d-flex gap-2 align-center flex-wrap">
-              <VBtn size="small" variant="outlined" color="secondary"
-                >부서원 상세수정</VBtn
-              >
-            </div>
+            <div class="d-flex gap-2 align-center flex-wrap"></div>
           </STitleArea>
           <VCard class="basic-table-card">
             <VCardText>
@@ -232,7 +228,7 @@ const menu02 = [
                     <td>부장</td>
                     <td>abcd@maol.com</td>
                     <td>010-0000-0000</td>
-                    <td>사용</td>
+                    <td>미사용</td>
                     <td style="width: 130px">
                       <VSwitch v-model="switchOnDisabled" value="on" disabled />
                     </td>
@@ -383,12 +379,46 @@ const menu02 = [
           </STitleArea>
           <BottomTotalArea>
             <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppTextField
+                label="소속부서코드|소속부서명"
+                append-inner-icon="tabler-search"
+                placeholder="소속부서코드,부서명을 입력하세요."
+                class="required"
+                value="[1900200] 종병1지부 1팀"
+              />
+            </VCol>
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppSelect
+                label="직책"
+                :items="items"
+                v-model="selectedItem"
+                class="required"
+                value="부장"
+              />
+            </VCol>
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppTextField
+                label="사용자ID"
+                type="text"
+                value="IDIDID"
+                class="required"
+              />
+            </VCol>
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppTextField
+                label="사번"
+                type="text"
+                value="IDIDID"
+                class="required"
+              />
+            </VCol>
+
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
               <AppSelect
                 label="유통구분"
                 :items="items"
                 v-model="selectedItem"
                 class="required"
-                readonly
               />
             </VCol>
             <VCol cols="12" lg="2" md="2" sm="12" xs="12">
@@ -418,50 +448,14 @@ const menu02 = [
             </VCol>
             <VCol cols="12" lg="3" md="3" sm="12" xs="12">
               <AppTextField
-                label="소속부서코드|소속부서명"
-                type="text"
-                value="[1900200]종병1지부1팀"
-                class="required"
-                readonly
-              />
-            </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppSelect
-                label="직책"
-                :items="items"
-                v-model="selectedItem"
-                class="required"
-              />
-            </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppTextField
-                label="사용자ID"
-                type="text"
-                value="IDIDID"
-                class="required"
-                readonly
-              />
-            </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppTextField
-                label="사번"
-                type="text"
-                value="IDIDID"
-                class="required"
-                readonly
-              />
-            </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppTextField
                 label="사용자명"
                 type="text"
                 value="김영업"
                 class="required"
-                readonly
               />
             </VCol>
             <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppTextField label="사용자명(영문)" type="text" readonly />
+              <AppTextField label="사용자명(영문)" type="text" />
             </VCol>
             <VCol cols="12" lg="3" md="3" sm="12" xs="12">
               <DemoDateTimePickerBasic2
@@ -469,7 +463,6 @@ const menu02 = [
                 :config="{ dateFormat: 'Y.m.d', allowInput: true }"
                 prepend-inner-icon="tabler-calendar-event"
                 clearable
-                readonly
                 class="required"
               />
             </VCol>
@@ -481,18 +474,11 @@ const menu02 = [
                 class="required"
               />
             </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppSelect label="검색권한" class="required" />
-            </VCol>
-            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
-              <AppSelect label="사용" />
-            </VCol>
             <VCol cols="12" lg="6" md="6" sm="12" xs="12">
               <AppTextField
                 label="이메일"
                 type="text"
                 value="asdfg@mail.co.kr"
-                readonly
                 class="required"
               />
             </VCol>
@@ -501,9 +487,14 @@ const menu02 = [
                 label="휴대폰 번호"
                 type="text"
                 value="010-0000-0000"
-                readonly
                 class="required"
               />
+            </VCol>
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppSelect label="사용자상태" />
+            </VCol>
+            <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+              <AppSelect label="검색권한" class="required" />
             </VCol>
             <VCol cols="12" lg="9" md="9" sm="12" xs="12">
               <div style="margin: -8px">

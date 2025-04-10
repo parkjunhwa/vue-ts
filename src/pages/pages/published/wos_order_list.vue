@@ -50,24 +50,42 @@ const onClear = () => {
               </h6>
             </div>
           </div>
-          <div class="top-search-order-mid" v-show="expanded">
+          <div class="top-search-order-end" v-show="expanded">
             <div class="item">
-              <DemoDateTimePickerRange readonly />
+              <DemoDateTimePickerRange readonly style="min-width: 340px" />
             </div>
             <div class="item">
-              <AppSelect :items="items" placeholder="처리상태" />
+              <AppSelect
+                :items="items"
+                placeholder="간납처를 선택하세요."
+                style="min-width: 200px"
+              />
+            </div>
+            <div class="item">
+              <AppSelect
+                :items="items"
+                placeholder="원외처방처를 선택하세요."
+                style="min-width: 200px"
+              />
+            </div>
+            <div class="item">
+              <VRadioGroup v-model="inlineRadio" inline>
+                <VRadio label="전체" value="radio-1" />
+                <VRadio label="OTC" value="radio-2" />
+                <VRadio label="ETC" value="radio-3" />
+              </VRadioGroup>
             </div>
           </div>
-          <Vcol class="top-search-order-end" v-show="expanded">
-            <div class="d-flex gap-2 justify-end w-100">
-              <VBtn variant="outlined" color="secondary"
-                ><VIcon start icon="tabler-refresh" />초기화</VBtn
-              >
-              <VBtn color="primary"
-                ><VIcon start icon="tabler-search" />조회</VBtn
-              >
-            </div>
-          </Vcol>
+        </VCol>
+        <VCol cols="12" v-show="expanded">
+          <div class="d-flex gap-2 flex-wrap justify-center w-100">
+            <VBtn variant="outlined" color="secondary"
+              ><VIcon start icon="tabler-refresh" />초기화</VBtn
+            >
+            <VBtn color="primary"
+              ><VIcon start icon="tabler-search" />조회</VBtn
+            >
+          </div>
         </VCol>
       </TopSearchArea>
     </VCol>
@@ -82,7 +100,7 @@ const onClear = () => {
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
           <VBtn size="small" color="secondary" variant="tonal"
-            ><VIcon start icon="tabler-minus" />선택택삭제
+            ><VIcon start icon="tabler-minus" />선택삭제
           </VBtn>
         </div>
       </STitleArea>
@@ -165,10 +183,6 @@ const onClear = () => {
               <span class="item-text">80,000</span>
             </div>
             <div class="item">
-              <span class="item-title">관리자 승인</span>
-              <span class="item-text">승인</span>
-            </div>
-            <div class="item">
               <span class="item-title">주문상태</span>
               <span class="item-text">확정</span>
             </div>
@@ -225,7 +239,7 @@ export default {
 .top-search-order-end {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 8px;
   flex-direction: row !important;
   align-items: center;
   justify-content: flex-end;
@@ -418,20 +432,6 @@ export default {
     align-items: normal;
     .app-text-field {
       max-width: none;
-    }
-  }
-  .top-search-order-mid {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-    flex-direction: column !important;
-    align-items: center;
-
-    .app-text-field {
-      width: 100% !important;
-    }
-    .item {
-      width: 100%;
     }
   }
   .top-search-order-end {

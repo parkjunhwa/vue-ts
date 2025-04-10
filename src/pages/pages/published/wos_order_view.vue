@@ -21,7 +21,7 @@ const onClear = () => {
   <TitleArea>
     <div class="d-flex justify-start flex-wrap">
       <h3 class="d-flex text-h3 font-weight-medium align-center">
-        주문내역조회
+        주문내역조회 상세
       </h3>
     </div>
 
@@ -71,30 +71,6 @@ const onClear = () => {
                 </VChip>
                 <span class="item-text">[IDIDID] 선택 처방처명</span>
               </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="top-chip-item">
-                    <span class="item-title">임시반품번호</span>
-                    <span class="item-text"> MIDIDIDIDIDID </span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="top-chip-item">
-                    <span class="item-title">주문번호</span>
-                    <span class="item-text"> IDIDIDIDIDIDIDIDIDID </span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="top-chip-item">
-                    <span class="item-title">유형</span>
-                    <span class="item-text"> ETC </span>
-                  </div>
-                </VChip>
-              </div>
             </div>
             <div class="top-search-order-end">
               <div class="item">
@@ -130,6 +106,36 @@ const onClear = () => {
             value="수거요청사항 내용이 출력됩니다."
             readonly
         /></VCol>
+        <VCol cols="12" class="top-search-order">
+          <div class="d-flex flex-row flex-md-row gap-2 w-100">
+            <div class="top-search-order-start">
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">임시주문번호</span>
+                    <span class="item-text"> MIDIDIDIDIDID </span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">주문번호</span>
+                    <span class="item-text"> IDIDIDIDIDIDIDIDIDID </span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="top-chip-item">
+                    <span class="item-title">유형</span>
+                    <span class="item-text"> ETC </span>
+                  </div>
+                </VChip>
+              </div>
+            </div>
+          </div>
+        </VCol>
       </TopSearchArea>
     </VCol>
   </VRow>
@@ -138,7 +144,7 @@ const onClear = () => {
       <STitleArea>
         <div class="d-flex justify-start flex-wrap">
           <h5 class="d-flex text-h5 font-weight-medium align-center">
-            반품 정보 목록
+            제품 품목 리스트
           </h5>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap"></div>
@@ -167,6 +173,10 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">공급가액(VAT제외)</span>
                 <span class="item-text">80,000</span>
+              </div>
+              <div class="item">
+                <span class="item-title">주문상태</span>
+                <span class="item-text font-weight-bold">확정</span>
               </div>
             </div>
           </div>
@@ -197,34 +207,9 @@ const onClear = () => {
                 <span class="item-title">공급가액(VAT제외)</span>
                 <span class="item-text">80,000</span>
               </div>
-            </div>
-          </div>
-        </VCardText>
-      </VCard>
-      <VCard class="data">
-        <VCardText>
-          <div class="d-flex flex-column flex-md-row gap-2 w-100">
-            <!-- 왼쪽 컨텐츠 -->
-            <div class="d-flex flex-row flex-grow-1 justify-content-start">
               <div class="item">
-                <span class="item-cell-title text-primary">
-                  (IGT104) 이가탄에프캡슐</span
-                >
-              </div>
-            </div>
-            <!-- 오른쪽 컨텐츠 -->
-            <div class="d-flex flex-row justify-content-end">
-              <div class="item">
-                <span class="item-title">발주수량</span>
-                <span class="item-text">30</span>
-              </div>
-              <div class="item">
-                <span class="item-title">정정수량</span>
-                <span class="item-text font-weight-bold">30</span>
-              </div>
-              <div class="item">
-                <span class="item-title">공급가액(VAT제외)</span>
-                <span class="item-text">80,000</span>
+                <span class="item-title">주문상태</span>
+                <span class="item-text font-weight-bold">부결</span>
               </div>
             </div>
           </div>
@@ -254,6 +239,45 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">공급가액(VAT제외)</span>
                 <span class="item-text">80,000</span>
+              </div>
+
+              <div class="item">
+                <span class="item-title">주문상태</span>
+                <span class="item-text font-weight-bold">확정</span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div class="d-flex flex-row flex-grow-1 justify-content-start">
+              <div class="item">
+                <span class="item-cell-title text-primary">
+                  (IGT104) 이가탄에프캡슐</span
+                >
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">발주수량</span>
+                <span class="item-text">30</span>
+              </div>
+              <div class="item">
+                <span class="item-title">정정수량</span>
+                <span class="item-text font-weight-bold">30</span>
+              </div>
+              <div class="item">
+                <span class="item-title">공급가액(VAT제외)</span>
+                <span class="item-text">80,000</span>
+              </div>
+
+              <div class="item">
+                <span class="item-title">주문상태</span>
+                <span class="item-text font-weight-bold">확정</span>
               </div>
             </div>
           </div>
@@ -383,6 +407,9 @@ export default {
 .card-table-infinity .data .justify-content-end .item:nth-child(3) {
   width: 180px;
   justify-content: space-between;
+}
+.card-table-infinity .data .justify-content-end .item:nth-child(4) {
+  width: auto;
 }
 @media (max-width: 1280px) {
   .top-search-order {

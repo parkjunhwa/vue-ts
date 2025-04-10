@@ -90,7 +90,6 @@ const isDialogVisible = ref(false);
               <div class="d-flex flex-column flex-md-row gap-2 w-100">
                 <!-- 왼쪽 컨텐츠 -->
                 <div class="d-flex flex-row flex-grow-1 justify-content-start">
-                  <div class="item"><VRadio v-model="checkboxOne" /></div>
                   <div class="item">
                     <VChip color="primary" size="small">
                       <div class="chip-item">
@@ -200,7 +199,9 @@ const isDialogVisible = ref(false);
           </VCardText>
 
           <VCardText class="d-flex">
-            <VBtn @click="isDialogVisible = false" class="v-100">저장</VBtn>
+            <VBtn @click="isDialogVisible = false" class="v-100"
+              >카드수금 등록저장</VBtn
+            >
           </VCardText>
         </VCard>
       </VDialog>
@@ -210,7 +211,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -253,7 +253,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -296,7 +295,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -339,7 +337,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -382,7 +379,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -425,7 +421,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -468,7 +463,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -511,7 +505,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -554,7 +547,6 @@ const isDialogVisible = ref(false);
           <div class="d-flex flex-column flex-md-row gap-2 w-100">
             <!-- 왼쪽 컨텐츠 -->
             <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item"><VRadio v-model="checkboxOne" /></div>
               <div class="item">
                 <VChip color="primary" size="small">
                   <div class="chip-item">
@@ -610,7 +602,7 @@ const isDialogVisible = ref(false);
           </h5>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
-          <VBtn size="small">저장</VBtn>
+          <VBtn size="small">카드수금 등록저장</VBtn>
         </div>
       </STitleArea>
       <BottomTotalArea>
@@ -710,23 +702,23 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 }
+// .card-table-infinity .data .justify-content-start .item:nth-child(1) {
+//   width: 24px;
+//   min-width: 24px;
+//   height: 24px;
+//   overflow: visible;
+//   :deep(.v-selection-control__wrapper) {
+//     margin: -6px;
+//   }
+// }
 .card-table-infinity .data .justify-content-start .item:nth-child(1) {
-  width: 24px;
-  min-width: 24px;
-  height: 24px;
-  overflow: visible;
-  :deep(.v-selection-control__wrapper) {
-    margin: -6px;
-  }
-}
-.card-table-infinity .data .justify-content-start .item:nth-child(2) {
   width: 140px;
   min-width: 140px;
   .v-chip {
     width: 140px;
   }
 }
-.card-table-infinity .data .justify-content-start .item:nth-child(3) {
+.card-table-infinity .data .justify-content-start .item:nth-child(2) {
   width: 140px;
   min-width: 140px;
   .v-chip {
@@ -763,7 +755,7 @@ export default {
     flex-direction: row !important;
     justify-content: left;
     gap: 4px;
-    .item:nth-child(4) {
+    .item:nth-child(3) {
       width: 100%;
     }
   }
@@ -773,15 +765,20 @@ export default {
     gap: 4px 16px;
     justify-content: left;
   }
+  // .card-table-infinity .data .justify-content-end .item:nth-child(1) {
+  //   min-width: calc(50% - 8px);
+  // }
   .card-table-infinity .data .justify-content-end .item:nth-child(1) {
-    min-width: calc(50% - 8px);
+    min-width: calc(32% - 8px);
+    justify-content: space-between;
   }
   .card-table-infinity .data .justify-content-end .item:nth-child(2) {
-    min-width: calc(50% - 8px);
+    min-width: calc(32% - 8px);
     justify-content: space-between;
   }
   .card-table-infinity .data .justify-content-end .item:nth-child(3) {
-    width: 100%;
+    min-width: calc(32% - 8px);
+    justify-content: space-between;
   }
   .v-card.data {
     .gap-2 {

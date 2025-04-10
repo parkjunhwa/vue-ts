@@ -116,8 +116,8 @@ const onClear = () => {
             <div class="d-flex flex-row justify-content-end">
               <div class="item">
                 <span class="item-title">처리상태</span>
-                <span class="item-text"
-                  ><VChip color="error" size="small"> 반품불가</VChip>
+                <span class="item-text">
+                  <VChip color="primary" size="small"> 처리완료 </VChip>
                 </span>
               </div>
             </div>
@@ -162,7 +162,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 반품완료 </VChip>
+                  <VChip color="primary" size="small"> 처리완료 </VChip>
                 </span>
               </div>
             </div>
@@ -207,142 +207,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 진행중 </VChip>
-                </span>
-              </div>
-            </div>
-          </div>
-        </VCardText>
-      </VCard>
-      <VCard class="data">
-        <VCardText>
-          <div class="d-flex flex-column flex-md-row gap-2 w-100">
-            <!-- 왼쪽 컨텐츠 -->
-            <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품신청일</span>
-                    <span class="item-text">2024.12.12</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
-              </div>
-            </div>
-            <!-- 오른쪽 컨텐츠 -->
-            <div class="d-flex flex-row justify-content-end">
-              <div class="item">
-                <span class="item-title">처리상태</span>
-                <span class="item-text"
-                  ><VChip size="small"> 반품등록</VChip>
-                </span>
-              </div>
-            </div>
-          </div>
-        </VCardText>
-      </VCard>
-      <VCard class="data">
-        <VCardText>
-          <div class="d-flex flex-column flex-md-row gap-2 w-100">
-            <!-- 왼쪽 컨텐츠 -->
-            <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품신청일</span>
-                    <span class="item-text">2024.12.12</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
-              </div>
-            </div>
-            <!-- 오른쪽 컨텐츠 -->
-            <div class="d-flex flex-row justify-content-end">
-              <div class="item">
-                <span class="item-title">처리상태</span>
-                <span class="item-text">
-                  <VChip color="primary" size="small"> 반품완료 </VChip>
-                </span>
-              </div>
-            </div>
-          </div>
-        </VCardText>
-      </VCard>
-      <VCard class="data">
-        <VCardText>
-          <div class="d-flex flex-column flex-md-row gap-2 w-100">
-            <!-- 왼쪽 컨텐츠 -->
-            <div class="d-flex flex-row flex-grow-1 justify-content-start">
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">임시반품번호</span>
-                    <span class="item-text">MIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품번호</span>
-                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <VChip color="primary" size="small">
-                  <div class="chip-item">
-                    <span class="item-title">반품신청일</span>
-                    <span class="item-text">2024.12.12</span>
-                  </div>
-                </VChip>
-              </div>
-              <div class="item">
-                <span class="item-cell-title"> [IDIDID]거래처명</span>
-              </div>
-            </div>
-            <!-- 오른쪽 컨텐츠 -->
-            <div class="d-flex flex-row justify-content-end">
-              <div class="item">
-                <span class="item-title">처리상태</span>
-                <span class="item-text">
-                  <VChip color="info" size="small"> 진행중 </VChip>
+                  <VChip color="info" size="small"> 주문생성 </VChip>
                 </span>
               </div>
             </div>
@@ -387,7 +252,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text"
-                  ><VChip size="small"> 반품등록</VChip>
+                  ><VChip size="small"> 반품의뢰</VChip>
                 </span>
               </div>
             </div>
@@ -432,7 +297,7 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="primary" size="small"> 반품완료 </VChip>
+                  <VChip color="primary" size="small"> 처리완료 </VChip>
                 </span>
               </div>
             </div>
@@ -477,7 +342,52 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 진행중 </VChip>
+                  <VChip color="info" size="small"> 주문생성 </VChip>
+                </span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div class="d-flex flex-row flex-grow-1 justify-content-start">
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">임시반품번호</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품번호</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품신청일</span>
+                    <span class="item-text">2024.12.12</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <span class="item-cell-title"> [IDIDID]거래처명</span>
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">처리상태</span>
+                <span class="item-text"
+                  ><VChip size="small"> 반품의뢰</VChip>
                 </span>
               </div>
             </div>
@@ -522,7 +432,97 @@ const onClear = () => {
               <div class="item">
                 <span class="item-title">처리상태</span>
                 <span class="item-text">
-                  <VChip color="info" size="small"> 진행중 </VChip>
+                  <VChip color="primary" size="small"> 처리완료 </VChip>
+                </span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div class="d-flex flex-row flex-grow-1 justify-content-start">
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">임시반품번호</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품번호</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품신청일</span>
+                    <span class="item-text">2024.12.12</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <span class="item-cell-title"> [IDIDID]거래처명</span>
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">처리상태</span>
+                <span class="item-text">
+                  <VChip color="info" size="small"> 주문생성 </VChip>
+                </span>
+              </div>
+            </div>
+          </div>
+        </VCardText>
+      </VCard>
+      <VCard class="data">
+        <VCardText>
+          <div class="d-flex flex-column flex-md-row gap-2 w-100">
+            <!-- 왼쪽 컨텐츠 -->
+            <div class="d-flex flex-row flex-grow-1 justify-content-start">
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">임시반품번호</span>
+                    <span class="item-text">MIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품번호</span>
+                    <span class="item-text">IDIDIDIDIDIDIDIDIDID</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <VChip color="primary" size="small">
+                  <div class="chip-item">
+                    <span class="item-title">반품신청일</span>
+                    <span class="item-text">2024.12.12</span>
+                  </div>
+                </VChip>
+              </div>
+              <div class="item">
+                <span class="item-cell-title"> [IDIDID]거래처명</span>
+              </div>
+            </div>
+            <!-- 오른쪽 컨텐츠 -->
+            <div class="d-flex flex-row justify-content-end">
+              <div class="item">
+                <span class="item-title">처리상태</span>
+                <span class="item-text">
+                  <VChip color="info" size="small"> 주문생성 </VChip>
                 </span>
               </div>
             </div>
