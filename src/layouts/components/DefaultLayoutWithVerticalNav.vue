@@ -4,7 +4,6 @@ import navItems from "@/navigation/vertical";
 // Components
 import Footer from "@/layouts/components/Footer.vue";
 import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
-import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
 import { VerticalNavLayout } from "@layouts";
 
 import { layoutConfig } from "@layouts";
@@ -42,7 +41,11 @@ import { layoutConfig } from "@layouts";
             >홍길동</span
           >
         </div>
-        <NavBarNotifications class="d-none d-lg-flex" id="notification-btn" />
+        <IconBtn>
+          <VBadge color="error" dot offset-x="2" offset-y="3">
+            <VIcon icon="tabler-bell" />
+          </VBadge>
+        </IconBtn>
         <NavBarLogout class="d-none d-lg-flex" />
       </div>
     </template>

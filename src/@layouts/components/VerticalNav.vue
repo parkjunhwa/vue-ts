@@ -17,7 +17,6 @@ import type { Component } from "vue";
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 
 import NavBarLogout from "@/layouts/components/NavBarLogout.vue";
-import NavBarNotifications from "@/layouts/components/NavBarNotifications.vue";
 
 interface Props {
   tag?: string | Component;
@@ -111,7 +110,12 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered);
                 >홍길동</span
               >
             </div>
-            <NavBarNotifications />
+            <IconBtn>
+              <VBadge color="error" dot offset-x="2" offset-y="3">
+                <VIcon icon="tabler-bell" />
+              </VBadge>
+            </IconBtn>
+
             <NavBarLogout />
           </div>
         </div>
