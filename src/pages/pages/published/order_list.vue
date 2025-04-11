@@ -55,7 +55,16 @@ const onClear = () => {
           />
         </VCol>
         <VCol cols="12" lg="3" md="6" sm="12" xs="12" v-show="expanded">
-          <DemoDateTimePickerRange readonly v-show="expanded" />
+          <AppDateTimePicker
+            v-model="dateRange"
+            placeholder="날자 선택"
+            prefix="조회기간"
+            :config="{ mode: 'range' }"
+            prepend-inner-icon="tabler-calendar-event"
+            clearable
+            readonly
+            @keydown.esc="onClear"
+          />
         </VCol>
         <VCol cols="12" lg="3" md="6" sm="12" xs="12" v-show="expanded"
           ><VRadioGroup v-model="inlineRadio" inline>
@@ -194,7 +203,7 @@ export default {
     return {
       expanded: true,
       values: "",
-      nameRules: [(v) => !!v || "필수 항목입니다"],
+      dateRange: ["2024-10-11", "2024-11-10"],
     };
   },
 };

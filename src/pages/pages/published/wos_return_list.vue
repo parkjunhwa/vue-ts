@@ -50,7 +50,17 @@ const onClear = () => {
           </div>
           <div class="top-search-return-mid" v-show="expanded">
             <div class="item">
-              <DemoDateTimePickerRange readonly style="min-width: 320px" />
+              <AppDateTimePicker
+                v-model="dateRange"
+                placeholder="날자 선택"
+                prefix="조회기간"
+                :config="{ mode: 'range' }"
+                prepend-inner-icon="tabler-calendar-event"
+                clearable
+                readonly
+                @keydown.esc="onClear"
+                style="min-width: 320px"
+              />
             </div>
             <div class="item">
               <AppSelect :items="items" placeholder="처리상태" />
@@ -682,6 +692,7 @@ export default {
       values: "",
       items: ["Option 1", "Option 2", "Option 3"],
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      dateRange: ["2024-10-11", "2024-11-10"],
     };
   },
 };

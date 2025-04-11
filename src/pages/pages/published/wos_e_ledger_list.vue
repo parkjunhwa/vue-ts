@@ -1,12 +1,14 @@
 <script setup>
 import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import STitleArea from "@/layouts/components/STitleArea.vue";
-const inputA = ref(1234567489);
-const inputB = ref("홍길동");
-const inputC = ref("이상없음");
-const inputD = ref("회전초과");
-const inputE = ref("여신초과");
+
 const currentTab = ref("window1");
+import { ref } from "vue";
+const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 <template>
   <div class="d-flex flex-wrap justify-start mb-2 align-center">
@@ -73,7 +75,17 @@ const currentTab = ref("window1");
               <span class="item-text">김영업</span>
             </div>
             <div class="item">
-              <DemoDateTimePickermoon readonly />
+              <AppMoonPicker
+                v-model="moon"
+                placeholder="월 선택"
+                prefix="조회기간"
+                prepend-inner-icon="tabler-calendar-event"
+                moon
+                clearable
+                range
+                readonly
+                @keydown.esc="onClear"
+              />
             </div>
           </div>
           <div class="top-search-eledgerlist-start2">
@@ -119,115 +131,117 @@ const currentTab = ref("window1");
         <div class="d-flex gap-2 align-center flex-wrap"></div>
       </STitleArea>
       <VCard class="basic-table-card">
-        <VWindow v-model="currentTab">
-          <VWindowItem v-for="item in 3" :key="`window${item}`">
-            <VDataTable
-              :headers="headers"
-              :items="tabledata"
-              density="compact"
-              class="text-no-wrap"
-              fixed-header
-              style="max-height: 314px"
-              hide-default-footer
-            >
-              <thead>
-                <tr>
-                  <th>일자</th>
-                  <th>품목명</th>
-                  <th>규격</th>
-                  <th>수량</th>
-                  <th>단가</th>
-                  <th>공급가액</th>
-                  <th>부가세</th>
-                  <th>잔고</th>
-                </tr>
-              </thead>
+        <VCardText>
+          <VWindow v-model="currentTab">
+            <VWindowItem v-for="item in 3" :key="`window${item}`">
+              <VDataTable
+                :headers="headers"
+                :items="tabledata"
+                density="compact"
+                class="text-no-wrap"
+                fixed-header
+                style="max-height: 314px"
+                hide-default-footer
+              >
+                <thead>
+                  <tr>
+                    <th>일자</th>
+                    <th>품목명</th>
+                    <th>규격</th>
+                    <th>수량</th>
+                    <th>단가</th>
+                    <th>공급가액</th>
+                    <th>부가세</th>
+                    <th>잔고</th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                <tr class="total-line">
-                  <td>전기이월</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">-</td>
-                </tr>
-                <tr>
-                  <td>24.12.12</td>
-                  <td>이가탄에프캡슐</td>
-                  <td>규격명</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                </tr>
-                <tr>
-                  <td>24.12.12</td>
-                  <td>이가탄에프캡슐</td>
-                  <td>규격명</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                </tr>
-                <tr>
-                  <td>24.12.12</td>
-                  <td>수금</td>
-                  <td></td>
-                  <td class="text-right">-</td>
-                  <td class="text-right">-</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">-</td>
-                  <td class="text-right">1,000,000</td>
-                </tr>
-                <tr>
-                  <td>24.12.12</td>
-                  <td>이가탄에프캡슐</td>
-                  <td>규격명</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                </tr>
-                <tr>
-                  <td>24.12.12</td>
-                  <td>이가탄에프캡슐</td>
-                  <td>규격명</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                  <td class="text-right">1,000,000</td>
-                </tr>
-                <tr class="total-line">
-                  <td>24.01</td>
-                  <td>판매</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">-</td>
-                </tr>
-                <tr class="total-line">
-                  <td>24.01</td>
-                  <td>수금</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">1,000,000</td>
-                  <td class="text-right font-weight-bold">-</td>
-                </tr>
-              </tbody>
-            </VDataTable>
-          </VWindowItem>
-        </VWindow>
+                <tbody>
+                  <tr class="total-line">
+                    <td>전기이월</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>수금</td>
+                    <td></td>
+                    <td class="text-right">-</td>
+                    <td class="text-right">-</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">-</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>판매</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>수금</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                  </tr>
+                </tbody>
+              </VDataTable>
+            </VWindowItem>
+          </VWindow>
+        </VCardText>
       </VCard>
     </VCol>
   </VRow>
@@ -240,6 +254,7 @@ export default {
       expanded: true,
       values: "",
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      moon: ["2024-10", "2024-11"],
     };
   },
 };
@@ -322,7 +337,6 @@ export default {
 }
 
 .basic-table-card {
-
   @media (max-width: 960px) {
     padding: 0px !important;
   }

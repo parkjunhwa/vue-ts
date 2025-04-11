@@ -55,7 +55,18 @@ const isDialogVisible = ref(false);
                 <span class="item-text">김영업</span>
               </div>
             </VChip>
-            <DemoDateTimePickerRange class="w-100" v-show="expanded" />
+            <AppDateTimePicker
+              v-model="dateRange"
+              placeholder="날자 선택"
+              prefix="조회기간"
+              :config="{ mode: 'range' }"
+              prepend-inner-icon="tabler-calendar-event"
+              clearable
+              readonly
+              @keydown.esc="onClear"
+              v-show="expanded"
+              class="w-100"
+            />
           </div>
         </VCol>
         <VCol cols="12" lg="6" md="6" sm="12" xs="12" v-show="expanded">
@@ -678,6 +689,7 @@ export default {
       expanded: true,
       values: "",
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      dateRange: ["2024-10-11", "2024-11-10"],
     };
   },
 };

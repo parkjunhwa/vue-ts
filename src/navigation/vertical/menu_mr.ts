@@ -76,8 +76,26 @@ export default [
   },
   {
     title: '현황통계',
-    icon: { icon: 'tabler-shopping-cart' },
-    to: '',
+    icon: { icon: 'tabler-chart-area-line' },
+    children: [
+      {
+        title: '지점/담당자별 목표대비 실적',
+        to: 'pages-published-report01',
+      },
+      {
+        title: '처방처 원내외 판매현황',
+        to: 'pages-published-report02',
+      },
+      
+      {
+        title: '유통별실적조회',
+        to: 'pages-published-report03',
+      },
+      {
+        title: '실적조회(실시간)',
+        to: 'pages-published-report04',
+      },
+    ],
   },
   {
     title: '마스터관리',

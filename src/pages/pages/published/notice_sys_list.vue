@@ -3,6 +3,10 @@ import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import TitleArea from "@/layouts/components/TitleArea.vue";
 import { ref } from "vue";
 const inputValue = ref("");
+
+const onClear = () => {
+  inputValue.value = "";
+};
 </script>
 
 <template>
@@ -36,7 +40,16 @@ const inputValue = ref("");
           />
         </VCol>
         <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
-          <DemoDateTimePickerRange readonly />
+          <AppDateTimePicker
+            v-model="dateRange"
+            placeholder="날자 선택"
+            prefix="조회기간"
+            :config="{ mode: 'range' }"
+            prepend-inner-icon="tabler-calendar-event"
+            clearable
+            readonly
+            @keydown.esc="onClear"
+          />
         </VCol>
         <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
           <AppSelect
@@ -431,6 +444,7 @@ export default {
       values: "",
       items: ["Option 1", "Option 2", "Option 3"],
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      dateRange: ["2024-10-11", "2024-11-10"],
     };
   },
 };

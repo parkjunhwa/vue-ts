@@ -52,7 +52,18 @@ const onClear = () => {
           </div>
           <div class="top-search-order-end" v-show="expanded">
             <div class="item">
-              <DemoDateTimePickerRange readonly style="min-width: 340px" />
+              <AppMoonPicker
+                v-model="moon"
+                placeholder="월 선택"
+                prefix="조회기간"
+                prepend-inner-icon="tabler-calendar-event"
+                moon
+                clearable
+                range
+                readonly
+                @keydown.esc="onClear"
+                style="min-width: 340px"
+              />
             </div>
             <div class="item">
               <AppSelect
@@ -205,6 +216,7 @@ export default {
       expanded: true,
       values: "",
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      moon: ["2024-10", "2024-11"],
     };
   },
 };

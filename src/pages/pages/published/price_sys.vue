@@ -336,7 +336,7 @@ const onClear = () => {
         </VCol>
         <VCol cols="12" lg="2" md="2" sm="12" xs="12">
           <AppDateTimePicker
-            v-model="date"
+            v-model="date1"
             label="시작일"
             :config="{ dateFormat: 'Y.m.d', allowInput: true }"
             prepend-inner-icon="tabler-calendar-event"
@@ -347,7 +347,7 @@ const onClear = () => {
         </VCol>
         <VCol cols="12" lg="2" md="2" sm="12" xs="12">
           <AppDateTimePicker
-            v-model="date"
+            v-model="date2"
             label="종료일"
             :config="{ dateFormat: 'Y.m.d', allowInput: true }"
             prepend-inner-icon="tabler-calendar-event"
@@ -377,6 +377,8 @@ export default {
       values: "",
       items: ["Option 1", "Option 2", "Option 3"],
       nameRules: [(v) => !!v || "필수 항목입니다"],
+      date1: ["2024-10-11"],
+      date2: ["2024-11-11"],
     };
   },
 };

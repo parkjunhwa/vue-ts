@@ -53,7 +53,17 @@ const onClear = () => {
               placeholder="부서 및 사원을 검색하세요."
               v-show="expanded"
             />
-            <DemoDateTimePickerRange readonly v-show="expanded" />
+            <AppDateTimePicker
+              v-model="dateRange"
+              placeholder="날자 선택"
+              prefix="조회기간"
+              :config="{ mode: 'range' }"
+              prepend-inner-icon="tabler-calendar-event"
+              clearable
+              readonly
+              @keydown.esc="onClear"
+              v-show="expanded"
+            />
           </div>
         </VCol>
         <VCol cols="12" lg="3" md="3" sm="12" xs="12" v-show="expanded">
@@ -545,7 +555,7 @@ export default {
     return {
       expanded: true,
       values: "",
-      nameRules: [(v) => !!v || "필수 항목입니다"],
+      dateRange: ["2024-10-11", "2024-11-10"],
     };
   },
 };
