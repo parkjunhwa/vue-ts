@@ -185,12 +185,7 @@ const onClear3 = () => {
                     >
                       <VCheckbox v-model="rememberMe" label="아이디 저장" />
 
-                      <RouterLink
-                        class="text-primary ms-2 mb-1"
-                        :to="{
-                          name: 'pages-authentication-forgot-password-v1',
-                        }"
-                      >
+                      <RouterLink class="text-primary ms-2 mb-1">
                         비밀번호 재설정
                       </RouterLink>
                     </div>
@@ -203,7 +198,6 @@ const onClear3 = () => {
                   <VCol cols="12" class="text-body-2 text-center">
                     <RouterLink
                       class="text-primary ms-1 d-inline-block text-body-2"
-                      :to="{ name: 'pages-authentication-register-v1' }"
                     >
                       관리자에게 계정요청
                     </RouterLink>
