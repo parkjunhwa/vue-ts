@@ -496,7 +496,7 @@ export default {
     padding: 16px;
   }
 }
-.tabler-device-mobile {
-  opacity: 0.5 !important;
+::v-deep(.tabler-device-mobile) {
+  opacity: 0.2 !important;
 }
 </style>
