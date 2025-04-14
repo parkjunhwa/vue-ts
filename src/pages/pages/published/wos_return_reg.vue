@@ -149,6 +149,7 @@ const onClear = () => {
                 readonly
               />
             </VCol>
+            <!-- 수량과 낱알수량은 반품형태에 따라 disable형태가 바뀜, 기획 참조 -->
             <VCol cols="4">
               <AppTextField
                 label="수량"

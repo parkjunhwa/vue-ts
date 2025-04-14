@@ -36,18 +36,17 @@ const onClear = () => {
   <VRow>
     <VCol cols="12">
       <TopSearchArea v-model:expanded="expanded" :openbutton="true">
-        <VCol cols="12" lg="4" md="4" sm="12" xs="12">
-          <AppDateTimePicker
+        <VCol cols="12" lg="3" md="3" sm="12" xs="12">
+          <AppMoonPicker
             v-model="dateRange"
             placeholder="날자 선택"
             prefix="조회기간"
-            :config="{ mode: 'range' }"
             prepend-inner-icon="tabler-calendar-event"
             clearable
             @keydown.esc="onClear"
           />
         </VCol>
-        <VCol cols="12" lg="8" md="8" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="9" md="9" sm="12" xs="12" v-show="expanded">
           <div class="d-flex gap-2 flex-wrap justify-end w-100">
             <VBtn variant="outlined" color="secondary"
               ><VIcon start icon="tabler-refresh" />초기화</VBtn
@@ -282,7 +281,7 @@ export default {
     return {
       expanded: true,
       values: "",
-      dateRange: ["2024-10-11", "2024-11-10"],
+      dateRange: ["2024-10"],
     };
   },
 };

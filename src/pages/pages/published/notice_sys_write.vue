@@ -31,6 +31,7 @@ const file = ref(null);
     </div>
 
     <div class="d-flex gap-4 align-center flex-wrap">
+      <VBtn size="large" color="secondary">삭제</VBtn>
       <VBtn size="large" color="primary">저장</VBtn>
     </div>
   </TitleArea>

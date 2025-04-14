@@ -239,7 +239,7 @@ const file = ref(null);
           </VCol>
           <VCol cols="12" class="ma-0 pa-0 pt-1">
             <p class="text-body-2 mb-1 text-primary">
-              ※ 입력불가 사유건은 반품등록 되지 않습니다.
+              ※ 입력불가사유건은 반품등록 되지 않습니다. 반품 등록시 향정제품은 엑셀업로드 제외 됩니다.
             </p>
             <p class="text-body-2 mb-0">
               ※ 반품사유 : 1. 폐기성(유효기간임박), 2.납품도매변경, 3.
