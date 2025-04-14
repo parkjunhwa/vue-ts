@@ -125,7 +125,7 @@ const currentTab = ref("window1");
         </VCol>
         <VCol cols="12" lg="2" md="2" sm="6" xs="6" v-show="expanded">
           <VBtn variant="tonal"
-            ><VIcon start icon="tabler-refresh" />거래내역 조회
+            ><VIcon start icon="tabler-refresh" />거래처 회전 내역 조회
           </VBtn>
         </VCol>
 

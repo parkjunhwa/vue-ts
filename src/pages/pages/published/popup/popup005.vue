@@ -4,62 +4,52 @@ const tatbledata = [
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
   {
     item01: "IDIDID",
     item02: "제품명(KOR)",
-    item03: "제품명(ENG)",
-    item04: "IDIDID",
+    item03: "IDIDID",
   },
 ];
 </script>
@@ -94,7 +84,6 @@ const tatbledata = [
             <tr>
               <th>적용코드</th>
               <th>제품명(KOR)</th>
-              <th>제품명(ENG)</th>
               <th>제품유형</th>
             </tr>
           </thead>
@@ -108,9 +97,6 @@ const tatbledata = [
               </td>
               <td>
                 {{ item.item03 }}
-              </td>
-              <td>
-                {{ item.item04 }}
               </td>
             </tr>
           </tbody>

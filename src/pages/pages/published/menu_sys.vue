@@ -7,20 +7,20 @@ const items = ["Y", "N"];
 
 const open = ref(["menu0101"]);
 const menu0101 = [
-  ["주문등록", "tabler-file"],
-  ["주문내역조회", "tabler-file"],
+  ["주문등록", "tabler-file", "tabler-device-mobile"],
+  ["주문내역조회", "tabler-file", "tabler-device-mobile"],
 ];
 const menu0102 = [
-  ["반품등록", "tabler-file"],
-  ["반품조회", "tabler-file"],
+  ["반품등록", "tabler-file", "tabler-device-mobile"],
+  ["반품조회", "tabler-file", "tabler-device-mobile"],
 ];
 const menu0103 = [["거래원장조회", "tabler-file"]];
 const menu0104 = [
-  ["카드수금등록", "tabler-file"],
-  ["수금내역조회", "tabler-file"],
+  ["카드수금등록", "tabler-file", "tabler-device-mobile"],
+  ["수금내역조회", "tabler-file", "tabler-device-mobile"],
 ];
-const menu0105 = [["공지사항", "tabler-file"]];
-const menu0106 = [["현황통계", "tabler-file"]];
+const menu0105 = [["공지사항", "tabler-file", "tabler-device-mobile"]];
+const menu0106 = [["현황통계", "tabler-file", "tabler-device-mobile"]];
 
 const menu0201 = [
   ["주문등록", "tabler-file"],
@@ -104,11 +104,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0101"
+                  v-for="([title, icon, mobile], i) in menu0101"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -122,11 +123,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0102"
+                  v-for="([title, icon, mobile], i) in menu0102"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -140,11 +142,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0103"
+                  v-for="([title, icon, mobile], i) in menu0103"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
               <VListGroup value="수금1">
@@ -157,11 +160,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0104"
+                  v-for="([title, icon, mobile], i) in menu0104"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
               <VListGroup value="공지사항1">
@@ -174,11 +178,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0105"
+                  v-for="([title, icon, mobile], i) in menu0105"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -192,11 +197,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0106"
+                  v-for="([title, icon, mobile], i) in menu0106"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
             </VListGroup>
@@ -219,11 +225,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0201"
+                  v-for="([title, icon, mobile], i) in menu0201"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -237,11 +244,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0202"
+                  v-for="([title, icon, mobile], i) in menu0202"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -255,11 +263,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0203"
+                  v-for="([title, icon, mobile], i) in menu0203"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
               <VListGroup value="수금2">
@@ -272,11 +281,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0204"
+                  v-for="([title, icon, mobile], i) in menu0204"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
               <VListGroup value="공지사항2">
@@ -289,11 +299,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0205"
+                  v-for="([title, icon, mobile], i) in menu0205"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
 
@@ -307,11 +318,12 @@ const menu0206 = [["현황통계", "tabler-file"]];
                 </template>
 
                 <VListItem
-                  v-for="([title, icon], i) in menu0206"
+                  v-for="([title, icon, mobile], i) in menu0206"
                   :key="i"
                   :value="title"
                   :title="title"
                   :prepend-icon="icon"
+                  :append-icon="mobile"
                 />
               </VListGroup>
             </VListGroup>
@@ -483,5 +495,8 @@ export default {
   .v-card-text {
     padding: 16px;
   }
+}
+.tabler-device-mobile {
+  opacity: 0.5 !important;
 }
 </style>

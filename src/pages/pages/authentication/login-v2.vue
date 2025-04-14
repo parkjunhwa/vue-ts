@@ -145,12 +145,11 @@ const onClear3 = () => {
 
                   <!-- create account -->
                   <VCol cols="12" class="text-body-2 text-center">
-                    <span class="d-inline-block"> 관리자에게 계정요청 </span>
                     <RouterLink
                       class="text-primary ms-1 d-inline-block text-body-2"
                       :to="{ name: 'pages-authentication-register-v1' }"
                     >
-                      바로가기
+                      관리자에게 계정요청
                     </RouterLink>
                   </VCol>
                 </VRow>

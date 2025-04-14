@@ -62,7 +62,6 @@ const onClear = () => {
                 range
                 readonly
                 @keydown.esc="onClear"
-                style="min-width: 340px"
               />
             </div>
             <div class="item">

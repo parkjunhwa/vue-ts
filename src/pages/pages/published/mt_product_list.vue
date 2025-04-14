@@ -86,10 +86,11 @@ const onClear = () => {
           >
             <thead>
               <tr>
-                <th>품목유형</th>
+                <th>품목<br />유형</th>
                 <th>품목범주그룹</th>
-                <th>제품그룹코드</th>
+                <th>제품<br />그룹코드</th>
                 <th>제품군</th>
+                <th>주문<br />구분유형</th>
                 <th>제품코드</th>
                 <th>제품명1</th>
                 <th>제품명2</th>
@@ -97,8 +98,8 @@ const onClear = () => {
                 <th>표준코드</th>
                 <th>대표품목코드</th>
                 <th>보험코드</th>
-                <th>관리품목</th>
-                <th>재고부족품목</th>
+                <th>관리<br />품목</th>
+                <th>재고<br />부족품목</th>
               </tr>
             </thead>
 
@@ -108,6 +109,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -123,6 +125,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -138,6 +141,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -153,6 +157,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -168,6 +173,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -183,6 +189,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -198,6 +205,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -213,6 +221,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -228,6 +237,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>
@@ -243,6 +253,7 @@ const onClear = () => {
                 <td>PRODUCT</td>
                 <td>20</td>
                 <td>221</td>
+                <td>OTC</td>
                 <td>ACM101</td>
                 <td>명인아캄프로세이트정333mg 30T</td>
                 <td>명인아캄프로세이트정333mg</td>

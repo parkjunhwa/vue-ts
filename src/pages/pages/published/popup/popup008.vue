@@ -39,13 +39,6 @@ const currentTab = ref("window1");
         />
       </VCardText>
       <VCardText class="d-flex justify-end gap-2 flex-wrap">
-        <VBtn
-          color="secondary"
-          variant="tonal"
-          @click="isDialogVisible = false"
-        >
-          <VIcon start icon="tabler-refresh" />다시작성
-        </VBtn>
         <VBtn @click="isDialogVisible = false"> 저장</VBtn>
       </VCardText>
     </VCard>

@@ -31,9 +31,7 @@ const onClear = () => {
       <h3 class="d-flex text-h3 font-weight-medium align-center">공지사항</h3>
     </div>
 
-    <div class="d-flex gap-4 align-center flex-wrap">
-      <VBtn size="large" color="primary">저장</VBtn>
-    </div>
+    <div class="d-flex gap-4 align-center flex-wrap"></div>
   </TitleArea>
 
   <VRow>

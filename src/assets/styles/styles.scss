@@ -240,6 +240,8 @@
         tr {
             th {
                 height: 40px !important;
+                line-height: 1.2;
+                font-size: 12px;
             }
         }
     }
@@ -862,7 +864,7 @@ $positions: (
 }
 
 .v-table {
-    font-size: 13px;
+    font-size: 13px !important;
 }
 
 .chart_area {

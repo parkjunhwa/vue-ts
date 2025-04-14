@@ -33,15 +33,13 @@ const onClear = () => {
       <TopSearchArea v-model:expanded="expanded" :openbutton="false">
         <VCol cols="12" class="custom-grid">
           <div class="grid1">
-            <div class="d-flex flex-row flex-md-row gap-2 w-100">
+            <div class="d-flex flex-column gap-2 w-100">
               <div class="top-search-order-start">
                 <div class="item">
                   <h6 class="d-flex text-h6 font-weight-medium align-center">
                     [IDIDID] 선택 거래처명
                   </h6>
                 </div>
-              </div>
-              <div class="top-search-order-end">
                 <div class="item">
                   <VChip color="primary" size="small">
                     <div class="chip-item">
@@ -73,6 +71,24 @@ const onClear = () => {
                     </div>
                   </VChip>
                   <span class="item-text">[IDIDID] 선택 처방처명</span>
+                </div>
+              </div>
+              <div class="top-search-order-end">
+                <div class="item">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">배송지</span>
+                    </div>
+                  </VChip>
+                  <span class="item-text">[IDIDID] 배송지명</span>
+                </div>
+                <div class="item">
+                  <VChip color="primary" size="small">
+                    <div class="chip-item">
+                      <span class="item-title">비고</span>
+                    </div>
+                  </VChip>
+                  <span class="item-text">비고 글 내용</span>
                 </div>
                 <div class="item">
                   <VChip color="primary" size="small">
@@ -119,6 +135,7 @@ const onClear = () => {
               </div>
               <div class="top-search-order-end">
                 <AppTextField
+                  prefix="발주 후 여신초과금액"
                   placeholder="금액입력"
                   value="2,000,000"
                   readonly
@@ -348,7 +365,7 @@ export default {
   gap: 8px 16px;
   flex-direction: row !important;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   .item {
     display: flex;
     align-items: center;
@@ -375,7 +392,7 @@ export default {
     width: 100%;
     flex-wrap: wrap;
     align-items: normal;
-    justify-content: right;
+    justify-content: left;
   }
 }
 .card-table-infinity .data {

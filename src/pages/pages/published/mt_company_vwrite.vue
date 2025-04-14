@@ -301,6 +301,7 @@ const onClear = () => {
           >
             <thead>
               <tr>
+                <th>구분</th>
                 <th>코드</th>
                 <th>출고지명</th>
                 <th>주소</th>
@@ -310,6 +311,7 @@ const onClear = () => {
             </thead>
             <tbody>
               <tr>
+                <td>전체</td>
                 <td>IDIDID</td>
                 <td>출고지명</td>
                 <td>출고지 주소입니다.</td>
@@ -317,6 +319,7 @@ const onClear = () => {
                 <td>IDIDIDIDIDIDIDID</td>
               </tr>
               <tr>
+                <td>원외처방처</td>
                 <td>IDIDID</td>
                 <td>출고지명</td>
                 <td>출고지 주소입니다.</td>
@@ -324,6 +327,7 @@ const onClear = () => {
                 <td>IDIDIDIDIDIDIDID</td>
               </tr>
               <tr>
+                <td>전체</td>
                 <td>IDIDID</td>
                 <td>출고지명</td>
                 <td>출고지 주소입니다.</td>
@@ -371,12 +375,15 @@ const onClear = () => {
       width: 104px;
     }
     td:nth-child(2) {
+      width: 104px;
+    }
+    td:nth-child(3) {
       width: 200px;
     }
-    td:nth-child(4) {
+    td:nth-child(5) {
       width: 120px;
     }
-    td:nth-child(5) {
+    td:nth-child(6) {
       width: 120px;
     }
   }

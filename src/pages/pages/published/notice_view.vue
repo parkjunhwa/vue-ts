@@ -37,7 +37,7 @@ const file = ref(null);
 
   <VRow>
     <VCol cols="12">
-      <TopSearchArea v-model:expanded="expanded" :openbutton="true">
+      <TopSearchArea>
         <VCol cols="12" lg="5" md="5" sm="12" xs="12">
           <AppTextField
             label="제목"
@@ -48,7 +48,7 @@ const file = ref(null);
             variant="outlined"
           />
         </VCol>
-        <VCol cols="6" lg="1" md="1" sm="6" xs="6" v-show="expanded">
+        <VCol cols="6" lg="1" md="1" sm="6" xs="6">
           <AppTextField
             label="작성자"
             placeholder="작성자"
@@ -57,7 +57,7 @@ const file = ref(null);
             class="required"
           />
         </VCol>
-        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6">
           <AppTextField
             label="작성일"
             placeholder="작성일"
@@ -65,7 +65,7 @@ const file = ref(null);
             readonly
           />
         </VCol>
-        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6">
           <AppTextField
             label="조회수"
             placeholder="조회수"
@@ -74,11 +74,11 @@ const file = ref(null);
           />
         </VCol>
 
-        <VCol cols="6" lg="2" md="2" sm="6" xs="6" v-show="expanded">
+        <VCol cols="6" lg="2" md="2" sm="6" xs="6">
           <AppTextField label="번호" placeholder="번호" value="30" readonly />
         </VCol>
 
-        <VCol cols="12" lg="12" md="12" sm="12" xs="12" v-show="expanded">
+        <VCol cols="12" lg="12" md="12" sm="12" xs="12">
           <label
             class="v-label mb-1 text-body-2 text-wrap"
             style="line-height: 15px"
@@ -133,3 +133,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+::v-deep(.top-search-area-open-button-wrap) {
+  display: none !important;
+}
+::v-deep(.top-search-area) {
+  padding: 24px !important;
+}
+</style>

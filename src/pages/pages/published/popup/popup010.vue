@@ -1,151 +1,175 @@
 <script lang="ts" setup>
+import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
 import { ref } from "vue";
 const isDialogVisible = ref(false);
 
 // 정렬 기능 비활성화 (sortable: false)
 const headers = [
   { title: "순번", key: "item01", sortable: false },
-  { title: "제품코드", key: "item02", sortable: false },
-  { title: "제품명", key: "item03", sortable: false },
-  { title: "간납처", key: "item04", sortable: false },
-  { title: "원외처방처", key: "item05", sortable: false },
-  { title: "반품사유", key: "item06", sortable: false },
-  { title: "포장단위", key: "item07", sortable: false },
-  { title: "낱알", key: "item08", sortable: false },
-  { title: "반품구분", key: "item09", sortable: false },
-  { title: "입력불가사유", key: "item10", sortable: false },
+  { title: "표준코드", key: "item02", sortable: false },
+  { title: "대표품목코드", key: "item03", sortable: false },
+  { title: "로트번호", key: "item04", sortable: false },
+  { title: "유효기간", key: "item05", sortable: false },
+  { title: "제품코드", key: "item06", sortable: false },
+  { title: "제품명", key: "item07", sortable: false },
+  { title: "포장단위", key: "item08", sortable: false },
+  { title: "반품사유", key: "item09", sortable: false },
+  { title: "반품구분", key: "item10", sortable: false },
+  { title: "수량", key: "item11", sortable: false },
+  { title: "낱알수량", key: "item12", sortable: false },
+  { title: "입력불가사유", key: "item13", sortable: false },
 ];
 
 const tabledata = ref([
   {
     item01: 1,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 2,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 3,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 4,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 5,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 6,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 7,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 8,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 9,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
   {
     item01: 10,
-    item02: "IDIDID",
-    item03: "이가탄에프 캡슐",
-    item04: "[IDIDID]간납처명",
-    item05: "[IDIDID]원외처방처명",
-    item06: "폐기성(유효기간임박)",
-    item07: "30T",
-    item08: "1",
-    item09: "10",
+    item02: "IDIDIDIDIDIDID",
+    item03: "IDIDIDIDIDIDID",
+    item04: "IDIDIDIDIDIDID",
+    item05: "2025.06.03",
+    item06: "IGT104",
+    item07: "이가탄에프캡슐",
+    item08: "180C",
+    item09: "폐기성(유효기간임박)",
     item10: "완제품",
-    item11: "입력불가사유 출력",
+    item11: "10",
+    item12: "-",
+    item13: "입력불가사유 출력",
   },
 ]);
 
@@ -171,20 +195,47 @@ const file = ref(null);
               <VFileInput
                 chips
                 placeholder="첨부파일 선택"
-                label="첨부파일"
                 prependInnerIcon="tabler-paperclip"
                 prepend-icon=""
                 class="custom-input"
-              />
+                hide-details
+              ></VFileInput>
             </div>
             <Vcol class="popup-top-between-end">
               <div class="d-flex gap-2 justify-end w-100">
                 <VBtn variant="outlined" color="secondary"
                   ><VIcon start icon="tabler-refresh" />초기화</VBtn
                 >
-                <VBtn color="primary">엑셀저장</VBtn>
+                <VBtn color="primary">엑셀추가</VBtn>
               </div>
             </Vcol>
+          </VCol>
+          <VCol cols="12" style="padding: 16px 0 8px 0">
+            <TopSearchArea>
+              <VCol cols="12">
+                <div
+                  class="d-flex flex-column flex-md-row flex-wrap gap-2 w-100"
+                >
+                  <div class="top-search-return-start">
+                    <div class="item">
+                      <h6
+                        class="d-flex text-h6 font-weight-medium align-center"
+                      >
+                        [IDIDID] 로그인 거래처명
+                      </h6>
+                    </div>
+                    <div class="item">
+                      <VChip color="primary" size="small">
+                        <div class="chip-item">
+                          <span class="item-title">간납처</span>
+                        </div>
+                      </VChip>
+                      <span class="item-text">[IDIDID] 선택 간납처명</span>
+                    </div>
+                  </div>
+                </div>
+              </VCol>
+            </TopSearchArea>
           </VCol>
           <VCol cols="12" class="ma-0 pa-0 pt-1">
             <p class="text-body-2 mb-1 text-primary">
@@ -213,19 +264,39 @@ const file = ref(null);
               <td>{{ item.item03 }}</td>
               <td>{{ item.item04 }}</td>
               <td>{{ item.item05 }}</td>
-              <td style="min-width: 180px">
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
+                {{ item.item06 }}
+              </td>
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
+                {{ item.item07 }}
+              </td>
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
+                {{ item.item08 }}
+              </td>
+              <td
+                style="
+                  background: rgba(var(--v-theme-secondary), 0.08);
+                  min-width: 180px;
+                "
+              >
                 <AppTextField
                   placeholder="반품사유"
                   density="compact"
-                  v-model="tabledata[index].item06"
+                  readonly
+                  v-model="tabledata[index].item09"
                 />
               </td>
-              <td>{{ item.item07 }}</td>
-              <td>{{ item.item08 }}</td>
-              <td>{{ item.item09 }}</td>
-              <td>{{ item.item10 }}</td>
-              <td style="background: rgba(var(--v-theme-success), 0.08)">
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
+                {{ item.item10 }}
+              </td>
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
                 {{ item.item11 }}
+              </td>
+              <td style="background: rgba(var(--v-theme-secondary), 0.08)">
+                {{ item.item12 }}
+              </td>
+              <td style="background: rgba(var(--v-theme-success), 0.08)">
+                {{ item.item13 }}
               </td>
             </tr>
           </template>
@@ -242,6 +313,7 @@ const file = ref(null);
   flex-direction: row !important;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0;
 }
 .popup-top-between-start {
   display: flex;
@@ -252,7 +324,6 @@ const file = ref(null);
   flex-direction: row !important;
   align-items: center;
   .custom-input {
-    max-width: 360px;
     height: 36px;
   }
   @media (max-width: 960px) {
@@ -272,5 +343,40 @@ const file = ref(null);
   @media (max-width: 960px) {
     flex: 0 0 100%;
   }
+}
+.top-search-return-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  flex-direction: row !important;
+  align-items: center;
+  flex: 1;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .item:nth-child(1) h6 {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: max-content;
+  }
+}
+
+@media (max-width: 960px) {
+  .top-search-return-start {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: column !important;
+    align-items: normal;
+  }
+}
+
+::v-deep(.top-search-area-open-button-wrap) {
+  display: none !important;
+}
+::v-deep(.top-search-area) {
+  padding: 24px !important;
 }
 </style>

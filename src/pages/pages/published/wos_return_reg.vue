@@ -195,12 +195,15 @@ const onClear = () => {
           <p class="text-body-2 mb-0">
             ※ 반품사유 :  1. 폐기성(유효기간임박 또는 경과) 2. 처방부진 3.
             처방변경 4. 파손 및 변질 5. 거래정리 6. 폐업 7. 발주착오 8. 수취거절
-             9. 기타(담당자 직접입력) | 반품구분 : 1. 완제품, 2. 낱알
+             9. 기타(담당자 직접입력)
           </p>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
           <VBtn size="small" variant="outlined"
-            ><VIcon start icon="tabler-arrow-bar-to-down" />엑셀다운로드</VBtn
+            ><VIcon
+              start
+              icon="tabler-arrow-bar-to-down"
+            />엑셀양식다운로드</VBtn
           >
           <VBtn size="small" variant="outlined"
             ><VIcon start icon="tabler-arrow-bar-to-up" />엑셀업로드</VBtn

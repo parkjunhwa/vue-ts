@@ -163,38 +163,38 @@ const onClear = () => {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="text-right font-weight-bold">1,000,000</td>
-                    <td class="text-right font-weight-bold">1,000,000</td>
-                    <td class="text-right font-weight-bold">-</td>
-                  </tr>
-                  <tr>
-                    <td>24.12.12</td>
-                    <td>이가탄에프캡슐</td>
-                    <td>규격명</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                  </tr>
-                  <tr>
-                    <td>24.12.12</td>
-                    <td>이가탄에프캡슐</td>
-                    <td>규격명</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                  </tr>
-                  <tr>
-                    <td>24.12.12</td>
-                    <td>수금</td>
                     <td></td>
-                    <td class="text-right">-</td>
-                    <td class="text-right">-</td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
                     <td class="text-right">1,000,000</td>
-                    <td class="text-right">-</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
                     <td class="text-right">1,000,000</td>
                   </tr>
                   <tr>
@@ -234,7 +234,57 @@ const onClear = () => {
                     <td></td>
                     <td></td>
                     <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                    <td class="text-right font-weight-bold">-</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>판매</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>수금</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
                     <td class="text-right font-weight-bold">-</td>
                   </tr>
                 </tbody>

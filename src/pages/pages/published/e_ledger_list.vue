@@ -106,7 +106,7 @@ const onClear = () => {
             />
             <div class="button" v-show="expanded">
               <VBtn variant="tonal">
-                <VIcon start icon="tabler-search" />거래처 내역 조회
+                <VIcon start icon="tabler-search" />거래처 회전 내역 조회
               </VBtn>
             </div>
           </div>
@@ -175,9 +175,9 @@ const onClear = () => {
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
                     <td class="text-right font-weight-bold">1,000,000</td>
-                    <td class="text-right font-weight-bold">1,000,000</td>
-                    <td class="text-right font-weight-bold">-</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -199,17 +199,6 @@ const onClear = () => {
                     <td class="text-right">1,000,000</td>
                     <td class="text-right">1,000,000</td>
                     <td class="text-right">1,000,000</td>
-                    <td class="text-right">1,000,000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>24.12.12</td>
-                    <td>수금</td>
-                    <td></td>
-                    <td class="text-right">-</td>
-                    <td class="text-right">-</td>
-                    <td class="text-right">1,000,000</td>
-                    <td class="text-right">-</td>
                     <td class="text-right">1,000,000</td>
                     <td></td>
                   </tr>
@@ -253,7 +242,56 @@ const onClear = () => {
                     <td></td>
                     <td></td>
                     <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                    <td class="text-right font-weight-bold">-</td>
+                    <td>
+                      <VBtn size="x-small" color="success">
+                        거래원장 전자서명
+                      </VBtn>
+                      <span class="ml-2"> 2024.12.12 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>24.12.12</td>
+                    <td>이가탄에프캡슐</td>
+                    <td>규격명</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td class="text-right">1,000,000</td>
+                    <td></td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>판매</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
+                    <td></td>
+                  </tr>
+                  <tr class="total-line">
+                    <td>24.01</td>
+                    <td>수금</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right font-weight-bold">1,000,000</td>
+                    <td class="text-right font-weight-bold">-</td>
                     <td class="text-right font-weight-bold">-</td>
                     <td>
                       <VBtn size="x-small" color="success">

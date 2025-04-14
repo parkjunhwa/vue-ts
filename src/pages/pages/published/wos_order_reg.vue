@@ -215,14 +215,17 @@ const onClear = () => {
           </p>
         </div>
         <div class="d-flex gap-2 align-center flex-wrap">
+          <VBtn size="small"
+            ><VIcon start icon="tabler-plus" />품목 주문추가</VBtn
+          >
           <VBtn size="small" variant="outlined"
-            ><VIcon start icon="tabler-arrow-bar-to-down" />엑셀다운로드</VBtn
+            ><VIcon
+              start
+              icon="tabler-arrow-bar-to-down"
+            />엑셀양식다운로드</VBtn
           >
           <VBtn size="small" variant="outlined"
             ><VIcon start icon="tabler-arrow-bar-to-up" />엑셀업로드</VBtn
-          >
-          <VBtn size="small"
-            ><VIcon start icon="tabler-plus" />신규등록 주문추가</VBtn
           >
         </div>
       </STitleArea>
