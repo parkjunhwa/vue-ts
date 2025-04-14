@@ -14,7 +14,7 @@ const menu0102 = [
   ["반품등록", "tabler-file", "tabler-device-mobile"],
   ["반품조회", "tabler-file", "tabler-device-mobile"],
 ];
-const menu0103 = [["거래원장조회", "tabler-file"]];
+const menu0103 = [["거래원장조회", "tabler-file", "tabler-device-mobile"]];
 const menu0104 = [
   ["카드수금등록", "tabler-file", "tabler-device-mobile"],
   ["수금내역조회", "tabler-file", "tabler-device-mobile"],
