@@ -6,6 +6,7 @@ const selectedItem = ref("Y");
 const items = ["Y", "N"];
 
 const open = ref(["menu0101"]);
+// "tabler-device-mobile" 이 붙으면 모바일 아이콘 표시 - 모바일 지원 페이지
 const menu0101 = [
   ["주문등록", "tabler-file", "tabler-device-mobile"],
   ["주문내역조회", "tabler-file", "tabler-device-mobile"],
