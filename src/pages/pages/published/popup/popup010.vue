@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import TopSearchArea from "@/layouts/Components/TopSearchArea.vue";
+import BottomTotalArea from "@/layouts/components/BottomTotalArea.vue";
 import { ref } from "vue";
 const isDialogVisible = ref(false);
 
@@ -211,7 +211,7 @@ const file = ref(null);
             </Vcol>
           </VCol>
           <VCol cols="12" style="padding: 16px 0 8px 0">
-            <TopSearchArea>
+            <BottomTotalArea>
               <VCol cols="12">
                 <div
                   class="d-flex flex-column flex-md-row flex-wrap gap-2 w-100"
@@ -235,7 +235,7 @@ const file = ref(null);
                   </div>
                 </div>
               </VCol>
-            </TopSearchArea>
+            </BottomTotalArea>
           </VCol>
           <VCol cols="12" class="ma-0 pa-0 pt-1">
             <p class="text-body-2 mb-1 text-primary">
@@ -373,10 +373,4 @@ const file = ref(null);
   }
 }
 
-::v-deep(.top-search-area-open-button-wrap) {
-  display: none !important;
-}
-::v-deep(.top-search-area) {
-  padding: 24px !important;
-}
 </style>
