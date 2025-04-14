@@ -46,7 +46,7 @@ const onClear = () => {
             moon
             clearable
             range
-            readonly
+            disabled
             @keydown.esc="onClear"
           />
         </VCol>

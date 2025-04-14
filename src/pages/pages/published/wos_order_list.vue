@@ -59,8 +59,7 @@ const onClear = () => {
                 prepend-inner-icon="tabler-calendar-event"
                 moon
                 clearable
-                range
-                readonly
+                disabled
                 @keydown.esc="onClear"
               />
             </div>
@@ -215,7 +214,7 @@ export default {
       expanded: true,
       values: "",
       nameRules: [(v) => !!v || "필수 항목입니다"],
-      moon: ["2024-10", "2024-11"],
+      moon: ["2024-10"],
     };
   },
 };
