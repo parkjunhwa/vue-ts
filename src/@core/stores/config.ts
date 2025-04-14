@@ -1,30 +1,18 @@
+import { useLayoutConfigStore } from '@layouts/stores/config'
+import { themeConfig } from '@themeConfig'
 import { storeToRefs } from 'pinia'
 import { useTheme } from 'vuetify'
-import { cookieRef, useLayoutConfigStore } from '@layouts/stores/config'
-import { themeConfig } from '@themeConfig'
 
 // SECTION Store
 export const useConfigStore = defineStore('config', () => {
-  // 👉 Theme
-  const userPreferredColorScheme = usePreferredColorScheme()
-  const cookieColorScheme = cookieRef<'light' | 'dark'>('color-scheme', 'light')
-
-  watch(
-    userPreferredColorScheme,
-    val => {
-      if (val !== 'no-preference')
-        cookieColorScheme.value = val
-    },
-    { immediate: true },
-  )
-
-  const theme = cookieRef('theme', themeConfig.app.theme)
+  // 👉 Force Theme to 'light'
+  const theme = ref('light')
 
   // 👉 isVerticalNavSemiDark
-  const isVerticalNavSemiDark = cookieRef('isVerticalNavSemiDark', themeConfig.verticalNav.isVerticalNavSemiDark)
+  const isVerticalNavSemiDark = ref(themeConfig.verticalNav.isVerticalNavSemiDark)
 
-  // 👉 isVerticalNavSemiDark
-  const skin = cookieRef('skin', themeConfig.app.skin)
+  // 👉 skin
+  const skin = ref(themeConfig.app.skin)
 
   // ℹ️ We need to use `storeToRefs` to forward the state
   const {
@@ -58,23 +46,20 @@ export const useConfigStore = defineStore('config', () => {
 
 // SECTION Init
 export const initConfigStore = () => {
-  const userPreferredColorScheme = usePreferredColorScheme()
   const vuetifyTheme = useTheme()
   const configStore = useConfigStore()
 
+  // Force theme to 'light'
   watch(
-    [() => configStore.theme, userPreferredColorScheme],
+    () => configStore.theme,
     () => {
-      vuetifyTheme.global.name.value = configStore.theme === 'system'
-        ? userPreferredColorScheme.value === 'dark'
-          ? 'dark'
-          : 'light'
-        : configStore.theme
-    })
+      vuetifyTheme.global.name.value = 'light'
+    },
+    { immediate: true }
+  )
 
   onMounted(() => {
-    if (configStore.theme === 'system')
-      vuetifyTheme.global.name.value = userPreferredColorScheme.value
+    vuetifyTheme.global.name.value = 'light'
   })
 }
 // !SECTION
